@@ -1,18 +1,23 @@
 import React from "react";
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
 
 function Home() {
   return (
     <>
+    {/* the navbar component */}
+      <Navbar/>
+
       <main>
         <section className="w-full h-full">
           {/* first div in the section */}
           <div className="w-full lg:w-[80%] mx-auto block sm:flex mt-5 sm:mt-14">
             <div className="w-full sm:w-1/2 block lg:flex relative p-3 sm:p-6">
-              <div className=" bg-green-300 w-full sm:w-[300px] h-[340px] border-black border-4">
-                for image
+              <div className="w-full sm:w-[300px] h-[380px] border-[#219D80]/[.40] border-[10px]">
+                <img className="w-full h-full object-cover" src="./assets/login_bg.jpg" alt="" />
               </div>
-              <div className=" bg-green-500 w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:w-[280px] h-[260px] sm:h-[280px] border-black/[.55] border-4 lg:-ml-24 lg:mt-[35%]">
-                for image
+              <div className="w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:w-[300px] h-[260px] sm:h-[300px] border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative">
+                <img className="w-full h-full object-cover" src="./assets/boxbg.jpg" alt="" />
               </div>
             </div>
             <div className="w-full sm:w-1/2 flex items-center">
@@ -32,15 +37,15 @@ function Home() {
           {/* second div in the section */}
           <div className="w-full lg:w-[80%] mx-auto block sm:flex mt-5 sm:mt-14">
             <div className="w-full sm:w-1/2 block lg:flex relative p-2 sm:p-6 order-last">
-              <div className=" bg-green-300 w-full sm:w-[300px] h-[340px] border-black border-4">
-                for image
+              <div className="w-full sm:w-[300px] h-[380px] border-[#219D80]/[.40] border-[10px]">
+                <img className="w-full h-full object-cover" src="./assets/openarm.jpg" alt="" />
               </div>
-              <div className="bg-white w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:w-[280px] h-fit border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%]">
-                <div className="p-6">
+              <div className="bg-white w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:w-[300px] h-fit border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative">
+                <div className="p-5">
                   <ul className="list-disc text-justify">
                     <li className="text-[#219D80]">Together, we're going to make the future</li>
                     <li>Children where we are able to fulfill all</li>
-                    <li>their requirements to keep them safe
+                    <li>Their requirements to keep them safe
                       from withered world
                     </li>
                     <li>We have already stepped out and
@@ -244,6 +249,7 @@ function Home() {
         </section>
 
         {/* second section--------------- */}
+        {/* testimonials------------------ */}
         <section className="h-full sm:h-[60vh] w-full bg-footer_theme">
           <div className="h-full w-full sm:w-[80%] mx-auto flex justify-center items-center">
             <div className="w-full sm:w-[60%] p-2 mx-auto text-center text-white">
@@ -415,32 +421,33 @@ function Home() {
           </div>
 
           {/* third div---------------------------------------------------- */}
+          {/* sponsors-------------------- */}
           <div className="mt-6 mb-10 w-full">
-            <div className="w-full sm:w-[75%] mx-auto flex justify-between p-2 flex-wrap">
-              <div className="w-[180px] h-full flex-grow">
+            <div className="w-full sm:w-[75%] mx-auto flex justify-between gap-2 p-2 flex-wrap">
+              <div className="w-[180px] h-[70px] flex-grow">
                 <img
-                  className="w-full h-full"
+                  className="w-full h-full object-contain"
                   src="./assets/sponsor1.png"
                   alt=""
                 />
               </div>
-              <div className="w-[180px] h-full flex-grow">
+              <div className="w-[180px] h-[70px] flex-grow">
                 <img
-                  className="w-full h-full"
+                  className="w-full h-full object-contain"
                   src="./assets/sponsor2.png"
                   alt=""
                 />
               </div>
-              <div className="w-[180px] h-full flex-grow">
+              <div className="w-[180px] h-[70px] flex-grow">
                 <img
-                  className="w-full h-full"
+                  className="w-full h-full object-contain"
                   src="./assets/sponsor2.png"
                   alt=""
                 />
               </div>
-              <div className="w-[180px] h-full flex-grow">
+              <div className="w-[180px] h-[70px] flex-grow">
                 <img
-                  className="w-full h-full"
+                  className="w-full h-full object-contain"
                   src="./assets/sponsor1.png"
                   alt=""
                 />
@@ -449,6 +456,9 @@ function Home() {
           </div>
         </section>
       </main>
+
+      {/* the footer component */}
+      <Footer/>
     </>
   );
 }

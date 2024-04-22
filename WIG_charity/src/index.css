@@ -13,7 +13,17 @@
 body {
   margin: 0;
   height: 100%;
-  background: #E8E9EB;
+  background: #e8e9eb;
+}
+
+/*header background image */
+.background-container {
+  width: 100%; /* Set the width of the container */
+  height: 90dvh; /* Set the height of the container */
+  background-image: url("./assets/schoolkidsss.jpg"); /* Path to your image */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the image */
 }
 
 #hero {
@@ -21,7 +31,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #252A34;
+  background-color: rgba(37, 42, 52, 0.8);
   width: 100%;
   height: 90dvh;
   overflow: hidden;
@@ -40,7 +50,7 @@ body {
   left: -55vw;
   width: 100%;
   height: 100%;
-  background-color: #219D80;
+  background-color: rgba(33, 157, 128, 0.4);
   transform: skewX(-40deg);
 }
 
@@ -52,9 +62,8 @@ body {
   color: white;
 }
 
-
 @media screen and (max-width: 620px) {
-  #hero{
+  #hero {
     width: 100%;
     min-height: 100dvh;
     overflow: hidden;
@@ -75,15 +84,13 @@ body {
     left: -55vw;
     width: 100%;
     height: 100%;
-    background-color: #219D80;
+    background-color: #219d80;
     transform: skewX(-25deg);
   }
 }
 
 /* hamburger css */
-
-#menuToggle
-{
+#menuToggle {
   display: block;
   position: relative;
   top: 10px;
@@ -93,20 +100,17 @@ body {
   user-select: none;
 }
 
-#menuToggle a
-{
+#menuToggle a {
   text-decoration: none;
   color: #232323;
   transition: color 0.3s ease;
 }
 
-#menuToggle a:hover
-{
+#menuToggle a:hover {
   color: tomato;
 }
 
-#menuToggle input
-{
+#menuToggle input {
   display: block;
   width: 40px;
   height: 32px;
@@ -122,8 +126,7 @@ body {
 /*
  * Just a quick hamburger
  */
-#menuToggle span
-{
+#menuToggle span {
   display: block;
   width: 33px;
   height: 4px;
@@ -133,18 +136,15 @@ body {
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
 
-#menuToggle span:first-child
-{
+#menuToggle span:first-child {
   transform-origin: 0% 0%;
 }
 
-#menuToggle span:nth-last-child(2)
-{
+#menuToggle span:nth-last-child(2) {
   transform-origin: 0% 100%;
 }
 
@@ -152,8 +152,7 @@ body {
  * Transform all the slices of hamburger
  * into a crossmark.
  */
-#menuToggle input:checked ~ span
-{
+#menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
@@ -162,8 +161,7 @@ body {
 /*
  * But let's hide the middle one.
  */
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
+#menuToggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
@@ -171,8 +169,7 @@ body {
 /*
  * Ohyeah and the last one should go the other direction
  */
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
+#menuToggle input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
@@ -180,8 +177,7 @@ body {
  * Make this absolute positioned
  * at the top left of the screen
  */
-#menu
-{
+#menu {
   position: absolute;
   width: 300px;
   margin: -100px 0 0 -50px;
@@ -193,11 +189,10 @@ body {
   /* to stop flickering of text in safari */
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
-#menu li
-{
+#menu li {
   padding: 10px 0;
   font-size: 22px;
 }
@@ -205,7 +200,17 @@ body {
 /*
  * And let's slide it in from the left
  */
-#menuToggle input:checked ~ ul
-{
+#menuToggle input:checked ~ ul {
   transform: none;
+}
+
+/* glass effect */
+.glass {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.32);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.8px);
+  -webkit-backdrop-filter: blur(7.8px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
 }
