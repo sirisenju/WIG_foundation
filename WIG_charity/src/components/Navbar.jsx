@@ -1,30 +1,41 @@
 import React from "react";
-import HamburgerMenu from "./Hamburger";
 import { Link, NavLink } from "react-router-dom";
-
 
 const navlinks = [
   { id: 1, path: "/", name: "Home" },
   { id: 2, path: "/about", name: "About" },
   { id: 3, path: "/causes", name: "Causes" },
-  { id: 4, path: "/ourteam", name: "Our Team" },
+  { id: 4, path: "/dashboard", name: "Our Team" },
   { id: 5, path: "/blog", name: "Blog" },
-]
+];
 
 function Navbar() {
+  const backgroundStyle = {
+    backgroundImage: "url('./assets/schoolkidsss.jpg')",
+    height: "100%",
+    width: "100%", // Full viewport height
+    backgroundSize: "cover", // Cover the entire container
+    backgroundPosition: "center", // Center the background image
+    backgroundRepeat: "no-repeat", // Do not repeat the image
+  };
+
   return (
-    <section className="w-full h-full">
-      <div className="background-container">
-        <div id="hero">
-          <div id="tra">
-            <HamburgerMenu />
-            <div className="w-full sm:w-[80%] mt-4 text-white flex justify-between items-center h-14 mx-auto relative bg-footer_theme/[.80] rounded-lg">
+    <>
+      <section className="h-full w-full">
+        <div className="hero-bg">
+          <div className="pt-2 hidden sm:block">
+            <div className="w-full md:w-[80%] mt-4 text-white flex justify-between items-center h-14 mx-auto relative bg-footer_theme/[.80] rounded-lg">
               <div className="pl-4">logo</div>
               <nav className="max-w-xl hidden sm:block">
                 <ul className="list-none flex gap-14">
                   {navlinks.map((item) => (
                     <li key={item.id} className="text-base hover:underline">
-                      <NavLink to={item.path} className={({ isActive }) => (isActive ? "text-green-400 text-base font-bold" : " ")}>
+                      <NavLink
+                        to={item.path}
+                        className={({ isActive }) =>
+                          isActive ? "text-green-400 text-base font-bold" : " "
+                        }
+                      >
                         {item.name}
                       </NavLink>
                     </li>
@@ -32,10 +43,12 @@ function Navbar() {
                 </ul>
               </nav>
               <div className="flex gap-2 px-2">
-              <Link to={"/login"}><button className="text-base px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
-                  Login
-                </button></Link>
-                
+                <Link to={"/login"}>
+                  <button className="text-base px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
+                    Login
+                  </button>
+                </Link>
+
                 <Link to={"/signup"}>
                   <button className="text-base px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
                     Sign Up
@@ -44,7 +57,7 @@ function Navbar() {
               </div>
             </div>
           </div>
-          <div id="con" className="text-center w-full p-2">
+          <div className="text-center w-full p-2 pt-[80px] sm:pt-[120px]">
             <p className="pb-2 tracking-wider text-lg">
               Give Hope To The Homeless.
             </p>
@@ -61,8 +74,8 @@ function Navbar() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 

@@ -16,77 +16,15 @@ body {
   background: #e8e9eb;
 }
 
-/*header background image */
-.background-container {
-  width: 100%; /* Set the width of the container */
-  height: 90dvh; /* Set the height of the container */
-  background-image: url("./assets/schoolkidsss.jpg"); /* Path to your image */
-  background-size: cover; /* Cover the entire container */
-  background-position: center; /* Center the background image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-}
-
-#hero {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  background-color: rgba(37, 42, 52, 0.8);
-  width: 100%;
+.hero-bg{
+  background-image: linear-gradient(-40deg, rgba(37, 42, 52, 0.8) 55%, rgba(33, 157, 128, 0.85) 45%), 
+  url('./assets/schoolkidsss.jpg');
   height: 90dvh;
-  overflow: hidden;
-}
-
-#tra {
   width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-#tra::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -55vw;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(33, 157, 128, 0.4);
-  transform: skewX(-40deg);
-}
-
-#hero #con {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
-
-@media screen and (max-width: 620px) {
-  #hero {
-    width: 100%;
-    min-height: 100dvh;
-    overflow: hidden;
-  }
-
-  #hero #con {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-  }
-
-  #tra::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -55vw;
-    width: 100%;
-    height: 100%;
-    background-color: #219d80;
-    transform: skewX(-25deg);
-  }
+  color: #ededed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* hamburger css */
@@ -213,4 +151,32 @@ body {
   backdrop-filter: blur(7.8px);
   -webkit-backdrop-filter: blur(7.8px);
   border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+/*accordion styling*/
+.accordion {
+  max-width: 510px;
+}
+
+.accordion-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: white;
+  border-bottom: 2px solid #ececf1;
+}
+
+.accordion-title:hover {
+  background-color: #D0E7E2;
+}
+
+.accordion-title,
+.accordion-content {
+  padding: 0.9rem;
+}
+
+.accordion-content {
+  background-color: white;
+  border-bottom: 8px;
 }

@@ -5,19 +5,26 @@ import Navbar from "../../components/Navbar";
 function About() {
   return (
     <>
-      <Navbar/>
-      <main> 
+      <Navbar />
+      <main>
         {/* first section */}
         <section className="w-full h-full">
-
           {/* first div design */}
-        <div className="w-full lg:w-[80%] mx-auto block sm:flex mt-5 sm:mt-14">
+          <div className="w-full lg:w-[80%] mx-auto block sm:flex mt-5 sm:mt-14">
             <div className="w-full sm:w-1/2 block lg:flex relative p-3 sm:p-6">
-              <div className="w-full sm:w-[300px] h-[380px] border-[#219D80]/[.40] border-[10px]">
-                <img className="w-full h-full object-cover" src="./assets/login_bg.jpg" alt="" />
+              <div className="w-full sm:max-w-xs h-[380px] border-[#219D80]/[.40] border-[10px]">
+                <img
+                  className="w-full h-full object-cover"
+                  src="./assets/login_bg.jpg"
+                  alt=""
+                />
               </div>
-              <div className="w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:w-[300px] h-[260px] sm:h-[300px] border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative">
-                <img className="w-full h-full object-cover" src="./assets/boxbg.jpg" alt="" />
+              <div className="w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:max-w-sm h-[260px] sm:h-[300px] border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative">
+                <img
+                  className="w-full h-full object-cover"
+                  src="./assets/boxbg.jpg"
+                  alt=""
+                />
               </div>
             </div>
             <div className="w-full sm:w-1/2 flex items-center">
@@ -37,23 +44,27 @@ function About() {
           {/* second div design */}
           <div className="w-full lg:w-[80%] mx-auto block sm:flex mt-5 sm:mt-14">
             <div className="w-full sm:w-1/2 block lg:flex relative p-2 sm:p-6 order-last">
-              <div className="w-full sm:w-[300px] h-[380px] border-[#219D80]/[.40] border-[10px]">
-                <img className="w-full h-full object-cover" src="./assets/openarm.jpg" alt="" />
+              <div className="w-full sm:max-w-sm h-[380px] border-[#219D80]/[.40] border-[10px]">
+                <img
+                  className="w-full h-full object-cover"
+                  src="./assets/openarm.jpg"
+                  alt=""
+                />
               </div>
-              <div className="bg-white w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:w-[300px] h-fit border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative">
+              <div className="bg-white w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:max-w-sm h-fit border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative">
                 <div className="p-5">
                   <ul className="list-disc text-justify">
-                    <li className="text-[#219D80]">Together, we're going to make the future</li>
-                    <li>Children where we are able to fulfill all</li>
-                    <li>Their requirements to keep them safe
-                      from withered world
+                    <li className="text-[#219D80]">
+                      Together, we're going to make the future
                     </li>
-                    <li>We have already stepped out and
-                      start changing the world
+                    <li>Children where we are able to fulfill all</li>
+                    <li>
+                      Their requirements to keep them safe from withered world
                     </li>
                     <li>
-                      Keeping safe them from war, inhumanity
+                      We have already stepped out and start changing the world
                     </li>
+                    <li>Keeping safe them from war, inhumanity</li>
                   </ul>
                 </div>
               </div>
@@ -93,7 +104,7 @@ function About() {
                   </div>
                 </div>
 
-                <div className=" mb-4">
+                <div className="mb-4">
                   <div className="flex justify-between pb-2">
                     <p>Donate</p> <p>100%</p>
                   </div>
@@ -109,16 +120,16 @@ function About() {
               </div>
             </div>
           </div>
-          
         </section>
+        
         <section className="w-full h-full">
           {/* about list div */}
-          <div className="w-[80%] h-full mx-auto pb-4">
-            <h3 className="text-base pb-2 tracking-wider pt-4">About</h3>
-            <h2 className="text-2xl pb-8">Our Features</h2>
-            <div className="w-full flex justify-between">
-              <div className="bg-[#219D80]/[.40] hover:bg-primary_theme max-w-sm p-6 rounded-xl">
-                <img className="h-20 w-20" src="./assets/icon2.png" alt="" />
+          <div className="w-full lg:w-[80%] h-full mx-auto pb-4 pt-14 p-2">
+            <h3 className="text-lg pb-2 tracking-wider pt-4">About</h3>
+            <h2 className="text-3xl pb-8">Our Features</h2>
+            <div className="w-full block sm:flex justify-between gap-10 flex-wrap">
+              <div className="bg-[#219D80]/[.40] hover:bg-primary_theme lg:max-w-sm p-6 rounded-xl mb-4 sm:mb-0 flex-grow basis-[230px]">
+                <img className="h-16 w-16" src="./assets/icon2.png" alt="" />
                 <h3 className="text-2xl pt-2 pb-2 tracking-wide">
                   Food & Homeless Charity
                 </h3>
@@ -133,8 +144,8 @@ function About() {
                 <p className="font-semibold text-base">Donate Now!</p>
               </div>
 
-              <div className="bg-[#219D80]/[.40] hover:bg-primary_theme rounded-xl max-w-sm p-6">
-                <img className="h-20 w-20" src="./assets/icon2.png" alt="" />
+              <div className="bg-[#219D80]/[.40] hover:bg-primary_theme rounded-xl lg:max-w-sm p-6 mb-4 sm:mb-0 flex-grow basis-[230px]">
+                <img className="h-16 w-16" src="./assets/icon2.png" alt="" />
                 <h3 className="text-2xl pt-2 pb-2 tracking-wide">
                   Food & Homeless Charity
                 </h3>
@@ -149,8 +160,8 @@ function About() {
                 <p className="font-semibold text-base">Donate Now!</p>
               </div>
 
-              <div className="bg-[#219D80]/[.40] hover:bg-primary_theme rounded-xl max-w-sm p-6">
-                <img className="h-20 w-20" src="./assets/icon2.png" alt="" />
+              <div className="bg-[#219D80]/[.40] hover:bg-primary_theme rounded-xl lg:max-w-sm p-6 mb-4 sm:mb-0 flex-grow basis-[230px]">
+                <img className="h-16 w-16" src="./assets/icon2.png" alt="" />
                 <h3 className="text-2xl pt-2 pb-2 tracking-wide">
                   Food & Homeless Charity
                 </h3>
@@ -168,8 +179,8 @@ function About() {
 
             {/* div for the counting cards */}
             <div className="w-full mx-auto mt-[10%] mb-5">
-              <div className="block sm:flex justify-between gap-10">
-                <div className="w-full mb-4 sm:w-[360px] lg:max-w-xs h-[250px] bg-[#219D80]/[.40] hover:bg-primary_theme text-center p-6 ">
+              <div className="block sm:flex justify-between gap-10 flex-wrap">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.40] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className="w-full h-full object-center"
@@ -181,7 +192,7 @@ function About() {
                   <p className="text-lg pt-2">People Helped</p>
                 </div>
 
-                <div className="w-full mb-4 sm:w-[360px] lg:max-w-xs h-[250px] bg-[#219D80]/[.40] hover:bg-primary_theme text-center p-6">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.40] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className=" w-full h-full object-center"
@@ -193,7 +204,7 @@ function About() {
                   <p className="text-lg pt-2">People Helped</p>
                 </div>
 
-                <div className="w-full mb-4 sm:w-[360px] lg:max-w-xs h-[250px] bg-[#219D80]/[.40] hover:bg-primary_theme text-center p-6">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.40] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className=" w-full h-full object-center"
@@ -205,7 +216,7 @@ function About() {
                   <p className="text-lg pt-2">People Helped</p>
                 </div>
 
-                <div className="w-full mb-4 sm:w-[360px] lg:max-w-xs h-[250px] bg-[#219D80]/[.40] hover:bg-primary_theme text-center p-6">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.40] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className="w-full h-full object-center"
@@ -223,7 +234,7 @@ function About() {
 
         {/* gallery section */}
         <section className="w-full h-full">
-          <div className="w-[80%] h-full mx-auto mb-10">
+          <div className="w-full lg:w-[80%] h-full mx-auto mb-10 p-2 lg:p-0">
             <h2 className="text-2xl pb-8 pt-2">Our Gallery</h2>
             <div className="row1 flex gap-2 justify-between">
               <div className="max-w-md">
@@ -323,7 +334,7 @@ function About() {
       </main>
 
       {/* footer component */}
-      <Footer/>
+      <Footer />
     </>
   );
 }

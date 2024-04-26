@@ -5,19 +5,26 @@ import Navbar from "../../components/Navbar";
 function Home() {
   return (
     <>
-    {/* the navbar component */}
-      <Navbar/>
-
+      {/* the navbar component */}
+      <Navbar />
       <main>
         <section className="w-full h-full">
           {/* first div in the section */}
-          <div className="w-full lg:w-[80%] mx-auto block sm:flex mt-5 sm:mt-14">
+          <div className="w-full lg:w-[80%] mx-auto block sm:flex pt-2">
             <div className="w-full sm:w-1/2 block lg:flex relative p-3 sm:p-6">
-              <div className="w-full sm:w-[300px] h-[380px] border-[#219D80]/[.40] border-[10px]">
-                <img className="w-full h-full object-cover" src="./assets/login_bg.jpg" alt="" />
+              <div className="w-full sm:max-w-xs h-[380px] border-[#219D80]/[.40] border-[10px]">
+                <img
+                  className="w-full h-full object-cover"
+                  src="./assets/login_bg.jpg"
+                  alt=""
+                />
               </div>
-              <div className="w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:w-[300px] h-[260px] sm:h-[300px] border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative">
-                <img className="w-full h-full object-cover" src="./assets/boxbg.jpg" alt="" />
+              <div className="w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:max-w-sm h-[260px] sm:h-[300px] border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative">
+                <img
+                  className="w-full h-full object-cover"
+                  src="./assets/boxbg.jpg"
+                  alt=""
+                />
               </div>
             </div>
             <div className="w-full sm:w-1/2 flex items-center">
@@ -37,23 +44,27 @@ function Home() {
           {/* second div in the section */}
           <div className="w-full lg:w-[80%] mx-auto block sm:flex mt-5 sm:mt-14">
             <div className="w-full sm:w-1/2 block lg:flex relative p-2 sm:p-6 order-last">
-              <div className="w-full sm:w-[300px] h-[380px] border-[#219D80]/[.40] border-[10px]">
-                <img className="w-full h-full object-cover" src="./assets/openarm.jpg" alt="" />
+              <div className="w-full sm:max-w-sm h-[380px] border-[#219D80]/[.40] border-[10px]">
+                <img
+                  className="w-full h-full object-cover"
+                  src="./assets/openarm.jpg"
+                  alt=""
+                />
               </div>
-              <div className="bg-white w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:w-[300px] h-fit border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative">
+              <div className="bg-white w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:max-w-sm h-fit border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative">
                 <div className="p-5">
                   <ul className="list-disc text-justify">
-                    <li className="text-[#219D80]">Together, we're going to make the future</li>
-                    <li>Children where we are able to fulfill all</li>
-                    <li>Their requirements to keep them safe
-                      from withered world
+                    <li className="text-[#219D80]">
+                      Together, we're going to make the future
                     </li>
-                    <li>We have already stepped out and
-                      start changing the world
+                    <li>Children where we are able to fulfill all</li>
+                    <li>
+                      Their requirements to keep them safe from withered world
                     </li>
                     <li>
-                      Keeping safe them from war, inhumanity
+                      We have already stepped out and start changing the world
                     </li>
+                    <li>Keeping safe them from war, inhumanity</li>
                   </ul>
                 </div>
               </div>
@@ -284,7 +295,7 @@ function Home() {
             </p>
             <div className="w-full mx-auto">
               <div className="block sm:flex gap-10">
-                <div className="w-full mb-4 sm:w-[360px] lg:w-[220px] h-[250px] bg-green-200 text-center p-6 ">
+                <div className="w-full mb-4 sm:w-[360px] lg:max-w-xs h-[250px] bg-green-200 text-center p-6 ">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className="w-full h-full object-center"
@@ -296,7 +307,7 @@ function Home() {
                   <p className="text-lg pt-2">People Helped</p>
                 </div>
 
-                <div className="w-full mb-4 sm:w-[360px] lg:w-[220px] h-[250px] bg-green-200 text-center p-6">
+                <div className="w-full mb-4 sm:w-[360px] lg:max-w-xs h-[250px] bg-green-200 text-center p-6">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className=" w-full h-full object-center"
@@ -308,7 +319,7 @@ function Home() {
                   <p className="text-lg pt-2">People Helped</p>
                 </div>
 
-                <div className="w-full mb-4 sm:w-[360px] lg:w-[220px] h-[250px] bg-green-200 text-center p-6">
+                <div className="w-full mb-4 sm:w-[360px] lg:max-w-xs h-[250px] bg-green-200 text-center p-6">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className=" w-full h-full object-center"
@@ -320,7 +331,7 @@ function Home() {
                   <p className="text-lg pt-2">People Helped</p>
                 </div>
 
-                <div className="w-full mb-4 sm:w-[360px] lg:w-[220px] h-[250px] bg-green-200 text-center p-6">
+                <div className="w-full mb-4 sm:w-[360px] lg:max-w-xs h-[250px] bg-green-200 text-center p-6">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className=" w-full h-full object-center"
@@ -336,7 +347,7 @@ function Home() {
           </div>
 
           {/* second div......................... */}
-          <div className="w-full lg:w-[75%] mx-auto mt-[10%] mb-[4%] p-2">
+          <div className="w-full lg:w-[75%] mx-auto mt-[5%] mb-[4%] p-2">
             <h3 className="text-base pb-2 tracking-wider">Our Fun Facts</h3>
             <p className="text-2xl pb-8">Articles You Might Like.</p>
             <div className="block sm:flex sm:gap-10 flex-wrap">
@@ -458,7 +469,7 @@ function Home() {
       </main>
 
       {/* the footer component */}
-      <Footer/>
+      <Footer />
     </>
   );
 }
