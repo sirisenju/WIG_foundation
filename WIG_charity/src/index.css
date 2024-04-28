@@ -22,7 +22,7 @@ body {
       rgba(37, 42, 52, 0.8) 55%,
       rgba(33, 157, 128, 0.85) 45%
     ),
-    url("./assets/schoolkidsss.jpg");
+    url("/assets/schoolkidsss.jpg");
   height: 90dvh;
   width: 100%;
   color: #ededed;
