@@ -14,6 +14,7 @@ import Causes from './views/Cause/index.jsx';
 import Dashboard from './views/Dashboard/index.jsx';
 import Project from './views/Dashboard/Project.jsx';
 import Reports from './views/Dashboard/Reports.jsx';
+import OurTeam from './views/Team/index.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/causes",
     element: <Causes/>
+  },
+  {
+    path: "/ourteam",
+    element: <OurTeam/>
   },
   {
     path: "/login",

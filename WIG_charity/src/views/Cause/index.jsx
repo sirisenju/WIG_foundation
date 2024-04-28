@@ -9,7 +9,7 @@ function Causes() {
     <>
       <Navbar />
       <section className="h-full w-full">
-        <div className="h-full w-[80%] mx-auto pt-10">
+        <div className="h-full w-full p-2 sm:w-[80%] mx-auto pt-5 sm:pt-10">
           {/* heading */}
           <div className="max-w-sm mb-5">
             <h3 className="text-lg pb-2 tracking-wider">Latest causes</h3>
@@ -281,14 +281,14 @@ function Causes() {
 
       {/* second section for the accordian and text/image */}
       <section className="w-full h-full bg-[#EDF7F5]">
-        <div className="w-[80%] mx-auto pb-16 pt-16">
+        <div className="w-full p-2 md:w-[80%] mx-auto pb-5 sm:pb-16 pt-5 sm:pt-16">
           <div className="max-w-sm mb-5">
             <h3 className="text-lg pb-2 tracking-wider">Have any question?</h3>
             <p className="text-3xl pb-8">
               Frequently Asked Questions.
             </p>
           </div>
-          <div className="w-full flex justify-between pb-4">
+          <div className="w-full block sm:flex justify-between pb-4">
             <div className="w-full sm:max-w-lg h-[380px] border-[#219D80]/[.40] border-[10px]">
               <img
                 className="w-full h-full object-cover"
@@ -313,7 +313,7 @@ function Causes() {
 
       {/* third section for more communication */}
       <section className="w-full h-full">
-        <div className=" w-[80%] mx-auto pb-10">
+        <div className="w-full sm:w-[80%] mx-auto pb-10 p-2">
           <div className="max-w-xs mb-5 pt-10">
             <h3 className="text-3xl pb-4">Still need help?</h3>
             <p className="text-lg pb-2">
@@ -322,8 +322,8 @@ function Causes() {
               at the forefront of the industry.
             </p>
           </div>
-          <div className="flex justify-between">
-            <div className=" max-w-sm bg-[#EDF7F5] text-center p-4">
+          <div className="gap-3 flex justify-between flex-wrap">
+            <div className="md:max-w-sm bg-[#EDF7F5] text-center p-4 mb-2 sm:mb-0 flex-grow basis-[180px]">
               <img className="h-16 w-16 mx-auto" src="./assets/callguy.png" alt="" />
               <h3 className="text-2xl pb-3 pt-2">Call support</h3>
               <p className="text-base pb-2">
@@ -333,7 +333,7 @@ function Causes() {
               </p>
             </div>
 
-            <div className=" max-w-sm bg-[#EDF7F5] text-center p-4">
+            <div className="md:max-w-sm bg-[#EDF7F5] text-center p-4 mb-2 sm:mb-0 flex-grow basis-[180px]">
               <img className="h-16 w-16 mx-auto" src="./assets/callguy.png" alt="" />
               <h3 className="text-2xl pb-3 pt-2">Call support</h3>
               <p className="text-base pb-2">
@@ -343,7 +343,7 @@ function Causes() {
               </p>
             </div>
 
-            <div className=" max-w-sm bg-[#EDF7F5] text-center p-4">
+            <div className=" md:max-w-sm bg-[#EDF7F5] text-center p-4 mb-2 sm:mb-0 flex-grow basis-[180px]">
               <img className="h-16 w-16 mx-auto" src="./assets/callguy.png" alt="" />
               <h3 className="text-2xl pb-3 pt-2">Call support</h3>
               <p className="text-base pb-2">
@@ -357,17 +357,17 @@ function Causes() {
       </section>
 
       {/*contact form section*/}
-      <section  className="w-full h-full pb-24">
-        <div className=" w-[80%] h-full mx-auto">
-          <div className="max-w-xs mb-5 pt-10">
+      <section  className="w-full h-full pb-20 p-2">
+        <div className="w-full sm:w-[80%] h-full mx-auto">
+          <div className="max-w-xs mb-5 pt-4 sm:pt-10">
             <h3 className="text-3xl pb-4">Get in touch today.</h3>
             <p className="text-lg pb-2">
               Send us a message
             </p>
           </div>
-        <div className="mx-auto flex flex-row mb-4 mt-4">
-        <div className="max-w-4xl h-full pr-16">
-          <div className="h-full flex flex-col items-center justify-center">
+        <div className="mx-auto  sm:flex flex-row flex-wrap mb-4 mt-4">
+        <div className="max-w-4xl h-full pr-0 sm:pr-16">
+          <div className="h-full flex flex-col items-center justify-center flex-grow">
             <form action="" className="flex flex-col gap-3">
               <div className="flex gap-2 w-full">
                 <div className="block w-full">
@@ -415,7 +415,7 @@ function Causes() {
             </form>
           </div>
         </div>
-        <div className="max-w-xs bg-white max-h-min p-5">
+        <div className="max-w-xs bg-white max-h-min p-5 flex-grow">
             <h2 className=" font-bold text-2xl pb-2">Address.</h2>
             <p className=" pb-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio 
               non nostrum odio explicabo, soluta repudiandae quasi sequi?
