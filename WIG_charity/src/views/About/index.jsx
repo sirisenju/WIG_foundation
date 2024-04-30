@@ -5,7 +5,12 @@ import Navbar from "../../components/Navbar";
 function About() {
   return (
     <>
-      <Navbar />
+      <Navbar
+        variant="primary"
+        intro="about heading"
+        heading="about heading section"
+        paragraph="paragraph section"
+      />
       <main>
         {/* first section */}
         <section className="w-full h-full">
@@ -121,7 +126,7 @@ function About() {
             </div>
           </div>
         </section>
-        
+
         <section className="w-full h-full">
           {/* about list div */}
           <div className="w-full lg:w-[80%] h-full mx-auto pb-4 pt-14 p-2">

@@ -6,7 +6,12 @@ function Home() {
   return (
     <>
       {/* the navbar component */}
-      <Navbar />
+      <Navbar
+        intro="Give Hope To The Homeless."
+        heading="Helping each other can make the world better"
+        paragraph="We Seek out world changers and difference makers around the
+                globe, and equip them to fulfill their unique purpose."
+      />
       <main>
         <section className="w-full h-full">
           {/* first div in the section */}

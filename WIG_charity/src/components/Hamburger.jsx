@@ -3,7 +3,7 @@ import { Sling as Hamburger } from 'hamburger-react'
 import { useState, useEffect } from "react";
 import OutsideClickHandler from "react-outside-click-handler";
 import navigation from "../../lib/navigationCtr";
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { FaAngleDoubleRight } from "react-icons/fa";
 
 
@@ -67,6 +67,19 @@ const HamburgerMenu = () => {
                   ))
                   }
                 </div>
+                {/* sign up and login buttons */}
+                <div className="gap-2 px-2 flex justify-between">
+                <Link to={"/login"}>
+                  <button className="text-base px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
+                    Login
+                  </button>
+                </Link>
+                <Link to={"/signup"}>
+                  <button className="text-base px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
+                    Sign Up
+                  </button>
+                </Link>
+              </div>
               </div>
             )}
         </div>
