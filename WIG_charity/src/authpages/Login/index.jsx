@@ -18,13 +18,20 @@ function Login() {
         };
   return (
     <>
-      <section>
-        <div className="w-[70%] h-screen mx-auto flex flex-row p-3 mb-4 mt-4 glass">
-          <div className="w-1/2 h-full p-4">
+      <section className="w-full h-full">
+        <div className="w-full lg:w-[70%] h-full sm:h-screen mx-auto block sm:flex flex-row p-3 mb-4 mt-4 glass">
+          <div className="w-full sm:w-1/2 h-[380px] sm:h-full order-last">
+            <img
+              className="w-full h-full object-cover rounded-md "
+              src="./assets/login_bg.jpg"
+              alt=""
+            />
+          </div>
+          <div className="w-full sm:w-1/2 h-full p-0 sm:p-4">
             <div className="h-full flex flex-col items-center justify-center">
               <div className="w-full text-center pb-4 pt-8">
-                <h1 className="text-3xl font-semibold">Create Your Account.</h1>
-                <p className="text-base font-medium">Sign up today.</p>
+                <h1 className="text-3xl font-semibold">Login Your Account.</h1>
+                <p className="text-base font-medium">Welcome back!</p>
               </div>
               <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                 <div className="block">
@@ -68,13 +75,6 @@ function Login() {
                 </span>
               </p>
             </div>
-          </div>
-          <div className="w-1/2 h-full">
-            <img
-              className="w-full h-full object-cover rounded-md "
-              src="./assets/login_bg.jpg"
-              alt=""
-            />
           </div>
         </div>
       </section>

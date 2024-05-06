@@ -10,6 +10,11 @@ import Home from './views/Home/index.jsx';
 import About from './views/About/index.jsx';
 import Login from './authpages/Login/index.jsx';
 import Signup from './authpages/Signup/index.jsx';
+import Causes from './views/Cause/index.jsx';
+import Dashboard from './views/Dashboard/index.jsx';
+import Project from './views/Dashboard/Project.jsx';
+import Reports from './views/Dashboard/Reports.jsx';
+import OurTeam from './views/Team/index.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,14 +26,25 @@ const router = createBrowserRouter([
     element: <About/>
   },
   {
+    path: "/causes",
+    element: <Causes/>
+  },
+  {
+    path: "/ourteam",
+    element: <OurTeam/>
+  },
+  {
     path: "/login",
     element: <Login/>
   },
   {
     path: "/signup",
     element: <Signup/>
-  }
-
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard/>
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
