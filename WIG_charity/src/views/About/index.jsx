@@ -1,15 +1,17 @@
 import React from "react";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import Swipper from "../../components/Swipper";
 
 function About() {
   return (
     <>
       <Navbar
         variant="primary"
-        intro="about heading"
-        heading="about heading section"
-        paragraph="paragraph section"
+        intro="About us."
+        heading="Empowering Change: Building a Stronger Tomorrow Through Our Foundation"
+        paragraph="Our foundation is committed to making a tangible difference in the lives of those in need. 
+        Join us in shaping a brighter future for all."
       />
       <main>
         {/* first section */}
@@ -241,36 +243,36 @@ function About() {
         <section className="w-full h-full">
           <div className="w-full lg:w-[80%] h-full mx-auto mb-10 p-2 lg:p-0">
             <h2 className="text-2xl pb-8 pt-2">Our Gallery</h2>
-            <div className="row1 flex gap-2 justify-between">
-              <div className="max-w-md">
+            <div className="row1 flex gap-2 justify-between flex-wrap">
+              <div className="flex-grow basis-[250px]">
                 <img
                   className="w-full align-middle"
                   src="./assets/heroes-bg.jpeg"
                   alt=""
                 />
               </div>
-              <div className="max-w-md">
+              <div className="flex-grow basis-[250px]">
                 <img className="w-full" src="./assets/heroes-bg.jpeg" alt="" />
               </div>
-              <div className="max-w-md">
+              <div className="flex-grow basis-[250px]">
                 <img className="w-full" src="./assets/heroes-bg.jpeg" alt="" />
               </div>
             </div>
-            <div className="row2 flex gap-2 mt-2 mb-2">
-              <div className="max-w-sm">
+            <div className="row2 flex flex-wrap gap-2 mt-2 mb-2">
+              <div className="flex-grow basis-[250px]">
                 <img
                   className="w-full h-full"
                   src="./assets/heroes-bg.jpeg"
                   alt=""
                 />
               </div>
-              <div className="max-w-sm">
+              <div className="flex-grow basis-[250px]">
                 <img className="w-full" src="./assets/heroes-bg.jpeg" alt="" />
               </div>
-              <div className="max-w-sm">
+              <div className="flex-grow basis-[250px]">
                 <img className="w-full" src="./assets/heroes-bg.jpeg" alt="" />
               </div>
-              <div className="max-w-sm">
+              <div className="flex-grow basis-[250px]">
                 <img className="w-full" src="./assets/heroes-bg.jpeg" alt="" />
               </div>
             </div>
@@ -280,24 +282,7 @@ function About() {
         {/* testimonials........... */}
         <section className="h-full sm:h-[60vh] w-full bg-footer_theme mb-[3%] mt-[3%]">
           <div className="h-full w-full sm:w-[80%] mx-auto flex justify-center items-center">
-            <div className="w-full sm:w-[60%] p-2 mx-auto text-center text-white">
-              <h3 className="text-base pb-2 tracking-wider">Testimonials.</h3>
-              <p className="text-2xl pb-8">What People Say About Us</p>
-              <div className="h-[90px] w-[90px] mx-auto rounded-full overflow-hidden shadow-md">
-                <img
-                  className=" w-full h-full object-cover object-center"
-                  src="./assets/girlHolder.jpg"
-                  alt=""
-                />
-              </div>
-              <p className="pt-2 text-base">Tony Stark</p>
-              <p className=" pb-2 text-lg">CEO</p>
-              <p className="text-lg space-x-1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-                minus, saepe dolor sapiente provident non? Quia, error maiores?
-                Facilis, itaque.
-              </p>
-            </div>
+            <Swipper/>
           </div>
         </section>
 

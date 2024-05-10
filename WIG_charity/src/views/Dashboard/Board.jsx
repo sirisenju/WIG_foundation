@@ -2,7 +2,8 @@ import React from "react";
 
 function Board() {
   return (
-    <div className="col-span-3 p-2 bg-white shadow-md rounded-lg ml-2">
+    <div className="col-span-3 p-2 bg-white shadow-md rounded-lg">
+      <h1 className="text-center text-4xl font-bold">User Dashboard</h1>
       <h2 className="text-3xl pt-2 pb-2">Hello, Adolf Hitler.</h2>
       <div className="h-[320px] w-full">
         <img
@@ -11,9 +12,9 @@ function Board() {
           alt=""
         />
       </div>
-      <div className="mt-4 flex p-2 gap-2">
+      <div className="mt-4 block md:flex p-2 gap-2 bg-yellow-300">
         {/* project div */}
-        <div className="w-[70%]">
+        <div className="w-full md:w-[70%]">
           <p className="text-2xl pb-1">Recent Projects:</p>
           <div className="flex gap-2 p-1 w-full max-h-max bg-purple-100 rounded-xl mb-2">
             <img
@@ -61,10 +62,13 @@ function Board() {
             </div>
           </div>
         </div>
-        <div className="w-[30%] h-auto p-2 mb-2 mt-2 rounded-lg">
+        <div className="w-full md:w-[30%] h-auto p-2 mb-2 mt-2 rounded-lg bg-orange-300">
           <p className="text-2xl pb-1">Filter by:</p>
           <button className="text-base mt-2 px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
             Recent Post
+          </button>
+          <button className="text-base mt-2 px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
+            Add Project
           </button>
         </div>
       </div>

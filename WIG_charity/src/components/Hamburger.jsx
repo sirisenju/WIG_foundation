@@ -2,12 +2,11 @@ import React from "react";
 import { Sling as Hamburger } from 'hamburger-react'
 import { useState, useEffect } from "react";
 import OutsideClickHandler from "react-outside-click-handler";
-import navigation from "../../lib/navigationCtr";
 import { NavLink, Link } from 'react-router-dom';
 import { FaAngleDoubleRight } from "react-icons/fa";
 
 
-const HamburgerMenu = () => {
+const HamburgerMenu = ({propData}) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -51,7 +50,7 @@ const HamburgerMenu = () => {
                   <FaAngleDoubleRight className="hover:cursor-pointer hover:scale-105" onClick={handleToggle} size={26}/>
                 </div>
                 <div className="grid place-content-start gap-y-5 pt-10 pb-10">
-                  {navigation.map((item) => (
+                  {propData.map((item) => (
                     <NavLink
                     to={item.href}
                     key={item.id}
