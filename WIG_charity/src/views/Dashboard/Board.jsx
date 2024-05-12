@@ -12,7 +12,7 @@ function Board() {
           alt=""
         />
       </div>
-      <div className="mt-4 block md:flex p-2 gap-2 bg-yellow-300">
+      <div className="mt-4 block md:flex p-2 gap-2">
         {/* project div */}
         <div className="w-full md:w-[70%]">
           <p className="text-2xl pb-1">Recent Projects:</p>
@@ -62,9 +62,9 @@ function Board() {
             </div>
           </div>
         </div>
-        <div className="w-full md:w-[30%] h-auto p-2 mb-2 mt-2 rounded-lg bg-orange-300">
+        <div className="w-full md:w-[30%] h-auto p-2 mb-2 mt-2 rounded-lg">
           <p className="text-2xl pb-1">Filter by:</p>
-          <button className="text-base mt-2 px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
+          <button className="text-base mt-2 mr-2 px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
             Recent Post
           </button>
           <button className="text-base mt-2 px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">

@@ -32,7 +32,7 @@ function Dashboard() {
       </div>
       <div className="h-full flex flex-row p-2 gap-4 flex-wrap">
         {/* left dashboard */}
-        <div className="basis-[250px] rounded-lg bg-white shadow-md flex-grow hidden md:block">
+        <div className="sm:basis-[100px] lg:basis-[200px] rounded-lg bg-white shadow-md flex-grow hidden md:block">
           <div className="p-2 flex flex-col justify-between h-auto pt-28">
             <ul className="list-none flex flex-col gap-4">
               <li className="h-10 flex items-center px-4 gap-2 text-lg hover:bg-[#EDF7F5] rounded-md">
@@ -54,7 +54,7 @@ function Dashboard() {
                 </button>
               </li>
             </ul>
-            <div className="mt-[80%]">
+            <div className="mt-[120px]">
               <p>Any trouble?</p>
               <button className="text-base mt-1 px-7 py-2 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
                 Contact admin
@@ -71,7 +71,7 @@ function Dashboard() {
         </div>
 
         {/* right column(last) */}
-        <div className="bg-white rounded-lg shadow-md basis-[250px] flex-grow hidden 2xl:block">
+        <div className="bg-white rounded-lg shadow-md sm:basis-[100px] lg:basis-[200px] flex-grow hidden 2xl:block">
           <div className="w-full text-center mb-5 mt-5  pt-28">
             <div className="w-full h-full">
               <img
