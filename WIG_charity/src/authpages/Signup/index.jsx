@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "../../components/Footer";
+import axios from 'axios';
 
 function Signup() {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [first_name, setFirstname] = useState('');
+    const [last_name, setLastname] = useState('');
+    const [phone_number, setPhone] = useState('');
+    const [role, setRole] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        axios.post('http://127.0.0.1:8000/api/register/', { email, password, first_name, last_name, phone_number, role })
+            .then(response => console.log(response))
+            .catch(error => console.error(error));
+    };
+
+
   return (
     <>
      <section className="h-full w-full">
@@ -12,13 +28,14 @@ function Signup() {
               <h1 className="text-3xl font-semibold">Create Your Account.</h1>
               <p className=" text-base font-medium">Signup today.</p>
             </div>
-            <form action="" className="flex flex-col gap-3 w-full">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3">
               <div className="block">
                 <label htmlFor="firstname">First Name</label>
                 <input
                   placeholder="enter your name"
                   className="w-full mt-2 py-2 px-2 rounded-lg"
                   type="text"
+                  value={first_name} onChange={(e) => setFirstname(e.target.value)}
                 />
               </div>
               <div className="block">
@@ -27,6 +44,7 @@ function Signup() {
                   placeholder="enter your last name"
                   className="w-full mt-2 py-2 px-2 rounded-lg"
                   type="text"
+                  value={last_name} onChange={(e) => setLastname(e.target.value)}
                 />
               </div>
               <div className="block">
@@ -35,6 +53,7 @@ function Signup() {
                   placeholder="you@email.com"
                   className="w-full mt-2 py-2 px-2 rounded-lg"
                   type="text"
+                  value={email} onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
 
@@ -45,6 +64,7 @@ function Signup() {
                     placeholder="080 *** *** 57"
                     className="w-full mt-2 py-2 px-2 rounded-lg"
                     type="text"
+                    value={phone_number} onChange={(e) => setPhone(e.target.value)}
                   />
                 </div>
                 <div className="block w-full">
@@ -53,6 +73,7 @@ function Signup() {
                     placeholder="enter your role"
                     className="w-full mt-2 py-2 px-2 rounded-lg"
                     type="text"
+                    value={role} onChange={(e) => setRole(e.target.value)}
                   />
                 </div>
               </div>
@@ -64,6 +85,7 @@ function Signup() {
                     placeholder="enter a strong password"
                     className="w-full mt-2 py-2 px-2 rounded-lg"
                     type="text"
+                    value={password} onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
                 <div className="block gap-2 w-full">
@@ -75,7 +97,7 @@ function Signup() {
                   />
                 </div>
               </div>
-              <button className="py-2 mt-4 mb-4 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">Sign up</button>
+              <button type="submit" className="py-2 mt-4 mb-4 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">Sign up</button>
             </form>
             <p className="text-center">Allready have an account? <span className=" hover:text-green-600"> <a href="#">Login here!</a></span></p>
           </div>
