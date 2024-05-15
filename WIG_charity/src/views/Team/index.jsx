@@ -6,7 +6,12 @@ import Navbar from "../../components/Navbar";
 function OurTeam() {
   return (
     <>
-    <Navbar/>
+      <Navbar
+        variant="primary"
+        intro="Our Team."
+        heading="Empowering Excellence: Meet Our Exceptional Team"
+        paragraph="Our team is a dynamic blend of diverse talents and perspectives, united by a shared passion for innovation and excellence."
+      />
 
       {/* start of the section */}
       <section className="w-full h-full">

@@ -2,6 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import HamburgerMenu from "./Hamburger";
 import styles from '../CSS/Styledhero.module.css';
+import navigation from "../../lib/navigationCtr";
 
 const navlinks = [
   { id: 1, path: "/", name: "Home" },
@@ -22,7 +23,7 @@ function Navbar(props) {
           <div className="sm:pt-2 sm:block">
             <div className="w-full lg:w-[80%] text-white flex justify-between items-center h-14 mx-auto relative bg-footer_theme/[.80] sm:rounded-lg">
               <div className="pl-4">logo</div>
-              <div className="block sm:hidden pr-4"><HamburgerMenu/></div>
+              <div className="block sm:hidden pr-4"><HamburgerMenu propData={navigation}/></div>
               <nav className="max-w-xl hidden sm:block pr-4 lg:pr-0">
                 <ul className="list-none flex gap-14">
                   {navlinks.map((item) => (
@@ -65,8 +66,8 @@ function Navbar(props) {
                 {props.paragraph}
               </p>
               <div className="flex gap-4 justify-center mt-5">
-                <button className="bg-green-400 px-5 py-2">Donate Now!</button>
-                <button className="bg-green-400 px-5 py-2">Contact Us</button>
+                <button className="bg-green-600 px-5 py-2">Donate Now!</button>
+                <button className="border-2 border-green-600 hover:bg-green-600 px-5 py-2">Contact Us</button>
               </div>
             </div>
           </div>

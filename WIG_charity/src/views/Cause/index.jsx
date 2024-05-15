@@ -7,7 +7,14 @@ import Footer from "../../components/Footer";
 function Causes() {
   return (
     <>
-      <Navbar />
+      <Navbar
+        variant="primary"
+        intro="Our Cause."
+        heading="Building Brighter Futures: Supporting Orphaned Children with Love and Care"
+        paragraph="Join us in giving hope and a future to orphaned children. Your support transforms lives, 
+        providing love, care, and opportunities for a brighter tomorrow."
+      />
+
       <section className="h-full w-full">
         <div className="h-full w-full p-2 sm:w-[80%] mx-auto pt-5 sm:pt-10">
           {/* heading */}
@@ -415,7 +422,7 @@ function Causes() {
             </form>
           </div>
         </div>
-        <div className="max-w-xs bg-white max-h-min p-5 flex-grow">
+        <div className="max-w-sm bg-white max-h-min p-5 flex-grow">
             <h2 className=" font-bold text-2xl pb-2">Address.</h2>
             <p className=" pb-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio 
               non nostrum odio explicabo, soluta repudiandae quasi sequi?
