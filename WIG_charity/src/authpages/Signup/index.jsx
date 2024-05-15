@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Footer from "../../components/Footer";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Signup() {
     const [email, setEmail] = useState('');
@@ -9,11 +10,18 @@ function Signup() {
     const [last_name, setLastname] = useState('');
     const [phone_number, setPhone] = useState('');
     const [role, setRole] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.post('http://127.0.0.1:8000/api/register/', { email, password, first_name, last_name, phone_number, role })
-            .then(response => console.log(response))
+            
+            .then(response => {
+                console.log(response)
+                localStorage.setItem('token', response.data.token);
+                navigate('/dashboard');
+            }
+            )
             .catch(error => console.error(error));
     };
 
