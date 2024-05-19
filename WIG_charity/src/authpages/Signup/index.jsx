@@ -1,23 +1,71 @@
 import React, { useState } from "react";
 import Footer from "../../components/Footer";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from "react-router-dom";
 
 function Signup() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [first_name, setFirstname] = useState('');
-    const [last_name, setLastname] = useState('');
-    const [phone_number, setPhone] = useState('');
-    const [role, setRole] = useState('');
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [first_name, setFirstname] = useState("");
+  const [last_name, setLastname] = useState("");
+  const [phone_number, setPhone] = useState("");
+  const [role, setRole] = useState("");
+  const [loading, setLoading] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        axios.post('http://127.0.0.1:8000/api/register/', { email, password, first_name, last_name, phone_number, role })
-            .then(response => console.log(response))
-            .catch(error => console.error(error));
-    };
+  const validateEmail = (email) => {
+    // Regex for email validation
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let valid = true;
+
+    if (!validateEmail(email)) {
+      setEmailError("Please enter a valid email address.");
+      valid = false;
+    } else {
+      setEmailError("");
+    }
+
+    if (password !== confirmPassword) {
+      setPasswordError("Passwords do not match.");
+      valid = false;
+    } else {
+      setPasswordError("");
+    }
+
+    if (valid) {
+      // Proceed with form submission
+      setLoading(true);
+      alert("login done");
+      axios;
+      axios
+        .post("http://127.0.0.1:8000/api/register/", {
+          email,
+          password,
+          first_name,
+          last_name,
+          phone_number,
+          role,
+        })
+        .then(response => console.log(response))
+        .catch(error => console.error(error));
+
+      // clear the form fields
+      setFirstname("");
+      setLastname("");
+      setEmail("");
+      setPassword("");
+      setPhone("");
+      setRole("");
+      setConfirmPassword("");
+    }
+  };
 
   return (
     <>
