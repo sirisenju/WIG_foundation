@@ -14,7 +14,7 @@ function Signup() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://127.0.0.1:8000/api/register/', { email, password, first_name, last_name, phone_number, role })
+        axios.post('http://127.0.0.1:8000/api/user/register/', { email, password, first_name, last_name, phone_number, role })
             
             .then(response => {
                 console.log(response)

@@ -6,13 +6,81 @@ from rest_framework.authtoken.models import Token
 from django.contrib.auth import authenticate
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
 from django.shortcuts import redirect
 
 from .serializers import UserSerializer#, ProjectSerializer
 from .models import User
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
 
 
 
+
+
+# ===== BEGINNING OF ADMIN VIEWS ===== #
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def submit_project(request):
+    pass
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def submit_project(request):
+    pass
+
+# ===== END OF ADMIN VIEWS ===== #
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ===== BEGINNING OF WIG VIEWS ===== #
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def submit_project(request):
+    pass
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def submit_project(request):
+    pass
+
+
+
+@api_view(['POST'])
+def contact(request):
+    pass
+
+# ===== END OF WIG VIEWS ===== #
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ===== BEGINNING OF USER VIEWS ===== #
 
 @api_view(['POST'])
 def register_user(request):
@@ -43,6 +111,21 @@ def user_login(request):
         return Response({'error': 'Invalid credentials.'}, status=status.HTTP_401_UNAUTHORIZED)
 
 
+def resize_image(x):
+    pass
+
+@api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticated])
+def dashboard(request):
+
+    #GET name, recent projects, profile pic, role
+
+    #POST and resize image
+    pass
+
+
+
+
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def submit_project(request):
@@ -59,3 +142,5 @@ def user_logout(request):
             return Response({'message': 'Successfully logged out.'}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+# ===== END OF USER VIEWS ===== #

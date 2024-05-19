@@ -8,6 +8,20 @@ import DHamburger from "./DHamburger";
 function Dashboard() {
   const [activeComponent, setActiveComponent] = useState("Board");
 
+ /* const handleLogout = async () => {
+    try {
+      await axios.post('/api/logout/', null, {
+        withCredentials: true // include cookies
+      });
+      // Redirect or update the UI as needed
+      // e.g., redirect to login page
+      window.location.href = '/login';
+    } catch (error) {
+      console.error('Logout failed:', error);
+    }
+  };*/
+
+
   const changeScreen = (screenName) => {
     switch (screenName) {
       case "Board":

@@ -15,6 +15,9 @@ import Dashboard from './views/Dashboard/index.jsx';
 import Project from './views/Dashboard/Project.jsx';
 import Reports from './views/Dashboard/Reports.jsx';
 import OurTeam from './views/Team/index.jsx';
+import ProtectedRoute from './ProtectedRoute.jsx';
+
+
 
 const router = createBrowserRouter([
   {
@@ -42,13 +45,13 @@ const router = createBrowserRouter([
     element: <Signup/>
   },
   {
-    path: "/dashboard",
-    element: <Dashboard/>
+    path: "/dashboard", 
+    element: <ProtectedRoute element={<Dashboard />} />
   },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+      <RouterProvider router={router}/> 
   </React.StrictMode>,
 )
