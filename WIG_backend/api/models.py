@@ -35,6 +35,7 @@ class User(AbstractBaseUser):
     profile_pic= models.ImageField(upload_to='images/', null=True, blank=True)
 
 
+    
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
@@ -57,9 +58,10 @@ class User(AbstractBaseUser):
 class Project(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title= models.CharField("Title", max_length= 50, null=True, blank=True)
-    desc= models.CharField("Description", max_length= 50, null=True, blank=True)
-    content= models.CharField("Content", max_length= 50, null=True, blank=True)
+    sub_header= models.CharField("Sub Header", max_length= 50, null=True, blank=True)
+    content= models.CharField("Main Content", max_length= 50, null=True, blank=True)
     date = models.DateTimeField(("Date"), auto_now_add=True)
+    is_approved = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
@@ -68,7 +70,7 @@ class Project(models.Model):
         ordering = ['title']
     
     
-class Gallery(models.Model):
+class ProjectGallery(models.Model):
     project= models.ForeignKey(Project, on_delete=models.CASCADE)
     image= models.ImageField(upload_to='images/', null=True, blank=True)
 

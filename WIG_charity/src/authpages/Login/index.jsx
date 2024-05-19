@@ -1,17 +1,26 @@
 import React, { useState } from "react";
 import Footer from "../../components/Footer";
+import axios from 'axios';
+
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:8000/api/login/", { email, password })
-      .then((response) => console.log(response))
-      .catch((error) => console.error(error));
-  };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        axios.post('http://127.0.0.1:8000/api/login/', { email, password })
+            
+            .then(response => {
+                console.log(response)
+                localStorage.setItem('token', response.data.token);
+                navigate('/dashboard');
+            }
+            )
+            .catch(error => console.error(error));
+    };
   return (
     <>
       <section className="w-full h-full">

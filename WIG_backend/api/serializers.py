@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User
+from .models import User, Project, ProjectGallery
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -19,3 +19,6 @@ class UserSerializer(serializers.ModelSerializer):
         user.save()
         return user
     
+ 
+
+
