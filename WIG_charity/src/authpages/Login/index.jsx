@@ -1,21 +1,17 @@
 import React, { useState } from "react";
-
 import Footer from "../../components/Footer";
 
-
-
-
 function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        axios.post('http://localhost:8000/api/login/', { email, password })
-            .then(response => console.log(response))
-            .catch(error => console.error(error));
-        };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:8000/api/login/", { email, password })
+      .then((response) => console.log(response))
+      .catch((error) => console.error(error));
+  };
   return (
     <>
       <section className="w-full h-full">
@@ -40,7 +36,9 @@ function Login() {
                     placeholder="example: you@email.com"
                     className="w-full mt-2 py-2 px-2 rounded-lg"
                     type="email"
-                    value={email} onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
                 </div>
                 <div className="block">
@@ -49,11 +47,16 @@ function Login() {
                     placeholder="enter your password"
                     className="w-full mt-2 py-2 px-2 rounded-lg"
                     type="password"
-                    value={password} onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
                   />
                 </div>
 
-                <button type="submit" className="py-2 mt-4 mb-5 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
+                <button
+                  type="submit"
+                  className="py-2 mt-4 mb-5 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white"
+                >
                   Login
                 </button>
               </form>
@@ -80,7 +83,7 @@ function Login() {
       </section>
 
       {/* footer component */}
-      <Footer/>
+      <Footer />
     </>
   );
 }

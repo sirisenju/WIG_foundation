@@ -45,7 +45,7 @@ const HamburgerMenu = ({propData}) => {
             color="white"
             />
             {isOpen && (
-              <div className="fixed z-10 hamburger-style h-full bg-purple-400 w-[70%] top-0 right-0 p-4" data-aos="slide-down">
+              <div className="fixed z-10 hamburger-style h-full bg-primary_theme w-[70%] top-0 right-0 p-4" data-aos="slide-down">
                 <div className="w-full flex justify-start pr-4">
                   <FaAngleDoubleRight className="hover:cursor-pointer hover:scale-105" onClick={handleToggle} size={26}/>
                 </div>
@@ -67,14 +67,14 @@ const HamburgerMenu = ({propData}) => {
                   }
                 </div>
                 {/* sign up and login buttons */}
-                <div className="gap-2 px-2 flex justify-between">
+                <div className="gap-2 px-2 flex justify-between flex-wrap">
                 <Link to={"/login"}>
-                  <button className="text-base px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
+                  <button className="text-base px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white flex-grow">
                     Login
                   </button>
                 </Link>
                 <Link to={"/signup"}>
-                  <button className="text-base px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
+                  <button className="text-base px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white flex-grow">
                     Sign Up
                   </button>
                 </Link>

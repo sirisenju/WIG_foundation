@@ -1,11 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-// import required modules
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import React from "react";
 
@@ -57,9 +53,9 @@ function Swipper() {
       >
         {swipeData.map((item) => (
             <SwiperSlide key={item.id} className="instyle">
-            <div className="h-full pb-10 sm:pl-10 sm:pr-10 ">
+            <div className="h-full pb-10 sm:pl-10 sm:pr-10 2xl:max-w-7xl">
               <div className="max-w-3xl h-full p-2 pt-10 pb-10 mx-auto text-center text-white">
-                <h3 className="text-base pb-2 tracking-wider">Testimonials.</h3>
+                <h3 className="font-mono text-base pb-1 tracking-wider">Testimonials.</h3>
                 <p className="text-2xl pb-8">What People Say About Us</p>
                 <div className="h-[90px] w-[90px] mx-auto rounded-full overflow-hidden shadow-md">
                   <img
