@@ -3,6 +3,12 @@ import { Link, NavLink } from "react-router-dom";
 import HamburgerMenu from "./Hamburger";
 import styles from '../CSS/Styledhero.module.css';
 import navigation from "../../lib/navigationCtr";
+import { useState } from "react";
+import DonateModel from "./DonateModel";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const navlinks = [
   { id: 1, path: "/", name: "Home" },
@@ -16,12 +22,22 @@ function Navbar(props) {
 
   const heroStyle = props.variant === 'primary' ? styles.heroBgPrimary : styles.heroBg;
 
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const openModal = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
+
   return (
     <>
       <section className="h-full w-full">
         <div className={heroStyle}>
           <div className="sm:pt-2 sm:block">
-            <div className="w-full lg:w-[80%] text-white flex justify-between items-center h-14 mx-auto relative bg-footer_theme/[.80] sm:rounded-lg">
+            <div className="w-full lg:w-[80%] text-white flex justify-between items-center h-14 mx-auto relative bg-footer_theme/[.80] sm:rounded-lg 2xl:max-w-7xl">
               <div className="pl-4">logo</div>
               <div className="block sm:hidden pr-4"><HamburgerMenu propData={navigation}/></div>
               <nav className="max-w-xl hidden sm:block pr-4 lg:pr-0">
@@ -55,7 +71,12 @@ function Navbar(props) {
             </div>
           </div>
           <div className="flex max-w-3xl h-full items-center justify-center mx-auto pb-10">
-            <div className="text-center w-full">
+            <div
+            data-aos="fade-right"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out-sine" className="text-center w-full">
               <p className="pb-2 tracking-wider text-lg">
                 {props.intro}
               </p>
@@ -66,8 +87,11 @@ function Navbar(props) {
                 {props.paragraph}
               </p>
               <div className="flex gap-4 justify-center mt-5">
-                <button className="bg-green-600 px-5 py-2">Donate Now!</button>
+                <button className="bg-green-600 px-5 py-2" onClick={openModal}>Donate Now!</button>
                 <button className="border-2 border-green-600 hover:bg-green-600 px-5 py-2">Contact Us</button>
+              </div>
+              <div className=" w-full bg-yellow-500">
+                <DonateModel isVisible={isModalVisible} onClose={closeModal}/>
               </div>
             </div>
           </div>

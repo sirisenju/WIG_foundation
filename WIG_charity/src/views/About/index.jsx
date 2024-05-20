@@ -17,7 +17,7 @@ function About() {
         {/* first section */}
         <section className="w-full h-full">
           {/* first div design */}
-          <div className="w-full lg:w-[80%] mx-auto block sm:flex mt-5 sm:mt-14">
+          <div className="w-full lg:w-[80%] mx-auto block sm:flex mt-5 sm:mt-14 2xl:max-w-7xl">
             <div className="w-full sm:w-1/2 block lg:flex relative p-3 sm:p-6">
               <div className="w-full sm:max-w-xs h-[380px] border-[#219D80]/[.40] border-[10px]">
                 <img
@@ -49,7 +49,7 @@ function About() {
           </div>
 
           {/* second div design */}
-          <div className="w-full lg:w-[80%] mx-auto block sm:flex mt-5 sm:mt-14">
+          <div className="w-full lg:w-[80%] mx-auto block sm:flex mt-5 sm:mt-14 2xl:max-w-7xl">
             <div className="w-full sm:w-1/2 block lg:flex relative p-2 sm:p-6 order-last">
               <div className="w-full sm:max-w-sm h-[380px] border-[#219D80]/[.40] border-[10px]">
                 <img
@@ -131,7 +131,7 @@ function About() {
 
         <section className="w-full h-full">
           {/* about list div */}
-          <div className="w-full lg:w-[80%] h-full mx-auto pb-4 pt-14 p-2">
+          <div className="w-full lg:w-[80%] h-full mx-auto pb-4 pt-14 p-2 2xl:max-w-7xl">
             <h3 className="text-lg pb-2 tracking-wider pt-4">About</h3>
             <h2 className="text-3xl pb-8">Our Features</h2>
             <div className="w-full block sm:flex justify-between gap-10 flex-wrap">
@@ -241,7 +241,7 @@ function About() {
 
         {/* gallery section */}
         <section className="w-full h-full">
-          <div className="w-full lg:w-[80%] h-full mx-auto mb-10 p-2 lg:p-0">
+          <div className="w-full lg:w-[80%] h-full mx-auto mb-10 p-2 lg:p-0 2xl:max-w-7xl">
             <h2 className="text-2xl pb-8 pt-2">Our Gallery</h2>
             <div className="row1 flex gap-2 justify-between flex-wrap">
               <div className="flex-grow basis-[250px]">
@@ -281,14 +281,14 @@ function About() {
 
         {/* testimonials........... */}
         <section className="h-full sm:h-[60vh] w-full bg-footer_theme mb-[3%] mt-[3%]">
-          <div className="h-full w-full sm:w-[80%] mx-auto flex justify-center items-center">
+          <div className="h-full w-full sm:w-[80%] mx-auto flex justify-center items-center 2xl:max-w-7xl">
             <Swipper/>
           </div>
         </section>
 
         {/* testimonials */}
         <section className="w-full h-full">
-          <div className="mt-6 mb-10 w-full">
+          <div className="mt-6 mb-10 w-full 2xl:max-w-7xl">
             <div className="w-full sm:w-[60%] mx-auto flex justify-between gap-2 p-2 flex-wrap">
               <div className="w-[180px] h-[70px] flex-grow">
                 <img

@@ -44,7 +44,9 @@ function Login() {
                     placeholder="example: you@email.com"
                     className="w-full mt-2 py-2 px-2 rounded-lg"
                     type="email"
-                    value={email} onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
                 </div>
                 <div className="block">
@@ -53,11 +55,16 @@ function Login() {
                     placeholder="enter your password"
                     className="w-full mt-2 py-2 px-2 rounded-lg"
                     type="password"
-                    value={password} onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
                   />
                 </div>
 
-                <button type="submit" className="py-2 mt-4 mb-5 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
+                <button
+                  type="submit"
+                  className="py-2 mt-4 mb-5 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white"
+                >
                   Login
                 </button>
               </form>
@@ -84,7 +91,7 @@ function Login() {
       </section>
 
       {/* footer component */}
-      <Footer/>
+      <Footer />
     </>
   );
 }
