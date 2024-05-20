@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Footer from "../../components/Footer";
-import axios from 'axios';
+import { useAuth } from '../../AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 function Signup() {
@@ -10,19 +10,18 @@ function Signup() {
     const [last_name, setLastname] = useState('');
     const [phone_number, setPhone] = useState('');
     const [role, setRole] = useState('');
+    const { user_signup } = useAuth();
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://127.0.0.1:8000/api/user/register/', { email, password, first_name, last_name, phone_number, role })
-            
-            .then(response => {
-                console.log(response)
-                localStorage.setItem('token', response.data.token);
-                navigate('/dashboard');
-            }
-            )
-            .catch(error => console.error(error));
+
+        try {
+          user_signup(email, password, first_name, last_name, phone_number, role);
+          navigate('/dashboard');
+        } catch (error) {
+          console.error('Login failed', error);
+        }
     };
 
 

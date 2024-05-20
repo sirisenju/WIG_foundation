@@ -20,17 +20,21 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-
 from api import views
+
+from rest_framework_simplejwt.views import TokenRefreshView
+#from rest_framework_simplejwt.views import (
+#    TokenObtainPairView,
+#    TokenRefreshView,
+#)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("api/user/register/", views.UserRegisterationAPIView.as_view(), name="create-user"),
+    path("api/user/login/", views.UserLoginAPIView.as_view(), name="login-user"),
+    path("api/token/refresh/", TokenRefreshView.as_view(), name="token-refresh"),
+    path("api/user/profile/", views.UserProfileView.as_view(), name="user-profile"),
+    path("api/logout/", views.UserLogoutAPIView.as_view(), name="logout-user"),
 
-
-    path('api/user/register/', views.register_user, name='register'),
-    path('api/user/login/', views.user_login, name='login'),
-
-
-    path('logout/', views.user_logout, name='logout'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

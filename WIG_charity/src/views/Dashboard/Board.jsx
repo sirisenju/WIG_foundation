@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import axiosInstance from '../../api';
+import { useAuth } from '../../AuthContext';
 
 function Board() {
+  const [userProfile, setUserProfile] = useState({})
+
+  const { isAuthenticated } = useAuth();
+
+  useEffect(() => {
+      const fetchUserProfile = async () => {
+        try {
+          const response = await axiosInstance.get('api/user/profile/'); // Adjust the endpoint URL as per your project setup
+          setUserProfile(response.data);
+          console.log(response.data)
+        } catch (error) {
+          console.error('Error fetching user profile:', error);
+        }
+      };
+
+      fetchUserProfile();
+
+      
+  }, [isAuthenticated]);
   return (
     <div className="col-span-3 p-2 bg-white shadow-md rounded-lg">
       <h1 className="text-center text-4xl font-bold">User Dashboard</h1>
-      <h2 className="text-3xl pt-2 pb-2">Hello, Adolf Hitler.</h2>
+      <h2 className="text-3xl pt-2 pb-2">Hello, {userProfile.first_name} {userProfile.last_name}.</h2>
       <div className="h-[320px] w-full">
         <img
           className="h-full w-full object-cover object-center rounded-xl"

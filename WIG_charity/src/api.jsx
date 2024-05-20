@@ -1,23 +1,54 @@
-import axios from "axios"
-import {ACCESS_TOKEN} from "./constants"
+import axios from 'axios';
 
 
-const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL 
-})
 
-api.interceptors.request.use(
-    (config) => {
-        const token = localStorage.getItem(ACCESS_TOKEN);
-        if (token){
-            config.headers.Authorization= 'Bearer ${token}'
+const axiosInstance = axios.create({
+    baseURL: 'http://127.0.0.1:8000/', 
+});
+
+axiosInstance.interceptors.request.use(
+    async (config) => {
+        const access_token = localStorage.getItem('access_token');
+        if (access_token) {
+            config.headers['Authorization'] = `Bearer ${access_token}`;
         }
-        return config
+        return config;
     },
-
     (error) => {
-        return Promise.reject(error)
+        Promise.reject(error);
     }
-)
+);
 
-export default api
+axiosInstance.interceptors.response.use(
+    (response) => {
+        return response;
+    },
+    async (error) => {
+        const originalRequest = error.config;
+
+        if (error.response.status === 401 && !originalRequest._retry) {
+            originalRequest._retry = true;
+            const refresh_token = localStorage.getItem('refresh_token');
+
+            try {
+                const { data } = await axiosInstance.post('http://127.0.0.1:8000/api/token/refresh/', {
+                    refresh: refresh_token,
+                });
+
+                localStorage.setItem('access_token', data.access);
+                axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${data.access}`;
+
+                return axiosInstance(originalRequest);
+            } catch (e) {
+                console.error('Refresh token expired or invalid', e);
+                localStorage.removeItem('access_token');
+                localStorage.removeItem('refresh_token');
+                window.location.href = '/login';
+            }
+        }
+        return Promise.reject(error);
+    }
+);
+
+
+export default axiosInstance;

@@ -68,17 +68,6 @@ function DHamburger({ onChangeScreen }) {
                 <button onClick={() => onChangeScreen("Report")}>Report</button>
               </li>
 
-              <li className="h-10 flex items-center px-4 gap-2 text-lg hover:bg-[#EDF7F5] rounded-md">
-                <img className="h-6 w-6" src="./assets/shild.png" alt="" />
-                <button onClick={() => onChangeScreen("Project")}>
-                  Project
-                </button>
-              </li>
-              <li className="h-10 flex items-center px-4 gap-2 text-lg hover:bg-[#EDF7F5] rounded-md">
-                <img className="h-6 w-6" src="./assets/shild.png" alt="" />
-                <button onClick={() => onChangeScreen("Report")}>Report</button>
-              </li>
-
 
             </ul>
             <div className="mt-[120px] mx-[20px]">
