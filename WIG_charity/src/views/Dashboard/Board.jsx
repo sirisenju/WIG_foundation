@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axiosInstance from '../../api';
 import { useAuth } from '../../AuthContext';
+import { Link } from 'react-router-dom'; 
 
 function Board() {
   const [userProfile, setUserProfile] = useState({})
-
+  const [projects, setProjects] = useState([]);
   const { isAuthenticated } = useAuth();
-
   useEffect(() => {
       const fetchUserProfile = async () => {
         try {
@@ -18,10 +18,20 @@ function Board() {
         }
       };
 
+      const fetchProjects = async () => {
+        try {
+          const response = await axiosInstance.get('api/user/projects/');
+          setProjects(response.data);
+        } catch (error) {
+          console.error('Error fetching projects:', error);
+        }
+      };
+  
+      fetchProjects();
       fetchUserProfile();
 
-      
   }, [isAuthenticated]);
+
   return (
     <div className="col-span-3 p-2 bg-white shadow-md rounded-lg">
       <h1 className="text-center text-4xl font-bold">User Dashboard</h1>
@@ -37,6 +47,19 @@ function Board() {
         {/* project div */}
         <div className="w-full md:w-[70%]">
           <p className="text-2xl pb-1">Recent Projects:</p>
+          <ul>
+            {projects.map(project => (
+              <li key={project.id}>
+              <Link to={`/projects/${project.title}`}>
+                <h2>{project.title}</h2>
+                <p>{project.sub_header}</p>
+                <p>{project.content}</p>
+                <p>{project.date}</p>
+              </Link>
+
+              </li>
+            ))}
+          </ul>
           <div className="flex gap-2 p-1 w-full max-h-max bg-purple-100 rounded-xl mb-2">
             <img
               className="h-full w-20 rounded-xl"

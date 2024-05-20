@@ -13,6 +13,8 @@ class UserRegisterationSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         return User.objects.create_user(**validated_data)
     
+    
+    
  
 class UserLoginSerializer(serializers.Serializer):
     email = serializers.CharField()
@@ -30,6 +32,21 @@ class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['email', 'first_name', 'last_name', 'phone_number', 'role', 'profile_pic']
+
+
+
+class UserProjectSerializer(serializers.ModelSerializer):
+    user = UserProfileSerializer(read_only=True) 
+    class Meta:
+        model = Project
+        fields = ('id', 'user', 'title', 'sub_header', 'content', 'date')
+
+
+
+class UserProjectImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProjectGallery
+        fields = ['image']
 
 
     

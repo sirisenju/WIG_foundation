@@ -15,16 +15,14 @@ function Dashboard() {
   const { user_logout, isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
-  function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
 
   const handleLogout = (e) => {
     e.preventDefault();
     try {
       user_logout();
-      delay(2000);
-      navigate('/');
+      setTimeout(() => {
+        navigate('/');
+      }, 3000);
     } catch (error) {
       console.error('Logout failed', error);
     }
@@ -120,7 +118,7 @@ function Dashboard() {
             <div className="w-full h-full">
               <img
                 className="w-[100px] h-[100px] rounded-full mx-auto"
-                src="./assets/girlHolder.jpg"
+                src= {userProfile.profile_pic}
                 alt=""
               />
             </div>

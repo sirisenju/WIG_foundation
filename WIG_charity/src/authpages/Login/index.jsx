@@ -14,7 +14,9 @@ function Login() {
       e.preventDefault();
       try {
         user_login(email, password);
-        navigate('/dashboard');
+        setTimeout(() => {
+          navigate('/dashboard');
+        }, 3000);
       } catch (error) {
         console.error('Login failed', error);
       }

@@ -45,11 +45,13 @@ function Signup() {
 
     if (valid) {
       // Proceed with form submission
-      setLoading(true);
-      alert("login done");
+      //setLoading(true);
+      //alert("login done");
       try {
         user_signup(email, password, first_name, last_name, phone_number, role);
-        navigate('/dashboard');
+        setTimeout(() => {
+          navigate('/dashboard');
+        }, 3000);
       } catch (error) {
         console.error('Login failed', error);
       }

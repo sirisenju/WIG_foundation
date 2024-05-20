@@ -14,9 +14,10 @@ export const AuthProvider = ({ children }) => {
       try {
           const response = await axios.post('http://127.0.0.1:8000/api/user/register/', { email, password, first_name, last_name, phone_number, role });
           console.log(response)
-          localStorage.setItem('access_token', response.data.access);
-          localStorage.setItem('refresh_token', response.data.refresh);
-          axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.access}`;
+          const { access, refresh } = response.data.tokens;
+          localStorage.setItem('access_token', access);
+          localStorage.setItem('refresh_token', refresh);
+          axios.defaults.headers.common['Authorization'] = `Bearer ${access}`;
           setIsAuthenticated(true);
       } catch (error) {
           console.error('Signup failed', error);
@@ -31,7 +32,7 @@ export const AuthProvider = ({ children }) => {
             const { access, refresh } = response.data.tokens;
             localStorage.setItem('access_token', access);
             localStorage.setItem('refresh_token', refresh);
-            axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.access}`;
+            axios.defaults.headers.common['Authorization'] = `Bearer ${access}`;
             setIsAuthenticated(true);
         } catch (error) {
             console.error('Login failed', error);
