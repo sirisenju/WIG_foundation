@@ -4,57 +4,109 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.authtoken.models import Token
 from django.contrib.auth import authenticate
 from django.core.exceptions import ObjectDoesNotExist
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
 from django.shortcuts import redirect
+from rest_framework.views import APIView
+from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
+from rest_framework_simplejwt.tokens import RefreshToken
+from django.contrib.auth import get_user_model
+from rest_framework.generics import GenericAPIView, RetrieveUpdateAPIView
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from . import serializers
+from .models import User, Project
 
-from .serializers import UserSerializer#, ProjectSerializer
-from .models import User
 
 
 
+class UserRegisterationAPIView(GenericAPIView):
+    permission_classes = (AllowAny,)
+    serializer_class = serializers.UserRegisterationSerializer
 
-@api_view(['POST'])
-def register_user(request):
-    if request.method == 'POST':
-        serializer = UserSerializer(data=request.data)
-        if serializer.is_valid():
-            user = serializer.save()
-            token, _ = Token.objects.get_or_create(user=user)
-            return Response({'Message':'Account Created Successflly','token': token.key}, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.save()
+        token = RefreshToken.for_user(user)
+
+        print(token)
+     
+        data = serializer.data  # Use validated_data for safety
+        #data = serializer.data
+        data["tokens"] = {"refresh": str(token), "access": str(token.access_token)}
+        return Response(data, status=status.HTTP_201_CREATED)
+
+
+
+class UserLoginAPIView(GenericAPIView):
+    permission_classes = (AllowAny,)
+    serializer_class = serializers.UserLoginSerializer
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.validated_data
+        token = RefreshToken.for_user(user)
+        data = serializer.data
+        data["tokens"] = {"refresh": str(token), "access": str(token.access_token)}
+        return Response(data, status=status.HTTP_200_OK)
     
+
+
+class UserProfileView(RetrieveUpdateAPIView):
+    permission_classes = (IsAuthenticated,)
+    serializer_class = serializers.UserProfileSerializer
+
+    def get_object(self):
+        return self.request.user
     
-@api_view(['POST'])
-def user_login(request):
-    if request.method == 'POST':
-        email = request.data.get('email')
-        password = request.data.get('password')
 
-        if not email or not password:
-            return Response({'error': 'Email and password are required.'}, status=status.HTTP_400_BAD_REQUEST)
+class UserProjectView(RetrieveUpdateAPIView):
+    permission_classes = (IsAuthenticated,)
 
-        user = authenticate(email=email, password=password)
+    def get(self, request, format=None):
+        user= self.request.user
+        projects = Project.objects.all().filter(user=request.user)
+        serializer = serializers.UserProjectSerializer(projects, many=True)
+        return Response(serializer.data)
+    
 
-        if user is not None:
-            token, _ = Token.objects.get_or_create(user=user)
-            return Response({'Message':'login successful','token': token.key}, status=status.HTTP_200_OK)
+class ProjectView(RetrieveUpdateAPIView):
+    permission_classes = (IsAuthenticated,)
+    serializer_class = serializers.UserProjectSerializer
 
-        return Response({'error': 'Invalid credentials.'}, status=status.HTTP_401_UNAUTHORIZED)
+    def get_queryset(self):
+        return Project.objects.filter(user=self.request.user)
 
-
-@api_view(['POST'])
-@permission_classes([IsAuthenticated])
-def submit_project(request):
-    pass
-
-
-@api_view(['POST'])
-@permission_classes([IsAuthenticated])
-def user_logout(request):
-    if request.method == 'POST':
+    def retrieve(self, request, *args, **kwargs):
+        title = self.kwargs.get('title')
         try:
-            # Delete the user's token to logout
-            request.user.auth_token.delete()
-            return Response({'message': 'Successfully logged out.'}, status=status.HTTP_200_OK)
+            instance = self.get_queryset().get(title=title)
+        except Project.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        serializer = self.get_serializer(instance)
+        return Response(serializer.data)
+    
+    
+    """def get(self, request, format=None):
+        user= self.request.user
+        projects = Project.objects.all().filter(user=request.user)
+        serializer = serializers.UserProjectSerializer(projects, many=True)
+        return Response(serializer.data)"""
+
+
+
+    
+
+
+class UserLogoutAPIView(GenericAPIView):
+    permission_classes = (IsAuthenticated,)
+
+    def post(self, request, *args, **kwargs):
+        try:
+            refresh_token = request.data["refresh"]
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+            return Response(status=status.HTTP_205_RESET_CONTENT)
         except Exception as e:
-            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+

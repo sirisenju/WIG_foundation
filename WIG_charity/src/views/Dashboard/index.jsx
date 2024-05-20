@@ -1,12 +1,48 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import Board from "./Board";
 import Project from "./Project";
 import Reports from "./Reports";
-import { useState } from "react";
 import DHamburger from "./DHamburger";
+import axiosInstance from '../../api';
+import { useAuth } from '../../AuthContext';
+import { useNavigate } from 'react-router-dom';
+
 
 function Dashboard() {
   const [activeComponent, setActiveComponent] = useState("Board");
+  const [userProfile, setUserProfile] = useState({})
+
+  const { user_logout, isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    try {
+      user_logout();
+      setTimeout(() => {
+        navigate('/');
+      }, 3000);
+    } catch (error) {
+      console.error('Logout failed', error);
+    }
+
+  };
+
+  useEffect(() => {
+      const fetchUserProfile = async () => {
+        try {
+          const response = await axiosInstance.get('api/user/profile/');
+          setUserProfile(response.data);
+        } catch (error) {
+          console.error('Error fetching user profile:', error);
+        }
+      };
+
+      fetchUserProfile();
+
+      
+  }, [isAuthenticated]);
 
   const changeScreen = (screenName) => {
     switch (screenName) {
@@ -53,6 +89,12 @@ function Dashboard() {
                   Report
                 </button>
               </li>
+              <li className="h-10 flex items-center px-4 gap-2 text-lg hover:bg-[#EDF7F5] rounded-md">
+                <img className="h-6 w-6" src="./assets/shild.png" alt="" />
+                <button onClick={handleLogout}>
+                  Logout
+                </button>
+              </li>
             </ul>
             <div className="mt-[120px]">
               <p>Any trouble?</p>
@@ -76,12 +118,12 @@ function Dashboard() {
             <div className="w-full h-full">
               <img
                 className="w-[100px] h-[100px] rounded-full mx-auto"
-                src="./assets/girlHolder.jpg"
+                src= {userProfile.profile_pic}
                 alt=""
               />
             </div>
-            <h1 className="pt-4 text-2xl">Adolf Hitler</h1>
-            <h3 className="pt-2 pb-2">user status</h3>
+            <h1 className="pt-4 text-2xl">{userProfile.first_name} {userProfile.last_name}</h1>
+            <h3 className="pt-2 pb-2">{userProfile.role}</h3>
           </div>
         </div>
       </div>

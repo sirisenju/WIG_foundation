@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Footer from "../../components/Footer";
+import { useAuth } from '../../AuthContext';
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -14,6 +15,9 @@ function Signup() {
   const [phone_number, setPhone] = useState("");
   const [role, setRole] = useState("");
   const [loading, setLoading] = useState(false);
+  const { user_signup } = useAuth();
+  const navigate = useNavigate();
+
 
   const validateEmail = (email) => {
     // Regex for email validation
@@ -41,20 +45,16 @@ function Signup() {
 
     if (valid) {
       // Proceed with form submission
-      setLoading(true);
-      alert("login done");
-      axios;
-      axios
-        .post("http://127.0.0.1:8000/api/register/", {
-          email,
-          password,
-          first_name,
-          last_name,
-          phone_number,
-          role,
-        })
-        .then(response => console.log(response))
-        .catch(error => console.error(error));
+      //setLoading(true);
+      //alert("login done");
+      try {
+        user_signup(email, password, first_name, last_name, phone_number, role);
+        setTimeout(() => {
+          navigate('/dashboard');
+        }, 3000);
+      } catch (error) {
+        console.error('Login failed', error);
+      }
 
       // clear the form fields
       setFirstname("");

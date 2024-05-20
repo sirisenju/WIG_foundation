@@ -1,25 +1,26 @@
 import React, { useState } from "react";
 import Footer from "../../components/Footer";
-import axios from 'axios';
-
+import { useAuth } from "../../AuthContext";
 import { useNavigate } from 'react-router-dom';
+
 
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-
+    const { user_login } = useAuth();
+  
     const handleSubmit = (e) => {
-        e.preventDefault();
-        axios.post('http://127.0.0.1:8000/api/login/', { email, password })
-            
-            .then(response => {
-                console.log(response)
-                localStorage.setItem('token', response.data.token);
-                navigate('/dashboard');
-            }
-            )
-            .catch(error => console.error(error));
+      e.preventDefault();
+      try {
+        user_login(email, password);
+        setTimeout(() => {
+          navigate('/dashboard');
+        }, 3000);
+      } catch (error) {
+        console.error('Login failed', error);
+      }
+
     };
   return (
     <>
