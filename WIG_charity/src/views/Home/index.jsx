@@ -24,7 +24,7 @@ function Home() {
               data-aos-delay="50"
               data-aos-duration="1000"
               data-aos-easing="ease-in-out-sine"
-              className="w-full sm:w-1/2 block lg:flex relative p-3 sm:p-6"
+              className="w-full sm:w-1/2 block lg:flex relative -z-[1] p-3 sm:p-6"
             >
               <div
                 data-aos="fade-right"

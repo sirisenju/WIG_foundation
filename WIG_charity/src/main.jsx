@@ -18,6 +18,7 @@ import ProjectDetails from './views/Dashboard/ReadProject.jsx';
 import OurTeam from './views/Team/index.jsx';
 import ProtectedRoute from './ProtectedRoute.jsx';
 import { AuthProvider } from './AuthContext.jsx';
+import Blog from './views/Blog/index.jsx';
 
 
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/ourteam",
     element: <OurTeam/>
+  },
+  {
+    path: "/blog",
+    element: <Blog/>
   },
   {
     path: "/login",

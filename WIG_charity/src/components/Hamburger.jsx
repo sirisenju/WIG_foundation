@@ -67,7 +67,7 @@ const HamburgerMenu = ({propData}) => {
                   }
                 </div>
                 {/* sign up and login buttons */}
-                <div className="gap-2 px-2 flex justify-between flex-wrap">
+                <div className="gap-2 px-2 flex justify-between flex-wrap max-w-xs">
                 <Link to={"/login"}>
                   <button className="text-base px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white flex-grow">
                     Login
