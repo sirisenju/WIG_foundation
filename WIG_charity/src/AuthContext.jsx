@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
 
     const user_signup = async (email, password, first_name, last_name, phone_number, role) => {
       try {
-          const response = await axios.post('http://127.0.0.1:8000/api/user/register/', { email, password, first_name, last_name, phone_number, role });
+          const response = await axiosInstance.post('api/user/register/', { email, password, first_name, last_name, phone_number, role });
           console.log(response)
           const { access, refresh } = response.data.tokens;
           localStorage.setItem('access_token', access);
@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
 
     const user_login = async (email, password) => {
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/user/login/', { email, password });
+            const response = await axiosInstance.post('api/user/login/', { email, password });
             console.log(response)
             const { access, refresh } = response.data.tokens;
             localStorage.setItem('access_token', access);
@@ -49,7 +49,7 @@ export const AuthProvider = ({ children }) => {
                 return;
             }
 
-            const response = await axios.post('http://127.0.0.1:8000/api/logout/', {
+            const response = await axiosInstance.post('api/logout/', {
                 refresh: refresh_token
             }, {
                 headers: {
