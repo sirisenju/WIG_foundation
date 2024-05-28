@@ -15,7 +15,7 @@ function Blog() {
 
       {/* first section of the blog */}
       <section className="w-full h-full">
-        <div className="w-full md:w-[80%] h-full mx-auto p-2 sm:p-0">
+        <div className="w-full md:w-[80%] h-full mx-auto p-2 sm:p-0 2xl:max-w-7xl">
           <h2 className="text-2xl font-bold tracking-wide pt-4 pb-4">
             Our blogging story. Join us and be a giver today.
           </h2>

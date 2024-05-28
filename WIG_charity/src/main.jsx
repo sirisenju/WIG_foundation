@@ -12,13 +12,12 @@ import Login from './authpages/Login/index.jsx';
 import Signup from './authpages/Signup/index.jsx';
 import Causes from './views/Cause/index.jsx';
 import Dashboard from './views/Dashboard/index.jsx';
-import Project from './views/Dashboard/Project.jsx';
-import Reports from './views/Dashboard/Reports.jsx';
 import ProjectDetails from './views/Dashboard/ReadProject.jsx';
 import OurTeam from './views/Team/index.jsx';
 import ProtectedRoute from './ProtectedRoute.jsx';
 import { AuthProvider } from './AuthContext.jsx';
 import Blog from './views/Blog/index.jsx';
+import Admin from './views/AdminDashboard/index.jsx';
 
 
 
@@ -50,6 +49,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <Signup/>
+  },
+  {
+    path: "/admin",
+    element: <Admin/>
   },
   {
     path: "/dashboard", 

@@ -88,7 +88,7 @@ function Navbar(props) {
               </p>
               <div className="flex gap-4 justify-center mt-5">
                 <button className="bg-green-600 px-5 py-2" onClick={openModal}>Donate Now!</button>
-                <Link to={"/causes"}>
+                <Link to={"/admin"}>
                   <button className="border-2 border-green-600 hover:bg-green-600 px-5 py-2">Contact Us</button>
                 </Link>
               </div>

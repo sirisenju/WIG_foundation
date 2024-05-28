@@ -63,10 +63,10 @@ function Dashboard() {
 
   return (
     <section className="w-full h-screen">
-      <div className=" block md:hidden">
+      <div className=" block md:hidden 2xl:max-w-7xl">
         <DHamburger onChangeScreen={changeScreen}/>
       </div>
-      <div className="h-full flex flex-row p-2 gap-4 flex-wrap">
+      <div className="h-full flex flex-row p-2 gap-4 flex-wrap 2xl:max-w-7xl">
         {/* left dashboard */}
         <div className="sm:basis-[100px] lg:basis-[200px] rounded-lg bg-white shadow-md flex-grow hidden md:block">
           <div className="p-2 flex flex-col justify-between h-auto pt-28">
