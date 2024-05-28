@@ -108,8 +108,6 @@ function DHamburger({ onChangeScreen }) {
                   Logout
                 </button>
               </li>
-
-
             </ul>
             <div className="mt-[120px] mx-[20px]">
               <p>Any trouble?</p>

@@ -1,20 +1,7 @@
 import React from "react";
-import { useEffect } from "react";
 import { FaTimes, FaUser } from "react-icons/fa";
 
 function DonateModel({ isVisible, onClose }) {
-  // useEffect(() => {
-  //   if (isVisible) {
-  //     document.body.style.overflow = "hidden"; // Prevent scrolling
-  //   } else {
-  //     document.body.style.overflow = "visible"; // Enable scrolling
-  //   }
-
-  //   // Cleanup function to ensure scrolling is enabled when the component unmounts
-  //   return () => {
-  //     document.body.style.overflow = "visible";
-  //   };
-  // }, [isVisible]);
 
   if (!isVisible) return null;
 
