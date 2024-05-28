@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axiosInstance from './../../api';
+import { useNavigate } from 'react-router-dom';
 
 function Project() {
   const [title, setTitle] = useState("");
@@ -8,23 +10,23 @@ function Project() {
   const [images, setImages] = useState([]);
   const [postDate, setPostDate] = useState("");
   const [postTime, setPostTime] = useState("");
+  const navigate = useNavigate();
 
   const handleImageChange = (e) => {
     setImages([...e.target.files]);
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     // Handle form submission
-    console.log({
-      title,
-      subheading,
-      volunteer,
-      content,
-      images,
-      postDate,
-      postTime,
-    });
+    e.preventDefault();
+    try {
+      axiosInstance.post('api/user/create_project/', {title, subheading, volunteer, content, images, postDate, postTime,});
+      setTimeout(() => {
+        navigate('/dashboard');
+      }, 3000);
+    } catch(error){
+      console.error("post failed", error)
+    }
   };
 
   return (

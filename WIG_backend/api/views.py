@@ -46,6 +46,13 @@ class UserProfileView(RetrieveUpdateAPIView):
 
     def get_object(self):
         return self.request.user
+
+
+
+class UserCreateProjectView(RetrieveUpdateAPIView):
+    permission_classes = (IsAuthenticated,)
+    serializer_class = serializers.UserProjectSerializer
+
     
 
 class UserProjectView(RetrieveUpdateAPIView):
