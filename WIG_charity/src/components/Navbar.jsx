@@ -15,7 +15,7 @@ const navlinks = [
   { id: 2, path: "/about", name: "About" },
   { id: 3, path: "/causes", name: "Causes" },
   { id: 4, path: "/ourteam", name: "Our Team" },
-  { id: 5, path: "/dashboard", name: "Blog" },
+  { id: 5, path: "/blog", name: "Blog" },
 ];
 
 function Navbar(props) {
@@ -88,9 +88,11 @@ function Navbar(props) {
               </p>
               <div className="flex gap-4 justify-center mt-5">
                 <button className="bg-green-600 px-5 py-2" onClick={openModal}>Donate Now!</button>
-                <button className="border-2 border-green-600 hover:bg-green-600 px-5 py-2">Contact Us</button>
+                <Link to={"/causes"}>
+                  <button className="border-2 border-green-600 hover:bg-green-600 px-5 py-2">Contact Us</button>
+                </Link>
               </div>
-              <div className=" w-full bg-yellow-500">
+              <div className="w-full h-full">
                 <DonateModel isVisible={isModalVisible} onClose={closeModal}/>
               </div>
             </div>
