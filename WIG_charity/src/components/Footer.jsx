@@ -1,4 +1,5 @@
 import React from "react";
+import { FaLocationArrow } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -6,15 +7,17 @@ function Footer() {
       <div className="w-full sm:w-[75%] h-[65%] pt-[5%] mx-auto 2xl:max-w-7xl">
         <div className="grid grid-flow-row place-content-center sm:place-content-start sm:grid-cols-4 sm:auto-cols-auto gap-5 auto-cols-max">
           <div className="text-center sm:text-start text-white">
-            <h1 className="text-lg pb-3">Western Iyamu Global Foundation</h1>
+            <h1 className="text-lg pb-2">WESTERNERS WORLDWIDE</h1>
             <p>
-              10k World Wide <br />
-              Client Already Connected
+              Email: thewesternersgroup@gmail.com 
+            </p>
+            <p>
+              Phone: +2348068939461 <br />+2348109088721 <br /> +2347062043171
             </p>
           </div>
           {/* fix this later for proper alignment */}
           <div className="text-center sm:text-start text-white md:place-self-center">
-            <h3 className="text-lg pb-3">Quick Link</h3>
+            <h3 className="text-lg pb-2">Quick Link</h3>
             <ul className="list-none">
               <li>Home</li>
               <li>About Us</li>
@@ -23,15 +26,14 @@ function Footer() {
             </ul>
           </div>
           <div className="text-center sm:text-start text-white">
-            <h3 className="text-lg pb-3">Contact Us</h3>
+            <h3 className="text-lg pb-2">Contact Us</h3>
             <ul className="list-none">
               <li>Our Team</li>
               <li>Contact</li>
             </ul>
           </div>
           <div className="text-center sm:text-start text-white">
-            <h3 className="text-lg pb-3">Address</h3>
-            <p>Nigeria</p>
+            <h3 className="text-base pb-2">Address: 2, Jemide Avenue, Giwa Amu Street, GRA, Benin City,Edo state</h3>
             <h3 className="text-lg pb-3">Social Media</h3>
             <a href="">face</a>
             <a href="">twitter</a>

@@ -36,12 +36,13 @@ function About() {
             </div>
             <div className="w-full sm:w-1/2 flex items-center">
               <div className="max-w-sm mx-auto sm:ml-4 sm:mr-4 md:ml-4 p-2">
-                <h3>About Us</h3>
-                <h2>Your Support Is Really Powerful</h2>
+                <h3 className="font-mono text-base pb-1 tracking-wider">About Us</h3>
+                <h2 className="text-xl pb-1">The Westerners Creed.</h2>
                 <p className="text-pretty text-justify pb-3">
-                  The secret to happiness lies in helping others. Never
-                  underestimate the difference you can make in the lives of the
-                  poor, the abused and the helpless.
+                  We believe in the liberty of independent decision-making: The Westerners Family cherishes individual 
+                  freedom and autonomy. While our collective values bind us together, we encourage every member to 
+                  express their independent thoughts, make sound decisions, and contribute to the growth and development 
+                  of our family.
                 </p>
                 <button className="bg-green-400 px-6 py-2">Read More</button>
               </div>
@@ -60,28 +61,32 @@ function About() {
               </div>
               <div className="bg-white w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:max-w-sm h-fit border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative">
                 <div className="p-5">
-                  <ul className="list-disc text-justify">
-                    <li className="text-[#219D80]">
-                      Together, we're going to make the future
+                  <h2 className="text-center text-xl font-medium">Objectives of the Westerners Family.</h2>
+                  <ul className="list-disc text-pretty text-base">
+                    <li className="text-[#219D80] font-mono">
+                      Maintain a strong sense of solidarity and unity, celebrating our achievements collectively and 
+                      reinforcing the bonds that make us unique and distinguished people.
                     </li>
-                    <li>Children where we are able to fulfill all</li>
-                    <li>
-                      Their requirements to keep them safe from withered world
+                    <li className="font-mono">
+                      Support the dissemination of knowledge and ideas, fostering an environment of intellectual 
+                      curiosity and open-mindedness.
                     </li>
-                    <li>
-                      We have already stepped out and start changing the world
+                    <li className="font-mono">
+                      Continuously seek personal growth and improvement, aligning with the vision of the Westerners Family.
                     </li>
-                    <li>Keeping safe them from war, inhumanity</li>
+                    <li className="font-mono">
+                      Actively engage in acts of giving, both within our family and beyond, to support and uplift individuals 
+                      and communities in need.
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
             <div className="w-full sm:w-1/2 flex items-center">
               <div className="max-w-md mx-auto sm:ml-4 sm:mr-4 md:ml-4 p-2">
-                <h3 className="pb-2">Welcome To Charity</h3>
+                <h3 className="font-mono text-base pb-1 tracking-wider">Welcome To The Westerners Creed.</h3>
                 <h2 className="text-3xl pb-2">
-                  Let Us Come Together <br />
-                  To Make a Difference
+                  Its All About Love.
                 </h2>
                 <p className="text-pretty pb-3">
                   The secret to happiness lies in helping others. Never
@@ -96,7 +101,9 @@ function About() {
                       <span>Our Mission</span>
                     </p>
                     <p className="text-pretty">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      We believe in improving lives: Our purpose as Westerners is to uplift and enhance the lives of like-minded 
+                      individuals who share our passion for making a positive impact on humanity. We are committed to improving 
+                      the well-being of others in all aspects of life.
                     </p>
                   </div>
                   <div className="w-1/2 bg-[#219D80]/[.10] p-2">
@@ -106,7 +113,9 @@ function About() {
                       <span>Our Vision</span>
                     </p>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      We believe in a life of humility: As Westerners, we understand the importance of humility in our interactions 
+                      with others. We strive to be modest in our thoughts, actions, and achievements, as it fosters a sense of unity 
+                      and respect within our family.
                     </p>
                   </div>
                 </div>
@@ -246,34 +255,34 @@ function About() {
             <div className="row1 flex gap-2 justify-between flex-wrap">
               <div className="flex-grow basis-[250px]">
                 <img
-                  className="w-full align-middle"
-                  src="./assets/heroes-bg.jpeg"
+                  className="w-full h-full object-cover align-middle"
+                  src="./assets/war-kids.jpg"
                   alt=""
                 />
               </div>
               <div className="flex-grow basis-[250px]">
-                <img className="w-full" src="./assets/heroes-bg.jpeg" alt="" />
+                <img className="w-full h-full object-cover" src="./assets/zion-kids.jpg" alt="" />
               </div>
               <div className="flex-grow basis-[250px]">
-                <img className="w-full" src="./assets/heroes-bg.jpeg" alt="" />
+                <img className="w-full h-full object-cover" src="./assets/romance.jpg" alt="" />
               </div>
             </div>
             <div className="row2 flex flex-wrap gap-2 mt-2 mb-2">
               <div className="flex-grow basis-[250px]">
                 <img
-                  className="w-full h-full"
-                  src="./assets/heroes-bg.jpeg"
+                  className="w-full h-full object-cover"
+                  src="./assets/boxbg.jpg"
                   alt=""
                 />
               </div>
               <div className="flex-grow basis-[250px]">
-                <img className="w-full" src="./assets/heroes-bg.jpeg" alt="" />
+                <img className="w-full h-full object-cover" src="./assets/schoolkidsss.jpg" alt="" />
               </div>
               <div className="flex-grow basis-[250px]">
-                <img className="w-full" src="./assets/heroes-bg.jpeg" alt="" />
+                <img className="w-full h-full object-cover" src="./assets/openarm.jpg" alt="" />
               </div>
               <div className="flex-grow basis-[250px]">
-                <img className="w-full" src="./assets/heroes-bg.jpeg" alt="" />
+                <img className="w-full h-full object-cover" src="./assets/top-school.jpg" alt="" />
               </div>
             </div>
           </div>
