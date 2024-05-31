@@ -45,16 +45,10 @@ function Causes() {
                   Dolore distinctio qui.
                 </p>
                 <div className="">
-                  <div className="flex justify-between pb-2">
-                    <p>Donate</p> <p>100%</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
-                  <div className="flex justify-between pt-2">
+                <div className="flex justify-between pt-2">
                     <p>Raised:$600</p> <p>Goal:$600</p>
                   </div>
-                  <button className="px-5 py-2 bg-green-400 mt-8">
-                    Donate Now
-                  </button>
+                  <div className="h-3 w-full bg-green-400"></div>
                 </div>
               </div>
             </div>
@@ -77,16 +71,10 @@ function Causes() {
                   Dolore distinctio qui.
                 </p>
                 <div className="">
-                  <div className="flex justify-between pb-2">
-                    <p>Donate</p> <p>100%</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
                   <div className="flex justify-between pt-2">
                     <p>Raised:$600</p> <p>Goal:$600</p>
                   </div>
-                  <button className="px-5 py-2 bg-green-400 mt-8">
-                    Donate Now
-                  </button>
+                  <div className="h-3 w-full bg-green-400"></div>
                 </div>
               </div>
             </div>
@@ -109,16 +97,10 @@ function Causes() {
                   Dolore distinctio qui.
                 </p>
                 <div className="">
-                  <div className="flex justify-between pb-2">
-                    <p>Donate</p> <p>100%</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
                   <div className="flex justify-between pt-2">
                     <p>Raised:$600</p> <p>Goal:$600</p>
                   </div>
-                  <button className="px-5 py-2 bg-green-400 mt-8">
-                    Donate Now
-                  </button>
+                  <div className="h-3 w-full bg-green-400"></div>
                 </div>
               </div>
             </div>
@@ -141,16 +123,10 @@ function Causes() {
                   Dolore distinctio qui.
                 </p>
                 <div className="">
-                  <div className="flex justify-between pb-2">
-                    <p>Donate</p> <p>100%</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
                   <div className="flex justify-between pt-2">
                     <p>Raised:$600</p> <p>Goal:$600</p>
                   </div>
-                  <button className="px-5 py-2 bg-green-400 mt-8">
-                    Donate Now
-                  </button>
+                  <div className="h-3 w-full bg-green-400"></div>
                 </div>
               </div>
             </div>
@@ -173,16 +149,10 @@ function Causes() {
                   Dolore distinctio qui.
                 </p>
                 <div className="">
-                  <div className="flex justify-between pb-2">
-                    <p>Donate</p> <p>100%</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
                   <div className="flex justify-between pt-2">
                     <p>Raised:$600</p> <p>Goal:$600</p>
                   </div>
-                  <button className="px-5 py-2 bg-green-400 mt-8">
-                    Donate Now
-                  </button>
+                  <div className="h-3 w-full bg-green-400"></div>
                 </div>
               </div>
             </div>
@@ -205,16 +175,10 @@ function Causes() {
                   Dolore distinctio qui.
                 </p>
                 <div className="">
-                  <div className="flex justify-between pb-2">
-                    <p>Donate</p> <p>100%</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
                   <div className="flex justify-between pt-2">
                     <p>Raised:$600</p> <p>Goal:$600</p>
                   </div>
-                  <button className="px-5 py-2 bg-green-400 mt-8">
-                    Donate Now
-                  </button>
+                  <div className="h-3 w-full bg-green-400"></div>
                 </div>
               </div>
             </div>
@@ -237,16 +201,10 @@ function Causes() {
                   Dolore distinctio qui.
                 </p>
                 <div className="">
-                  <div className="flex justify-between pb-2">
-                    <p>Donate</p> <p>100%</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
                   <div className="flex justify-between pt-2">
                     <p>Raised:$600</p> <p>Goal:$600</p>
                   </div>
-                  <button className="px-5 py-2 bg-green-400 mt-8">
-                    Donate Now
-                  </button>
+                  <div className="h-3 w-full bg-green-400"></div>
                 </div>
               </div>
             </div>
@@ -269,16 +227,10 @@ function Causes() {
                   Dolore distinctio qui.
                 </p>
                 <div className="">
-                  <div className="flex justify-between pb-2">
-                    <p>Donate</p> <p>100%</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
                   <div className="flex justify-between pt-2">
                     <p>Raised:$600</p> <p>Goal:$600</p>
                   </div>
-                  <button className="px-5 py-2 bg-green-400 mt-8">
-                    Donate Now
-                  </button>
+                  <div className="h-3 w-full bg-green-400"></div>
                 </div>
               </div>
             </div>
@@ -341,7 +293,7 @@ function Causes() {
             </div>
 
             <div className="md:max-w-sm bg-[#EDF7F5] text-center p-4 mb-2 sm:mb-0 flex-grow basis-[180px]">
-              <img className="h-16 w-16 mx-auto" src="./assets/callguy.png" alt="" />
+              <img className="h-16 w-16 mx-auto" src="./assets/chat-us.png" alt="" />
               <h3 className="text-2xl pb-3 pt-2">Call support</h3>
               <p className="text-base pb-2">
               We enjoy adapting our strategies to offer

@@ -10,7 +10,7 @@ function About() {
         variant="primary"
         intro="About us."
         heading="Empowering Change: Building a Stronger Tomorrow Through Our Foundation"
-        paragraph="Our foundation is committed to making a tangible difference in the lives of those in need. 
+        paragraph="We are committed to making a tangible difference in the lives of those in need. 
         Join us in shaping a brighter future for all."
       />
       <main>
@@ -119,19 +119,6 @@ function About() {
                     </p>
                   </div>
                 </div>
-
-                <div className="mb-4">
-                  <div className="flex justify-between pb-2">
-                    <p>Donate</p> <p>100%</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
-
-                  <div className="flex justify-between pb-2 pt-2">
-                    <p>Donate</p> <p>100%</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
-                </div>
-
                 <button className="bg-green-400 px-6 py-2">Read More</button>
               </div>
             </div>
@@ -145,7 +132,7 @@ function About() {
             <h2 className="text-3xl pb-8">Our Features</h2>
             <div className="w-full block sm:flex justify-between gap-10 flex-wrap">
               <div className="bg-[#219D80]/[.40] hover:bg-primary_theme lg:max-w-sm p-6 rounded-xl mb-4 sm:mb-0 flex-grow basis-[230px]">
-                <img className="h-16 w-16" src="./assets/icon2.png" alt="" />
+                <img className="h-16 w-16" src="./assets/home.png" alt="" />
                 <h3 className="text-2xl pt-2 pb-2 tracking-wide">
                   Food & Homeless Charity
                 </h3>
@@ -157,7 +144,6 @@ function About() {
                 <p className="font-semibold text-base">
                   Join use in creating a better tomorrow.
                 </p>
-                <p className="font-semibold text-base">Donate Now!</p>
               </div>
 
               <div className="bg-[#219D80]/[.40] hover:bg-primary_theme rounded-xl lg:max-w-sm p-6 mb-4 sm:mb-0 flex-grow basis-[230px]">
@@ -173,7 +159,6 @@ function About() {
                 <p className="font-semibold text-base">
                   Join use in creating a better tomorrow.
                 </p>
-                <p className="font-semibold text-base">Donate Now!</p>
               </div>
 
               <div className="bg-[#219D80]/[.40] hover:bg-primary_theme rounded-xl lg:max-w-sm p-6 mb-4 sm:mb-0 flex-grow basis-[230px]">
@@ -189,14 +174,13 @@ function About() {
                 <p className="font-semibold text-base">
                   Join use in creating a better tomorrow.
                 </p>
-                <p className="font-semibold text-base">Donate Now!</p>
               </div>
             </div>
 
             {/* div for the counting cards */}
             <div className="w-full mx-auto mt-[10%] mb-5">
               <div className="block sm:flex justify-between gap-10 flex-wrap">
-                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.40] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className="w-full h-full object-center"
@@ -205,43 +189,43 @@ function About() {
                     />
                   </div>
                   <h4 className="text-2xl pt-2">4500+</h4>
-                  <p className="text-lg pt-2">People Helped</p>
+                  <p className="text-lg pt-2 font-mono">People Helped</p>
                 </div>
 
-                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.40] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className=" w-full h-full object-center"
-                      src="./assets/iconImage.png"
+                      src="./assets/world-illu.png"
                       alt=""
                     />
                   </div>
                   <h4 className="text-2xl pt-2">4500+</h4>
-                  <p className="text-lg pt-2">People Helped</p>
+                  <p className="text-lg pt-2 font-mono">Country Member</p>
                 </div>
 
-                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.40] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className=" w-full h-full object-center"
-                      src="./assets/iconImage.png"
+                      src="./assets/carry-box.png"
                       alt=""
                     />
                   </div>
                   <h4 className="text-2xl pt-2">4500+</h4>
-                  <p className="text-lg pt-2">People Helped</p>
+                  <p className="text-lg pt-2 font-mono">Volunteer</p>
                 </div>
 
-                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.40] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className="w-full h-full object-center"
-                      src="./assets/iconImage.png"
+                      src="./assets/dove-illu.png"
                       alt=""
                     />
                   </div>
                   <h4 className="text-2xl pt-2">4500+</h4>
-                  <p className="text-lg pt-2">People Helped</p>
+                  <p className="text-lg pt-2 font-mono">People Saved</p>
                 </div>
               </div>
             </div>
@@ -295,9 +279,9 @@ function About() {
           </div>
         </section>
 
-        {/* testimonials */}
+        {/* sponsors............................. */}
         <section className="w-full h-full">
-          <div className="mt-6 mb-10 w-full 2xl:max-w-7xl">
+          <div className="mt-6 mb-10 w-full mx-auto 2xl:max-w-7xl">
             <div className="w-full sm:w-[60%] mx-auto flex justify-between gap-2 p-2 flex-wrap">
               <div className="w-[180px] h-[70px] flex-grow">
                 <img

@@ -170,25 +170,12 @@ function Home() {
                     </p>
                   </div>
                 </div>
-
-                <div className=" mb-4">
-                  <div className="flex justify-between pb-2">
-                    <p>Donate</p> <p>100%</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
-
-                  <div className="flex justify-between pb-2 pt-2">
-                    <p>Donate</p> <p>100%</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
-                </div>
-
                 <button className="bg-green-400 px-6 py-2">Read More</button>
               </div>
             </div>
           </div>
 
-          {/* the third div in the section */}
+          {/* the third div in the section the cause section.*/}
           <div
             data-aos="fade-down"
             data-aos-offset="200"
@@ -222,16 +209,10 @@ function Home() {
                     Dolore distinctio qui.
                   </p>
                   <div className="">
-                    <div className="flex justify-between pb-2">
-                      <p>Donate</p> <p>100%</p>
-                    </div>
-                    <div className="h-3 w-full bg-green-400"></div>
                     <div className="flex justify-between pt-2">
                       <p>Raised:$600</p> <p>Goal:$600</p>
                     </div>
-                    <button className="px-5 py-2 bg-green-400 mt-8">
-                      Donate Now
-                    </button>
+                    <div className="h-3 w-full bg-green-400"></div>
                   </div>
                 </div>
               </div>
@@ -254,16 +235,10 @@ function Home() {
                     Dolore distinctio qui.
                   </p>
                   <div className="">
-                    <div className="flex justify-between pb-2">
-                      <p>Donate</p> <p>100%</p>
-                    </div>
-                    <div className="h-3 w-full bg-green-400"></div>
                     <div className="flex justify-between pt-2">
                       <p>Raised:$600</p> <p>Goal:$600</p>
                     </div>
-                    <button className="px-5 py-2 bg-green-400 mt-8">
-                      Donate Now
-                    </button>
+                    <div className="h-3 w-full bg-green-400"></div>
                   </div>
                 </div>
               </div>
@@ -286,16 +261,10 @@ function Home() {
                     Dolore distinctio qui.
                   </p>
                   <div className="">
-                    <div className="flex justify-between pb-2">
-                      <p>Donate</p> <p>100%</p>
-                    </div>
-                    <div className="h-3 w-full bg-green-400"></div>
                     <div className="flex justify-between pt-2">
                       <p>Raised:$600</p> <p>Goal:$600</p>
                     </div>
-                    <button className="px-5 py-2 bg-green-400 mt-8">
-                      Donate Now
-                    </button>
+                    <div className="h-3 w-full bg-green-400"></div>
                   </div>
                 </div>
               </div>
@@ -318,16 +287,10 @@ function Home() {
                     Dolore distinctio qui.
                   </p>
                   <div className="">
-                    <div className="flex justify-between pb-2">
-                      <p>Donate</p> <p>100%</p>
-                    </div>
-                    <div className="h-3 w-full bg-green-400"></div>
                     <div className="flex justify-between pt-2">
                       <p>Raised:$600</p> <p>Goal:$600</p>
                     </div>
-                    <button className="px-5 py-2 bg-green-400 mt-8">
-                      Donate Now
-                    </button>
+                    <div className="h-3 w-full bg-green-400"></div>
                   </div>
                 </div>
               </div>
@@ -354,9 +317,10 @@ function Home() {
               We Believe We Can Save <br />
               More Lives With Your Support!
             </p>
-            <div className="w-full mx-auto">
-              <div className="block sm:flex gap-10">
-                <div className="w-full mb-4 sm:w-[360px] lg:max-w-xs h-[250px] bg-green-200 text-center p-6 ">
+            {/* status cards */}
+            <div className="w-full mx-auto mt-[10%] mb-5">
+              <div className="block sm:flex justify-between gap-10 flex-wrap">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className="w-full h-full object-center"
@@ -365,49 +329,49 @@ function Home() {
                     />
                   </div>
                   <h4 className="text-2xl pt-2">4500+</h4>
-                  <p className="text-lg pt-2">People Helped</p>
+                  <p className="text-lg pt-2 font-mono">People Helped</p>
                 </div>
 
-                <div className="w-full mb-4 sm:w-[360px] lg:max-w-xs h-[250px] bg-green-200 text-center p-6">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className=" w-full h-full object-center"
-                      src="./assets/iconImage.png"
+                      src="./assets/world-illu.png"
                       alt=""
                     />
                   </div>
                   <h4 className="text-2xl pt-2">4500+</h4>
-                  <p className="text-lg pt-2">People Helped</p>
+                  <p className="text-lg pt-2 font-mono">Country Member</p>
                 </div>
 
-                <div className="w-full mb-4 sm:w-[360px] lg:max-w-xs h-[250px] bg-green-200 text-center p-6">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className=" w-full h-full object-center"
-                      src="./assets/iconImage.png"
+                      src="./assets/carry-box.png"
                       alt=""
                     />
                   </div>
                   <h4 className="text-2xl pt-2">4500+</h4>
-                  <p className="text-lg pt-2">People Helped</p>
+                  <p className="text-lg pt-2 font-mono">Volunteer</p>
                 </div>
 
-                <div className="w-full mb-4 sm:w-[360px] lg:max-w-xs h-[250px] bg-green-200 text-center p-6">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
-                      className=" w-full h-full object-center"
-                      src="./assets/iconImage.png"
+                      className="w-full h-full object-center"
+                      src="./assets/dove-illu.png"
                       alt=""
                     />
                   </div>
                   <h4 className="text-2xl pt-2">4500+</h4>
-                  <p className="text-lg pt-2">People Helped</p>
+                  <p className="text-lg pt-2 font-mono">People Saved</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* second div......................... */}
+          {/* second div articles for the read......................... */}
           <div className="w-full lg:w-[75%] mx-auto mt-[5%] mb-[4%] p-2 2xl:max-w-7xl">
             <h3 className="font-mono text-base pb-2 tracking-wider">
               Our Fun Facts
@@ -415,7 +379,7 @@ function Home() {
             <p className="text-2xl pb-8">Articles You Might Like.</p>
             <div className="block sm:flex sm:gap-10 flex-wrap">
               <div className="h-max w-full sm:w-[290px] shadow-lg drop-shadow-xl mb-4 flex-grow basis-[170px]">
-                <div className="h-[50%] w-full bg-green-200">
+                <div className="h-[50%] w-full">
                   <img
                     className="w-full h-full object-center object-cover"
                     src=" ./assets/arabic-businessman.png"
@@ -434,14 +398,14 @@ function Home() {
                     Veniam corrupti enim repellat dolorum atque dolore esse
                     tempora suscipit ratione tenetur?
                   </p>
-                  <button className="px-5 py-2 bg-green-400 mt-8">
-                    Donate Now
+                  <button className="px-5 py-2 bg-green-400 mt-4">
+                    Read More
                   </button>
                 </div>
               </div>
 
               <div className="h-max w-full sm:w-[290px] shadow-lg drop-shadow-xl mb-4 flex-grow basis-[170px]">
-                <div className="h-[50%] w-full bg-green-200">
+                <div className="h-[50%] w-full">
                   <img
                     className="w-full h-full object-center object-cover"
                     src=" ./assets/arabic-businessman.png"
@@ -460,14 +424,14 @@ function Home() {
                     Veniam corrupti enim repellat dolorum atque dolore esse
                     tempora suscipit ratione tenetur?
                   </p>
-                  <button className="px-5 py-2 bg-green-400 mt-8">
-                    Donate Now
+                  <button className="px-5 py-2 bg-green-400 mt-4">
+                    Read More
                   </button>
                 </div>
               </div>
 
               <div className="h-max w-full sm:w-[290px] shadow-lg drop-shadow-xl mb-4 flex-grow basis-[170px]">
-                <div className="h-[50%] w-full bg-green-200">
+                <div className="h-[50%] w-full">
                   <img
                     className="w-full h-full object-center object-cover"
                     src="./assets/arabic-businessman.png"
@@ -486,8 +450,8 @@ function Home() {
                     Veniam corrupti enim repellat dolorum atque dolore esse
                     tempora suscipit ratione tenetur?
                   </p>
-                  <button className="px-5 py-2 bg-green-400 mt-8">
-                    Donate Now
+                  <button className="px-5 py-2 bg-green-400 mt-4">
+                    Read More
                   </button>
                 </div>
               </div>
