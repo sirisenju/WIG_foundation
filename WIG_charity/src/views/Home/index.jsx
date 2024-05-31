@@ -318,7 +318,7 @@ function Home() {
               More Lives With Your Support!
             </p>
             {/* status cards */}
-            <div className="w-full mx-auto mt-[10%] mb-5">
+            <div className="w-full mx-auto mt-5 mb-5">
               <div className="block sm:flex justify-between gap-10 flex-wrap">
                 <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
