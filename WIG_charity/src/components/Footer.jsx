@@ -33,7 +33,8 @@ function Footer() {
             </ul>
           </div>
           <div className="text-center sm:text-start text-white">
-            <h3 className="text-base pb-2">Address: 2, Jemide Avenue, Giwa Amu Street, GRA, Benin City,Edo state</h3>
+            <h3 className="text-base pb-2">Address: 2, Jemide Avenue, 
+            <br />Giwa Amu Street, GRA, <br />Benin City, Edo state</h3>
             <h3 className="text-lg pb-3">Social Media</h3>
             <a href="">face</a>
             <a href="">twitter</a>
