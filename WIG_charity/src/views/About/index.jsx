@@ -10,7 +10,7 @@ function About() {
         variant="primary"
         intro="About us."
         heading="Empowering Change: Building a Stronger Tomorrow Through Our Foundation"
-        paragraph="Our foundation is committed to making a tangible difference in the lives of those in need. 
+        paragraph="We are committed to making a tangible difference in the lives of those in need. 
         Join us in shaping a brighter future for all."
       />
       <main>
@@ -36,12 +36,13 @@ function About() {
             </div>
             <div className="w-full sm:w-1/2 flex items-center">
               <div className="max-w-sm mx-auto sm:ml-4 sm:mr-4 md:ml-4 p-2">
-                <h3>About Us</h3>
-                <h2>Your Support Is Really Powerful</h2>
+                <h3 className="font-mono text-base pb-1 tracking-wider">About Us</h3>
+                <h2 className="text-xl pb-1">The Westerners Creed.</h2>
                 <p className="text-pretty text-justify pb-3">
-                  The secret to happiness lies in helping others. Never
-                  underestimate the difference you can make in the lives of the
-                  poor, the abused and the helpless.
+                  We believe in the liberty of independent decision-making: The Westerners Family cherishes individual 
+                  freedom and autonomy. While our collective values bind us together, we encourage every member to 
+                  express their independent thoughts, make sound decisions, and contribute to the growth and development 
+                  of our family.
                 </p>
                 <button className="bg-green-400 px-6 py-2">Read More</button>
               </div>
@@ -60,28 +61,32 @@ function About() {
               </div>
               <div className="bg-white w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:max-w-sm h-fit border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative">
                 <div className="p-5">
-                  <ul className="list-disc text-justify">
-                    <li className="text-[#219D80]">
-                      Together, we're going to make the future
+                  <h2 className="text-center text-xl font-medium">Objectives of the Westerners Family.</h2>
+                  <ul className="list-disc text-pretty text-base">
+                    <li className="text-[#219D80] font-mono">
+                      Maintain a strong sense of solidarity and unity, celebrating our achievements collectively and 
+                      reinforcing the bonds that make us unique and distinguished people.
                     </li>
-                    <li>Children where we are able to fulfill all</li>
-                    <li>
-                      Their requirements to keep them safe from withered world
+                    <li className="font-mono">
+                      Support the dissemination of knowledge and ideas, fostering an environment of intellectual 
+                      curiosity and open-mindedness.
                     </li>
-                    <li>
-                      We have already stepped out and start changing the world
+                    <li className="font-mono">
+                      Continuously seek personal growth and improvement, aligning with the vision of the Westerners Family.
                     </li>
-                    <li>Keeping safe them from war, inhumanity</li>
+                    <li className="font-mono">
+                      Actively engage in acts of giving, both within our family and beyond, to support and uplift individuals 
+                      and communities in need.
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
             <div className="w-full sm:w-1/2 flex items-center">
               <div className="max-w-md mx-auto sm:ml-4 sm:mr-4 md:ml-4 p-2">
-                <h3 className="pb-2">Welcome To Charity</h3>
+                <h3 className="font-mono text-base pb-1 tracking-wider">Welcome To The Westerners Creed.</h3>
                 <h2 className="text-3xl pb-2">
-                  Let Us Come Together <br />
-                  To Make a Difference
+                  Its All About Love.
                 </h2>
                 <p className="text-pretty pb-3">
                   The secret to happiness lies in helping others. Never
@@ -96,7 +101,9 @@ function About() {
                       <span>Our Mission</span>
                     </p>
                     <p className="text-pretty">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      We believe in improving lives: Our purpose as Westerners is to uplift and enhance the lives of like-minded 
+                      individuals who share our passion for making a positive impact on humanity. We are committed to improving 
+                      the well-being of others in all aspects of life.
                     </p>
                   </div>
                   <div className="w-1/2 bg-[#219D80]/[.10] p-2">
@@ -106,23 +113,12 @@ function About() {
                       <span>Our Vision</span>
                     </p>
                     <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      We believe in a life of humility: As Westerners, we understand the importance of humility in our interactions 
+                      with others. We strive to be modest in our thoughts, actions, and achievements, as it fosters a sense of unity 
+                      and respect within our family.
                     </p>
                   </div>
                 </div>
-
-                <div className="mb-4">
-                  <div className="flex justify-between pb-2">
-                    <p>Donate</p> <p>100%</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
-
-                  <div className="flex justify-between pb-2 pt-2">
-                    <p>Donate</p> <p>100%</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
-                </div>
-
                 <button className="bg-green-400 px-6 py-2">Read More</button>
               </div>
             </div>
@@ -136,7 +132,7 @@ function About() {
             <h2 className="text-3xl pb-8">Our Features</h2>
             <div className="w-full block sm:flex justify-between gap-10 flex-wrap">
               <div className="bg-[#219D80]/[.40] hover:bg-primary_theme lg:max-w-sm p-6 rounded-xl mb-4 sm:mb-0 flex-grow basis-[230px]">
-                <img className="h-16 w-16" src="./assets/icon2.png" alt="" />
+                <img className="h-16 w-16" src="./assets/home.png" alt="" />
                 <h3 className="text-2xl pt-2 pb-2 tracking-wide">
                   Food & Homeless Charity
                 </h3>
@@ -148,7 +144,6 @@ function About() {
                 <p className="font-semibold text-base">
                   Join use in creating a better tomorrow.
                 </p>
-                <p className="font-semibold text-base">Donate Now!</p>
               </div>
 
               <div className="bg-[#219D80]/[.40] hover:bg-primary_theme rounded-xl lg:max-w-sm p-6 mb-4 sm:mb-0 flex-grow basis-[230px]">
@@ -164,7 +159,6 @@ function About() {
                 <p className="font-semibold text-base">
                   Join use in creating a better tomorrow.
                 </p>
-                <p className="font-semibold text-base">Donate Now!</p>
               </div>
 
               <div className="bg-[#219D80]/[.40] hover:bg-primary_theme rounded-xl lg:max-w-sm p-6 mb-4 sm:mb-0 flex-grow basis-[230px]">
@@ -180,14 +174,13 @@ function About() {
                 <p className="font-semibold text-base">
                   Join use in creating a better tomorrow.
                 </p>
-                <p className="font-semibold text-base">Donate Now!</p>
               </div>
             </div>
 
             {/* div for the counting cards */}
             <div className="w-full mx-auto mt-[10%] mb-5">
               <div className="block sm:flex justify-between gap-10 flex-wrap">
-                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.40] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className="w-full h-full object-center"
@@ -196,43 +189,43 @@ function About() {
                     />
                   </div>
                   <h4 className="text-2xl pt-2">4500+</h4>
-                  <p className="text-lg pt-2">People Helped</p>
+                  <p className="text-lg pt-2 font-mono">People Helped</p>
                 </div>
 
-                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.40] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className=" w-full h-full object-center"
-                      src="./assets/iconImage.png"
+                      src="./assets/world-illu.png"
                       alt=""
                     />
                   </div>
                   <h4 className="text-2xl pt-2">4500+</h4>
-                  <p className="text-lg pt-2">People Helped</p>
+                  <p className="text-lg pt-2 font-mono">Country Member</p>
                 </div>
 
-                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.40] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className=" w-full h-full object-center"
-                      src="./assets/iconImage.png"
+                      src="./assets/carry-box.png"
                       alt=""
                     />
                   </div>
                   <h4 className="text-2xl pt-2">4500+</h4>
-                  <p className="text-lg pt-2">People Helped</p>
+                  <p className="text-lg pt-2 font-mono">Volunteer</p>
                 </div>
 
-                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.40] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className="w-full h-full object-center"
-                      src="./assets/iconImage.png"
+                      src="./assets/dove-illu.png"
                       alt=""
                     />
                   </div>
                   <h4 className="text-2xl pt-2">4500+</h4>
-                  <p className="text-lg pt-2">People Helped</p>
+                  <p className="text-lg pt-2 font-mono">People Saved</p>
                 </div>
               </div>
             </div>
@@ -246,34 +239,34 @@ function About() {
             <div className="row1 flex gap-2 justify-between flex-wrap">
               <div className="flex-grow basis-[250px]">
                 <img
-                  className="w-full align-middle"
-                  src="./assets/heroes-bg.jpeg"
+                  className="w-full h-full object-cover align-middle"
+                  src="./assets/war-kids.jpg"
                   alt=""
                 />
               </div>
               <div className="flex-grow basis-[250px]">
-                <img className="w-full" src="./assets/heroes-bg.jpeg" alt="" />
+                <img className="w-full h-full object-cover" src="./assets/zion-kids.jpg" alt="" />
               </div>
               <div className="flex-grow basis-[250px]">
-                <img className="w-full" src="./assets/heroes-bg.jpeg" alt="" />
+                <img className="w-full h-full object-cover" src="./assets/romance.jpg" alt="" />
               </div>
             </div>
             <div className="row2 flex flex-wrap gap-2 mt-2 mb-2">
               <div className="flex-grow basis-[250px]">
                 <img
-                  className="w-full h-full"
-                  src="./assets/heroes-bg.jpeg"
+                  className="w-full h-full object-cover"
+                  src="./assets/boxbg.jpg"
                   alt=""
                 />
               </div>
               <div className="flex-grow basis-[250px]">
-                <img className="w-full" src="./assets/heroes-bg.jpeg" alt="" />
+                <img className="w-full h-full object-cover" src="./assets/schoolkidsss.jpg" alt="" />
               </div>
               <div className="flex-grow basis-[250px]">
-                <img className="w-full" src="./assets/heroes-bg.jpeg" alt="" />
+                <img className="w-full h-full object-cover" src="./assets/openarm.jpg" alt="" />
               </div>
               <div className="flex-grow basis-[250px]">
-                <img className="w-full" src="./assets/heroes-bg.jpeg" alt="" />
+                <img className="w-full h-full object-cover" src="./assets/top-school.jpg" alt="" />
               </div>
             </div>
           </div>
@@ -286,9 +279,9 @@ function About() {
           </div>
         </section>
 
-        {/* testimonials */}
+        {/* sponsors............................. */}
         <section className="w-full h-full">
-          <div className="mt-6 mb-10 w-full 2xl:max-w-7xl">
+          <div className="mt-6 mb-10 w-full mx-auto 2xl:max-w-7xl">
             <div className="w-full sm:w-[60%] mx-auto flex justify-between gap-2 p-2 flex-wrap">
               <div className="w-[180px] h-[70px] flex-grow">
                 <img

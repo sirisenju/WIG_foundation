@@ -9,7 +9,7 @@ function Blog() {
         variant="primary"
         intro="Our Stories."
         heading="Empowering Change: Building a Stronger Tomorrow Through Our Foundation"
-        paragraph="Our foundation is committed to making a tangible difference in the lives of those in need. 
+        paragraph="We are committed to making a tangible difference in the lives of those in need. 
         Join us in shaping a brighter future for all."
       />
 

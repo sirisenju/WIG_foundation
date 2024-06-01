@@ -8,13 +8,40 @@ import Blog from "./Blog";
 function Admin() {
     const [activeComponent, setActiveComponent] = useState("Dashboard");
 
+    const users = [
+      {
+          id: 1,
+          fname: "John",
+          lname: "Doe",
+          email: "johndoe@gmail.com",
+          role: "cook",
+          number: "+234768776652"
+      },
+      {
+          id: 2,
+          fname: "Peter",
+          lname: "Quill",
+          email: "peter@gmail.com",
+          role: "cook",
+          number: "+234768776652"
+      },
+      {
+          id: 3,
+          fname: "Thanos",
+          lname: "Festus",
+          email: "johndoe@gmail.com",
+          role: "cook",
+          number: "+234768776652"
+      }
+    ];
+
     const changeScreen = (screenName) => {
         switch (screenName) {
           case "Dashboard":
             setActiveComponent("Dashboard");
           break;
-          case "Users":
-            setActiveComponent("Users");
+          case "UserDisplay":
+            setActiveComponent("UserDisplay");
           break;
           case "Projects":
             setActiveComponent("Projects");
@@ -77,11 +104,10 @@ function Admin() {
         {/* render component */}
         <div className="basis-[60%] flex-grow">
           {activeComponent === "Dashboard" && <Dashboard/>}
-          {activeComponent === "Users" && <Users/>}
+          {activeComponent === "Users" && <Users items={users}/>}
           {activeComponent === "Projects" && <Projects/>}
           {activeComponent === "Blog" && <Blog/>}
         </div>
-
         {/* right column(last) */}
         <div className="bg-white rounded-lg shadow-md sm:basis-[100px] lg:basis-[200px] flex-grow hidden 2xl:block">
           <div className="w-full text-center mb-5 mt-5  pt-28">
@@ -93,7 +119,7 @@ function Admin() {
               />
             </div>
             <h1 className="pt-4 text-2xl">first name and lastname</h1>
-            <h3 className="pt-2 pb-2">role</h3>
+            <h3 className="pt-2 pb-2">Admin</h3>
           </div>
         </div>
       </div>

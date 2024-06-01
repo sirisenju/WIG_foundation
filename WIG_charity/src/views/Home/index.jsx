@@ -9,8 +9,8 @@ function Home() {
     <>
       {/* the navbar component */}
       <Navbar
-        intro="Give Hope To The Homeless."
-        heading="Helping each other can make the world better"
+        intro="Welcome to WESTERNERS WORLDWIDE."
+        heading="Selfless Service, Endless Possibilities."
         paragraph="We Seek out world changers and difference makers around the
                 globe, and equip them to fulfill their unique purpose."
       />
@@ -58,15 +58,15 @@ function Home() {
                 className="max-w-sm mx-auto sm:ml-4 sm:mr-4 md:ml-4 p-2"
               >
                 <h3 className="font-mono text-base pb-1 tracking-wider">
-                  About Us
+                  The Westerners Creed.
                 </h3>
                 <h2 className=" text-xl pb-1">
-                  Your Support Is Really Powerful
+                  Mission and vision statement.
                 </h2>
                 <p className="text-pretty text-justify pb-3">
-                  The secret to happiness lies in helping others. Never
-                  underestimate the difference you can make in the lives of the
-                  poor, the abused and the helpless.
+                  We believe in a life of humility: As Westerners, we understand the importance of humility in our 
+                  interactions with others. We strive to be modest in our thoughts, actions, and achievements, 
+                  as it fosters a sense of unity and respect within our family.
                 </p>
                 <button className="bg-green-400 px-6 py-2">Read More</button>
               </div>
@@ -104,21 +104,19 @@ function Home() {
                 className="bg-white w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:max-w-sm h-fit border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative"
               >
                 <div className="p-5">
-                  <ul className="list-disc text-justify">
+                  <h2 className="text-center text-xl font-medium">Objectives of the Westerners Family.</h2>
+                  <ul className="list-disc text-pretty">
                     <li className="text-[#219D80] font-mono">
-                      Together, we're going to make the future
+                      Foster and maintain a close-knit community of individuals dedicated 
+                      to progressive thought and benevolence.
                     </li>
                     <li className="font-mono">
-                      Children where we are able to fulfill all
+                      Develop and promote personal relationships with our leader, Supremo Western Iyamu, 
+                      built on mutual respect and trust.
                     </li>
                     <li className="font-mono">
-                      Their requirements to keep them safe from withered world
-                    </li>
-                    <li className="font-mono">
-                      We have already stepped out and start changing the world
-                    </li>
-                    <li className="font-mono">
-                      Keeping safe them from war, inhumanity
+                      Embrace the values, customs, and traditions cherished by the Westerners Family, 
+                      demonstrating our commitment to a way of life rooted in serving others.
                     </li>
                   </ul>
                 </div>
@@ -134,16 +132,16 @@ function Home() {
                 className="max-w-md mx-auto sm:ml-4 sm:mr-4 md:ml-4 p-2"
               >
                 <h3 className="font-mono text-base pb-1 tracking-wider">
-                  Welcome To Charity
+                  Welcome To The Westerners Creed.
                 </h3>
                 <h2 className="text-3xl pb-2">
-                  Let Us Come Together <br />
-                  To Make a Difference
+                  Coming Together <br />
+                  To Make a Difference.
                 </h2>
                 <p className="text-pretty pb-3">
-                  The secret to happiness lies in helping others. Never
-                  underestimate the difference YOU can make in the lives of the
-                  poor, the abused and the helpless.
+                  We believe in the power of giving: Generosity is the cornerstone of the Westerners Family.
+                  We embrace a tradition of selflessness, willingly extending a helping hand to those in need, 
+                  without hesitation or expectation of personal gain.
                 </p>
                 <div className="w-full flex flex-row gap-2 mb-4">
                   <div className=" w-1/2 bg-[#219D80]/[.10] p-2">
@@ -153,7 +151,9 @@ function Home() {
                       <span>Our Mission</span>
                     </p>
                     <p className="text-pretty">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      We believe in improving lives: Our purpose as Westerners is to uplift and enhance the lives 
+                      of like-minded individuals who share our passion for making a positive impact on humanity. 
+                      We are committed to improving the well-being of others in all aspects of life.
                     </p>
                   </div>
                   <div className="w-1/2 bg-[#219D80]/[.10] p-2">
@@ -162,30 +162,20 @@ function Home() {
                       <img src="./assets/shild.png" alt="" />
                       <span>Our Vision</span>
                     </p>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    <p className="text-pretty">
+                      We believe in the liberty of independent decision-making: The Westerners Family cherishes 
+                      individual freedom and autonomy. While our collective values bind us together, we encourage 
+                      every member to express their independent thoughts, make sound decisions, and contribute to 
+                      the growth and development of our family.
                     </p>
                   </div>
                 </div>
-
-                <div className=" mb-4">
-                  <div className="flex justify-between pb-2">
-                    <p>Donate</p> <p>100%</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
-
-                  <div className="flex justify-between pb-2 pt-2">
-                    <p>Donate</p> <p>100%</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
-                </div>
-
                 <button className="bg-green-400 px-6 py-2">Read More</button>
               </div>
             </div>
           </div>
 
-          {/* the third div in the section */}
+          {/* the third div in the section the cause section.*/}
           <div
             data-aos="fade-down"
             data-aos-offset="200"
@@ -219,16 +209,10 @@ function Home() {
                     Dolore distinctio qui.
                   </p>
                   <div className="">
-                    <div className="flex justify-between pb-2">
-                      <p>Donate</p> <p>100%</p>
-                    </div>
-                    <div className="h-3 w-full bg-green-400"></div>
                     <div className="flex justify-between pt-2">
                       <p>Raised:$600</p> <p>Goal:$600</p>
                     </div>
-                    <button className="px-5 py-2 bg-green-400 mt-8">
-                      Donate Now
-                    </button>
+                    <div className="h-3 w-full bg-green-400"></div>
                   </div>
                 </div>
               </div>
@@ -251,16 +235,10 @@ function Home() {
                     Dolore distinctio qui.
                   </p>
                   <div className="">
-                    <div className="flex justify-between pb-2">
-                      <p>Donate</p> <p>100%</p>
-                    </div>
-                    <div className="h-3 w-full bg-green-400"></div>
                     <div className="flex justify-between pt-2">
                       <p>Raised:$600</p> <p>Goal:$600</p>
                     </div>
-                    <button className="px-5 py-2 bg-green-400 mt-8">
-                      Donate Now
-                    </button>
+                    <div className="h-3 w-full bg-green-400"></div>
                   </div>
                 </div>
               </div>
@@ -283,16 +261,10 @@ function Home() {
                     Dolore distinctio qui.
                   </p>
                   <div className="">
-                    <div className="flex justify-between pb-2">
-                      <p>Donate</p> <p>100%</p>
-                    </div>
-                    <div className="h-3 w-full bg-green-400"></div>
                     <div className="flex justify-between pt-2">
                       <p>Raised:$600</p> <p>Goal:$600</p>
                     </div>
-                    <button className="px-5 py-2 bg-green-400 mt-8">
-                      Donate Now
-                    </button>
+                    <div className="h-3 w-full bg-green-400"></div>
                   </div>
                 </div>
               </div>
@@ -315,16 +287,10 @@ function Home() {
                     Dolore distinctio qui.
                   </p>
                   <div className="">
-                    <div className="flex justify-between pb-2">
-                      <p>Donate</p> <p>100%</p>
-                    </div>
-                    <div className="h-3 w-full bg-green-400"></div>
                     <div className="flex justify-between pt-2">
                       <p>Raised:$600</p> <p>Goal:$600</p>
                     </div>
-                    <button className="px-5 py-2 bg-green-400 mt-8">
-                      Donate Now
-                    </button>
+                    <div className="h-3 w-full bg-green-400"></div>
                   </div>
                 </div>
               </div>
@@ -351,9 +317,10 @@ function Home() {
               We Believe We Can Save <br />
               More Lives With Your Support!
             </p>
-            <div className="w-full mx-auto">
-              <div className="block sm:flex gap-10">
-                <div className="w-full mb-4 sm:w-[360px] lg:max-w-xs h-[250px] bg-green-200 text-center p-6 ">
+            {/* status cards */}
+            <div className="w-full mx-auto mt-5 mb-5">
+              <div className="block sm:flex justify-between gap-10 flex-wrap">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className="w-full h-full object-center"
@@ -362,49 +329,49 @@ function Home() {
                     />
                   </div>
                   <h4 className="text-2xl pt-2">4500+</h4>
-                  <p className="text-lg pt-2">People Helped</p>
+                  <p className="text-lg pt-2 font-mono">People Helped</p>
                 </div>
 
-                <div className="w-full mb-4 sm:w-[360px] lg:max-w-xs h-[250px] bg-green-200 text-center p-6">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className=" w-full h-full object-center"
-                      src="./assets/iconImage.png"
+                      src="./assets/world-illu.png"
                       alt=""
                     />
                   </div>
                   <h4 className="text-2xl pt-2">4500+</h4>
-                  <p className="text-lg pt-2">People Helped</p>
+                  <p className="text-lg pt-2 font-mono">Country Member</p>
                 </div>
 
-                <div className="w-full mb-4 sm:w-[360px] lg:max-w-xs h-[250px] bg-green-200 text-center p-6">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className=" w-full h-full object-center"
-                      src="./assets/iconImage.png"
+                      src="./assets/carry-box.png"
                       alt=""
                     />
                   </div>
                   <h4 className="text-2xl pt-2">4500+</h4>
-                  <p className="text-lg pt-2">People Helped</p>
+                  <p className="text-lg pt-2 font-mono">Volunteer</p>
                 </div>
 
-                <div className="w-full mb-4 sm:w-[360px] lg:max-w-xs h-[250px] bg-green-200 text-center p-6">
+                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
-                      className=" w-full h-full object-center"
-                      src="./assets/iconImage.png"
+                      className="w-full h-full object-center"
+                      src="./assets/dove-illu.png"
                       alt=""
                     />
                   </div>
                   <h4 className="text-2xl pt-2">4500+</h4>
-                  <p className="text-lg pt-2">People Helped</p>
+                  <p className="text-lg pt-2 font-mono">People Saved</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* second div......................... */}
+          {/* second div articles for the read......................... */}
           <div className="w-full lg:w-[75%] mx-auto mt-[5%] mb-[4%] p-2 2xl:max-w-7xl">
             <h3 className="font-mono text-base pb-2 tracking-wider">
               Our Fun Facts
@@ -412,7 +379,7 @@ function Home() {
             <p className="text-2xl pb-8">Articles You Might Like.</p>
             <div className="block sm:flex sm:gap-10 flex-wrap">
               <div className="h-max w-full sm:w-[290px] shadow-lg drop-shadow-xl mb-4 flex-grow basis-[170px]">
-                <div className="h-[50%] w-full bg-green-200">
+                <div className="h-[50%] w-full">
                   <img
                     className="w-full h-full object-center object-cover"
                     src=" ./assets/arabic-businessman.png"
@@ -431,14 +398,14 @@ function Home() {
                     Veniam corrupti enim repellat dolorum atque dolore esse
                     tempora suscipit ratione tenetur?
                   </p>
-                  <button className="px-5 py-2 bg-green-400 mt-8">
-                    Donate Now
+                  <button className="px-5 py-2 bg-green-400 mt-4">
+                    Read More
                   </button>
                 </div>
               </div>
 
               <div className="h-max w-full sm:w-[290px] shadow-lg drop-shadow-xl mb-4 flex-grow basis-[170px]">
-                <div className="h-[50%] w-full bg-green-200">
+                <div className="h-[50%] w-full">
                   <img
                     className="w-full h-full object-center object-cover"
                     src=" ./assets/arabic-businessman.png"
@@ -457,14 +424,14 @@ function Home() {
                     Veniam corrupti enim repellat dolorum atque dolore esse
                     tempora suscipit ratione tenetur?
                   </p>
-                  <button className="px-5 py-2 bg-green-400 mt-8">
-                    Donate Now
+                  <button className="px-5 py-2 bg-green-400 mt-4">
+                    Read More
                   </button>
                 </div>
               </div>
 
               <div className="h-max w-full sm:w-[290px] shadow-lg drop-shadow-xl mb-4 flex-grow basis-[170px]">
-                <div className="h-[50%] w-full bg-green-200">
+                <div className="h-[50%] w-full">
                   <img
                     className="w-full h-full object-center object-cover"
                     src="./assets/arabic-businessman.png"
@@ -483,8 +450,8 @@ function Home() {
                     Veniam corrupti enim repellat dolorum atque dolore esse
                     tempora suscipit ratione tenetur?
                   </p>
-                  <button className="px-5 py-2 bg-green-400 mt-8">
-                    Donate Now
+                  <button className="px-5 py-2 bg-green-400 mt-4">
+                    Read More
                   </button>
                 </div>
               </div>

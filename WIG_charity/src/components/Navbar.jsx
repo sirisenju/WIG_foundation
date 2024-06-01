@@ -80,7 +80,7 @@ function Navbar(props) {
               <p className="pb-2 tracking-wider text-lg">
                 {props.intro}
               </p>
-              <h1 className="text-5xl pt-3 pb-3">
+              <h1 className="text-3xl sm:text-5xl pt-3 pb-3 p-1">
                 {props.heading}
               </h1>
               <p className="tracking-wider text-lg">
