@@ -12,6 +12,7 @@ function Projects() {
       email: "johndoe@gmail.com",
       role: "cook",
       number: "+234768776652",
+      imgUrl: "/assets/faceskinModel.jpg",
     },
     {
       id: 2,
@@ -20,6 +21,7 @@ function Projects() {
       email: "peter@gmail.com",
       role: "cook",
       number: "+234768776652",
+      imgUrl: "/assets/faceskinModel.jpg"
     },
     {
       id: 3,
@@ -28,6 +30,7 @@ function Projects() {
       email: "johndoe@gmail.com",
       role: "cook",
       number: "+234768776652",
+      imgUrl: "/assets/faceskinModel.jpg"
     },
   ];
 
@@ -60,6 +63,13 @@ function Projects() {
       body: "Content of post 1 by User Three.",
       date: "2023-05-04",
     },
+    {
+      id: 5,
+      userId: 5,
+      topic: "Post 1 by User Three",
+      body: "Content of post 1 by User Three.",
+      date: "2023-05-04",
+    },
   ];
 
   const [selectedUser, setSelectedUser] = useState(null);
@@ -73,11 +83,15 @@ function Projects() {
     : [];
 
   return (
-    <div className="w-full h-full p-2 bg-white shadow-md rounded-lg">
+    <div className="w-full h-full p-2 bg-white shadow-md rounded-lg 2xl:max-w-7xl">
       <h2>Projects created.</h2>
-      <div className="flex">
+      <div className="flex flex-wrap">
+        <div className="flex-grow basis-[200px]">
         <Users items={users} onUserClick={handleUserClick} />
+        </div>
+        <div className="flex-grow basis-[200px]">
         <PostList posts={userPosts} />
+        </div>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import Dashboard from "./Dashboard";
 import Users from "./Users";
 import Projects from "./Projects";
 import Blog from "./Blog";
+import AHamburger from "./AHamburger";
 
 function Admin() {
     const [activeComponent, setActiveComponent] = useState("Dashboard");
@@ -40,8 +41,8 @@ function Admin() {
           case "Dashboard":
             setActiveComponent("Dashboard");
           break;
-          case "UserDisplay":
-            setActiveComponent("UserDisplay");
+          case "Users":
+            setActiveComponent("Users");
           break;
           case "Projects":
             setActiveComponent("Projects");
@@ -58,9 +59,12 @@ function Admin() {
 
   return (
     <section className="w-full h-full">
+      <div className=" block md:hidden 2xl:max-w-7xl">
+        <AHamburger onChangeScreen={changeScreen}/>
+      </div>
       <div className="h-full flex flex-row p-2 gap-4 flex-wrap">
         {/* left dashboard */}
-        <div className="sm:basis-[100px] lg:basis-[200px] rounded-lg bg-white shadow-md flex-grow hidden md:block">
+        <div className="sm:basis-[100px] lg:basis-[200px] rounded-lg bg-white shadow-md flex-grow hidden md:block 2xl:max-w-7xl">
           <div className="p-2 flex flex-col justify-between h-auto pt-28">
             <ul className="list-none flex flex-col gap-4">
               <li className="h-10 flex items-center px-4 gap-2 text-lg hover:bg-[#EDF7F5] rounded-md">
@@ -102,14 +106,14 @@ function Admin() {
         </div>
 
         {/* render component */}
-        <div className="basis-[60%] flex-grow">
+        <div className="basis-[60%] flex-grow 2xl:max-w-7xl">
           {activeComponent === "Dashboard" && <Dashboard/>}
           {activeComponent === "Users" && <Users items={users}/>}
           {activeComponent === "Projects" && <Projects/>}
           {activeComponent === "Blog" && <Blog/>}
         </div>
         {/* right column(last) */}
-        <div className="bg-white rounded-lg shadow-md sm:basis-[100px] lg:basis-[200px] flex-grow hidden 2xl:block">
+        <div className="bg-white rounded-lg shadow-md sm:basis-[100px] lg:basis-[200px] flex-grow hidden 2xl:block 2xl:max-w-7xl">
           <div className="w-full text-center mb-5 mt-5  pt-28">
             <div className="w-full h-full">
               <img
