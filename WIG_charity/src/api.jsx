@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 const axiosInstance = axios.create({
-    baseURL: 'https://wig-backend.onrender.com/', 
+    baseURL: 'http://192.168.43.8:8000/', 
 });
 
 axiosInstance.interceptors.request.use(
@@ -31,7 +31,7 @@ axiosInstance.interceptors.response.use(
             const refresh_token = localStorage.getItem('refresh_token');
 
             try {
-                const { data } = await axiosInstance.post('https://wig-backend.onrender.com/api/token/refresh/', {
+                const { data } = await axiosInstance.post('http://192.168.43.8:8000/api/token/refresh/', {
                     refresh: refresh_token,
                 });
 

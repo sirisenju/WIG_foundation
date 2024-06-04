@@ -22,6 +22,7 @@ function Board() {
         try {
           const response = await axiosInstance.get('api/user/projects/');
           setProjects(response.data);
+          console.log(response.data)
         } catch (error) {
           console.error('Error fetching projects:', error);
         }
@@ -48,63 +49,31 @@ function Board() {
         <div className="w-full md:w-[70%]">
           <p className="text-2xl pb-1">Recent Projects:</p>
           <ul>
-            {projects.map(project => (
-              <li key={project.id}>
-              <Link to={`/projects/${project.title}`}>
-                <h2>{project.title}</h2>
-                <p>{project.sub_header}</p>
-                <p>{project.content}</p>
-                <p>{project.date}</p>
+          {projects.map(project => (
+            <li key={project.id}>
+              <Link to={`/projects/${project.title}`} className="flex gap-2 p-1 w-full max-h-max bg-purple-100 rounded-xl mb-2">
+              {project.images && project.images.length > 0 ? (
+                    <img
+                      className="h-full w-20 rounded-xl"
+                      src={project.images[0].image_url}
+                      alt="Project"
+                    />
+                  ) : (
+                    <img
+                      className="h-full w-20 rounded-xl"
+                      src="./assets/girlHolder.jpg"
+                      alt="Placeholder"
+                    />
+                  )}
+                <div>
+                  <h2 className="text-xl">{project.title}</h2>
+                  <p>{project.sub_header}</p>
+                  <p className="text-end">{project.post_date}</p>
+                </div>
               </Link>
-
-              </li>
-            ))}
+            </li>
+          ))}
           </ul>
-          <div className="flex gap-2 p-1 w-full max-h-max bg-purple-100 rounded-xl mb-2">
-            <img
-              className="h-full w-20 rounded-xl"
-              src="./assets/girlHolder.jpg"
-              alt=""
-            />
-            <div>
-              <h2 className="text-xl">Project title</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Temporibus dolores aspernatur, magni soluta ipsum modi?
-              </p>
-              <p className="text-end">25th June, 2024.</p>
-            </div>
-          </div>
-          <div className="flex gap-2 p-1 w-full max-h-max bg-purple-100 rounded-xl mb-2">
-            <img
-              className="h-full w-20 rounded-xl"
-              src="./assets/girlHolder.jpg"
-              alt=""
-            />
-            <div>
-              <h2 className="text-xl">Project title</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Temporibus dolores aspernatur, magni soluta ipsum modi?
-              </p>
-              <p className="text-end">25th June, 2024.</p>
-            </div>
-          </div>
-          <div className="flex gap-2 p-1 w-full max-h-max bg-purple-100 rounded-xl mb-2">
-            <img
-              className="h-full w-20 rounded-xl"
-              src="./assets/girlHolder.jpg"
-              alt=""
-            />
-            <div>
-              <h2 className="text-xl">Project title</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Temporibus dolores aspernatur, magni soluta ipsum modi?
-              </p>
-              <p className="text-end">25th June, 2024.</p>
-            </div>
-          </div>
         </div>
         <div className="w-full md:w-[30%] h-auto p-2 mb-2 mt-2 rounded-lg">
           <p className="text-2xl pb-1">Filter by:</p>

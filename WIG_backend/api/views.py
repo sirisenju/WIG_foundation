@@ -3,10 +3,10 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.generics import GenericAPIView, RetrieveUpdateAPIView
 from rest_framework.permissions import AllowAny, IsAuthenticated
-
+from rest_framework.views import APIView
 from . import serializers
 from .models import User, Project
-
+from rest_framework import generics
 
 
 
@@ -49,20 +49,35 @@ class UserProfileView(RetrieveUpdateAPIView):
 
 
 
-class UserCreateProjectView(RetrieveUpdateAPIView):
-    permission_classes = (IsAuthenticated,)
-    serializer_class = serializers.UserProjectSerializer
 
+
+class UserCreateProjectView(RetrieveUpdateAPIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        
+        serializer = serializers.UserProjectSerializer(data=request.data, context={'request': request})
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 
-class UserProjectView(RetrieveUpdateAPIView):
+class UserProjectView(generics.ListAPIView):
     permission_classes = (IsAuthenticated,)
 
-    def get(self, request, format=None):
+    """def get(self, request, format=None):
         user= self.request.user
         projects = Project.objects.all().filter(user=request.user)
         serializer = serializers.UserProjectSerializer(projects, many=True)
-        return Response(serializer.data)
+        return Response(serializer.data)"""
+    
+    queryset = Project.objects.all()
+    serializer_class = serializers.UserProjectSerializer
+    
+    def get_serializer_context(self):
+        return {'request': self.request}
     
 
 class ProjectView(RetrieveUpdateAPIView):
@@ -94,4 +109,27 @@ class UserLogoutAPIView(GenericAPIView):
             return Response(status=status.HTTP_205_RESET_CONTENT)
         except Exception as e:
             return Response(status=status.HTTP_400_BAD_REQUEST)
+        
+
+
+
+######### ADMIN VIEWS #########
+
+
+
+"""class ProjectView(RetrieveUpdateAPIView):
+
+
+
+
+class ProjectView(RetrieveUpdateAPIView):
+
+
+
+class ProjectView(RetrieveUpdateAPIView):
+
+
+
+
+class ProjectView(RetrieveUpdateAPIView):"""
 

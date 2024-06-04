@@ -38,6 +38,8 @@ urlpatterns = [
     path("api/user/projects/", views.UserProjectView.as_view(), name="user-projects"),
     path("api/user/projects/<str:title>/", views.ProjectView.as_view(), name="project"),
     
+
+    
     path("api/logout/", views.UserLogoutAPIView.as_view(), name="logout-user"),
 
 
