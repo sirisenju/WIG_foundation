@@ -115,7 +115,7 @@ function Signup() {
                   )}
                 </div>
 
-                <div className="flex gap-2 w-full">
+                <div className="block sm:flex gap-2 w-full">
                   <div className="block w-full">
                     <label htmlFor="phoneNumber">Phone Number</label>
                     <input
@@ -127,7 +127,7 @@ function Signup() {
                       required
                     />
                   </div>
-                  <div className="block w-full">
+                  <div className="block w-full mt-2 sm:mt-0">
                     <label htmlFor="role">Role</label>
                     <input
                       placeholder="enter your role"
@@ -140,7 +140,7 @@ function Signup() {
                   </div>
                 </div>
 
-                <div className="flex gap-2 w-full">
+                <div className="block sm:flex gap-2 w-full">
                   <div className="block w-full">
                     <label htmlFor="password">Password</label>
                     <input
@@ -152,7 +152,7 @@ function Signup() {
                       required
                     />
                   </div>
-                  <div className="block gap-2 w-full">
+                  <div className="block gap-2 w-full mt-2 sm:mt-0">
                     <label htmlFor="confirmPass">Confirm Password</label>
                     <input
                       placeholder="confirm passowrd"

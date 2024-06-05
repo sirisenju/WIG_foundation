@@ -281,8 +281,8 @@ function Causes() {
               at the forefront of the industry.
             </p>
           </div>
-          <div className="gap-3 flex justify-between flex-wrap">
-            <div className="md:max-w-sm bg-[#EDF7F5] text-center p-4 mb-2 sm:mb-0 flex-grow basis-[180px]">
+          <div className="gap-3 flex flex-wrap">
+            <div className="bg-[#EDF7F5] text-center p-4 mb-2 sm:mb-0 flex-grow basis-[200px]">
               <img className="h-16 w-16 mx-auto" src="./assets/callguy.png" alt="" />
               <h3 className="text-2xl pb-3 pt-2">Call support</h3>
               <p className="text-base pb-2">
@@ -292,19 +292,9 @@ function Causes() {
               </p>
             </div>
 
-            <div className="md:max-w-sm bg-[#EDF7F5] text-center p-4 mb-2 sm:mb-0 flex-grow basis-[180px]">
+            <div className="bg-[#EDF7F5] text-center p-4 mb-2 sm:mb-0 flex-grow basis-[200px]">
               <img className="h-16 w-16 mx-auto" src="./assets/chat-us.png" alt="" />
-              <h3 className="text-2xl pb-3 pt-2">Call support</h3>
-              <p className="text-base pb-2">
-              We enjoy adapting our strategies to offer
-              every client the best solutions that are
-              at the forefront of the industry.
-              </p>
-            </div>
-
-            <div className=" md:max-w-sm bg-[#EDF7F5] text-center p-4 mb-2 sm:mb-0 flex-grow basis-[180px]">
-              <img className="h-16 w-16 mx-auto" src="./assets/callguy.png" alt="" />
-              <h3 className="text-2xl pb-3 pt-2">Call support</h3>
+              <h3 className="text-2xl pb-3 pt-2">Chat with us</h3>
               <p className="text-base pb-2">
               We enjoy adapting our strategies to offer
               every client the best solutions that are
