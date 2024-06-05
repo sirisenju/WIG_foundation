@@ -34,8 +34,11 @@ urlpatterns = [
     path("api/user/login/", views.UserLoginAPIView.as_view(), name="login-user"),
     path("api/token/refresh/", TokenRefreshView.as_view(), name="token-refresh"),
     path("api/user/profile/", views.UserProfileView.as_view(), name="user-profile"),
+    path("api/user/create_project/", views.UserCreateProjectView.as_view(), name="user-create-project"),
     path("api/user/projects/", views.UserProjectView.as_view(), name="user-projects"),
     path("api/user/projects/<str:title>/", views.ProjectView.as_view(), name="project"),
+    
+
     
     path("api/logout/", views.UserLogoutAPIView.as_view(), name="logout-user"),
 

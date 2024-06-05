@@ -1,30 +1,43 @@
 import React, { useState } from "react";
+import axiosInstance from './../../api';
+import { useNavigate } from 'react-router-dom';
 
 function Project() {
   const [title, setTitle] = useState("");
-  const [subheading, setSubheading] = useState("");
+  const [sub_header, setSubheading] = useState("");
   const [volunteer, setVolunteer] = useState("");
   const [content, setContent] = useState("");
-  const [images, setImages] = useState([]);
-  const [postDate, setPostDate] = useState("");
-  const [postTime, setPostTime] = useState("");
+  const [image, setImages] = useState([]);
+  const [post_date, setPostDate] = useState("");
+  const [post_time, setPostTime] = useState("");
+  const navigate = useNavigate();
 
   const handleImageChange = (e) => {
     setImages([...e.target.files]);
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     // Handle form submission
-    console.log({
-      title,
-      subheading,
-      volunteer,
-      content,
-      images,
-      postDate,
-      postTime,
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('sub_header', sub_header);
+    formData.append('volunteer', volunteer);
+    formData.append('content', content);
+    formData.append('post_date', post_date);
+    formData.append('post_time', post_time);
+    image.forEach((file) => {
+      formData.append('image_files', file);
     });
+    try {
+      const response = axiosInstance.post('api/user/create_project/', formData);
+      console.log(response)
+      setTimeout(() => {
+        navigate('/dashboard');
+      }, 3000);
+    } catch(error){
+      console.error("post failed", error)
+    }
   };
 
   return (
@@ -52,7 +65,7 @@ function Project() {
               <input
                 type="text"
                 className="w-full mt-2 p-2 border rounded-md"
-                value={subheading}
+                value={sub_header}
                 onChange={(e) => setSubheading(e.target.value)}
                 required
               />
@@ -92,7 +105,7 @@ function Project() {
             <input
               type="date"
               className="w-full mt-2 p-2 border rounded-md"
-              value={postDate}
+              value={post_date}
               onChange={(e) => setPostDate(e.target.value)}
               required
             />
@@ -102,7 +115,7 @@ function Project() {
             <input
               type="time"
               className="w-full mt-2 p-2 border rounded-md"
-              value={postTime}
+              value={post_time}
               onChange={(e) => setPostTime(e.target.value)}
               required
             />
