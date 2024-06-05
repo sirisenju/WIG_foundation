@@ -18,6 +18,7 @@ import ProtectedRoute from './ProtectedRoute.jsx';
 import { AuthProvider } from './AuthContext.jsx';
 import Blog from './views/Blog/index.jsx';
 import Admin from './views/AdminDashboard/index.jsx';
+import ErrorPage from './components/404error.jsx';
 
 
 
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: "/blog",
     element: <Blog/>
+  },
+  {
+    path: "/error",
+    element: <ErrorPage/>
   },
   {
     path: "/login",
