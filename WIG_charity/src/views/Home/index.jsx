@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Swipper from "../../components/Swipper";
 import SwipperTwo from "../../components/SwipperTwo";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -170,7 +171,6 @@ function Home() {
                     </p>
                   </div>
                 </div>
-                <button className="bg-green-400 px-6 py-2">Read More</button>
               </div>
             </div>
           </div>
@@ -398,9 +398,11 @@ function Home() {
                     Veniam corrupti enim repellat dolorum atque dolore esse
                     tempora suscipit ratione tenetur?
                   </p>
-                  <button className="px-5 py-2 bg-green-400 mt-4">
-                    Read More
-                  </button>
+                  <Link to="/blog">
+                    <button className="px-5 py-2 bg-green-400 mt-4">
+                      Read More
+                    </button>
+                  </Link>
                 </div>
               </div>
 

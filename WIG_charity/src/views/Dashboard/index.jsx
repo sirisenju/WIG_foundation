@@ -52,9 +52,6 @@ function Dashboard() {
       case "Project":
         setActiveComponent("Project");
       break;
-      case "Report":
-        setActiveComponent("Report");
-      break;
       default:
           setActiveComponent("Board");
         break;
@@ -62,13 +59,13 @@ function Dashboard() {
   }
 
   return (
-    <section className="w-full h-screen">
-      <div className=" block md:hidden 2xl:max-w-7xl">
+    <section className="w-full h-full">
+      <div className="block md:hidden 2xl:max-w-7xl">
         <DHamburger onChangeScreen={changeScreen}/>
       </div>
-      <div className="h-full flex flex-row p-2 gap-4 flex-wrap 2xl:max-w-7xl">
+      <div className=" min-h-screen flex flex-row p-2 gap-4 flex-wrap">
         {/* left dashboard */}
-        <div className="sm:basis-[100px] lg:basis-[200px] rounded-lg bg-white shadow-md flex-grow hidden md:block">
+        <div className="sm:basis-[100px] lg:basis-[200px] rounded-lg bg-white shadow-md flex-grow hidden md:block 2xl:max-w-7xl">
           <div className="p-2 flex flex-col justify-between h-auto pt-28">
             <ul className="list-none flex flex-col gap-4">
               <li className="h-10 flex items-center px-4 gap-2 text-lg hover:bg-[#EDF7F5] rounded-md">
@@ -81,12 +78,6 @@ function Dashboard() {
                 <img className="h-6 w-6" src="./assets/shild.png" alt="" />
                 <button onClick={() => setActiveComponent("Project")}>
                   Project
-                </button>
-              </li>
-              <li className="h-10 flex items-center px-4 gap-2 text-lg hover:bg-[#EDF7F5] rounded-md">
-                <img className="h-6 w-6" src="./assets/shild.png" alt="" />
-                <button onClick={() => setActiveComponent("Report")}>
-                  Report
                 </button>
               </li>
               <li className="h-10 flex items-center px-4 gap-2 text-lg hover:bg-[#EDF7F5] rounded-md">
@@ -106,14 +97,13 @@ function Dashboard() {
         </div>
         
         {/* render component */}
-        <div className="basis-[60%] flex-grow">
+        <div className="basis-[60%] flex-grow 2xl:max-w-7xl">
           {activeComponent === "Board" && <Board/>}
           {activeComponent === "Project" && <Project/>}
-          {activeComponent === "Report" && <Reports/>}
         </div>
 
         {/* right column(last) */}
-        <div className="bg-white rounded-lg shadow-md sm:basis-[100px] lg:basis-[200px] flex-grow hidden 2xl:block">
+        <div className="bg-white rounded-lg shadow-md sm:basis-[100px] lg:basis-[200px] flex-grow hidden 2xl:block 2xl:max-w-7xl">
           <div className="w-full text-center mb-5 mt-5  pt-28">
             <div className="w-full h-full">
               <img

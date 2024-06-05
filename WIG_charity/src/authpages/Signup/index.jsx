@@ -14,7 +14,7 @@ function Signup() {
   const [last_name, setLastname] = useState("");
   const [phone_number, setPhone] = useState("");
   const [role, setRole] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [buttonState, setButtonState] = useState(false)
   const { user_signup } = useAuth();
   const navigate = useNavigate();
 
@@ -48,12 +48,16 @@ function Signup() {
       //setLoading(true);
       //alert("login done");
       try {
+        setButtonState(true)
         user_signup(email, password, first_name, last_name, phone_number, role);
         setTimeout(() => {
           navigate('/dashboard');
         }, 3000);
       } catch (error) {
-        console.error('Login failed', error);
+        alert("Sign up failed", error);
+      }
+      finally{
+        setButtonState(false)
       }
 
       // clear the form fields
@@ -64,6 +68,9 @@ function Signup() {
       setPhone("");
       setRole("");
       setConfirmPassword("");
+    }
+    else{
+      alert("Complete the form to login!");
     }
   };
 
@@ -171,10 +178,10 @@ function Signup() {
                 </div>
                 <button
                   type="submit"
-                  disabled={loading}
+                  disabled={buttonState}
                   className="py-2 mt-4 mb-4 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white"
                 >
-                  {loading ? "Signning up...." : "Sign up"}
+                  {buttonState ? "Signning up...." : "Sign up"}
                 </button>
               </form>
               <p className="text-center">

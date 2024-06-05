@@ -119,7 +119,6 @@ function About() {
                     </p>
                   </div>
                 </div>
-                <button className="bg-green-400 px-6 py-2">Read More</button>
               </div>
             </div>
           </div>

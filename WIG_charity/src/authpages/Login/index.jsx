@@ -7,18 +7,22 @@ import { useNavigate } from 'react-router-dom';
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [buttonState, setButtonState] = useState(false)
     const navigate = useNavigate();
     const { user_login } = useAuth();
   
     const handleSubmit = (e) => {
       e.preventDefault();
       try {
+        setButtonState(true);
         user_login(email, password);
         setTimeout(() => {
           navigate('/dashboard');
         }, 3000);
       } catch (error) {
-        console.error('Login failed', error);
+        // console.error('Login failed', error);
+        alert("login failed, try again.")
+        setButtonState(false)
       }
 
     };
@@ -62,12 +66,12 @@ function Login() {
                     required
                   />
                 </div>
-
                 <button
                   type="submit"
+                  disabled={buttonState}
                   className="py-2 mt-4 mb-5 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white"
                 >
-                  Login
+                  {buttonState ? "Loading..." : "Login"}
                 </button>
               </form>
               {/* create account prompt */}
