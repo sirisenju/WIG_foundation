@@ -5,8 +5,10 @@ from rest_framework.generics import GenericAPIView, RetrieveUpdateAPIView
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.views import APIView
 from . import serializers
-from .models import User, Project
-from rest_framework import generics
+from rest_framework import generics, permissions
+from rest_framework.permissions import IsAdminUser
+from django.contrib.auth import get_user_model
+from .models import User, Project, Blog
 
 
 
@@ -36,6 +38,7 @@ class UserLoginAPIView(GenericAPIView):
         token = RefreshToken.for_user(user)
         data = serializer.data
         data["tokens"] = {"refresh": str(token), "access": str(token.access_token)}
+        data["is_superuser"] = user.is_superuser
         return Response(data, status=status.HTTP_200_OK)
     
 
@@ -48,12 +51,8 @@ class UserProfileView(RetrieveUpdateAPIView):
         return self.request.user
 
 
-
-
-
 class UserCreateProjectView(RetrieveUpdateAPIView):
     permission_classes = [IsAuthenticated]
-
     def post(self, request, *args, **kwargs):
         
         serializer = serializers.UserProjectSerializer(data=request.data, context={'request': request})
@@ -66,13 +65,6 @@ class UserCreateProjectView(RetrieveUpdateAPIView):
 
 class UserProjectView(generics.ListAPIView):
     permission_classes = (IsAuthenticated,)
-
-    """def get(self, request, format=None):
-        user= self.request.user
-        projects = Project.objects.all().filter(user=request.user)
-        serializer = serializers.UserProjectSerializer(projects, many=True)
-        return Response(serializer.data)"""
-    
     queryset = Project.objects.all()
     serializer_class = serializers.UserProjectSerializer
     
@@ -116,20 +108,32 @@ class UserLogoutAPIView(GenericAPIView):
 ######### ADMIN VIEWS #########
 
 
+User = get_user_model()
 
-"""class ProjectView(RetrieveUpdateAPIView):
+class AdminSummaryView(APIView):
+    #permission_classes = [IsAdminUser]
+    permission_classes = (IsAuthenticated,)
+    def get(self, request, *args, **kwargs):
+        users = User.objects.all()
+        projects = Project.objects.all()
+        user_serializer = serializers.UserProfileSerializer(users, many=True, context={'request': request})
+        project_serializer = serializers.UserProjectSerializer(projects, many=True, context={'request': request})
+        num_projects = Project.objects.count()
 
+        num_users = User.objects.count()
 
+        num_blogs = Blog.objects.count()
 
+        blogs = Blog.objects.all()
+        blog_serializer = serializers.BlogSerializer(blogs, many=True)
 
-class ProjectView(RetrieveUpdateAPIView):
+        response_data = {
+            'users': user_serializer.data,
+            'projets': project_serializer.data,
+            'num_projects': num_projects,
+            'num_users': num_users,
+            'num_blogs': num_blogs,
+            'blogs': blog_serializer.data
+        }
 
-
-
-class ProjectView(RetrieveUpdateAPIView):
-
-
-
-
-class ProjectView(RetrieveUpdateAPIView):"""
-
+        return Response(response_data)

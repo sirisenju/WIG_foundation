@@ -24,6 +24,10 @@ import ErrorPage from './components/404error.jsx';
 
 const router = createBrowserRouter([
   {
+    path: "*",  // This will catch all unmatched routes
+    element: <ErrorPage/>
+  },
+  {
     path: "/",
     element: <Home/>
   },
@@ -57,7 +61,8 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <Admin/>
+    element: <ProtectedRoute element={<Admin/>} />
+    //element: <Admin/>
   },
   {
     path: "/dashboard", 

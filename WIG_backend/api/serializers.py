@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import User, Project, Gallery, Blog
 from django.contrib.auth import authenticate
+from django.conf import settings
 
 
 
@@ -30,7 +31,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['email', 'first_name', 'last_name', 'phone_number', 'role', 'profile_pic']
-
+    
 
 class ImageSerializer(serializers.ModelSerializer):
     image_url = serializers.SerializerMethodField()
@@ -73,10 +74,6 @@ class UserProjectSerializer(serializers.ModelSerializer):
 
 
 
-
-
-
-
 ######### ADMIN SERIEALIZERS ############
 class BlogSerializer(serializers.ModelSerializer):
     images = ImageSerializer(many=True, read_only=True)
@@ -87,7 +84,7 @@ class BlogSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Blog
-        fields = ['id', 'title', 'sub_header', 'content', 'images', 'image_files', 'volunteer', 'post_time', 'post_date', 'date']
+        fields = ['id', 'title', 'sub_header', 'content', 'images', 'image_files', 'read_duration', 'post_date', 'date']
 
 
     def create(self, validated_data):
