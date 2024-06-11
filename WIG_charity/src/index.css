@@ -144,3 +144,11 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+/* Add this to your CSS file (e.g., index.css) */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

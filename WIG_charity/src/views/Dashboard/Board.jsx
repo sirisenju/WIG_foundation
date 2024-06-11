@@ -1,42 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import axiosInstance from '../../api';
-import { useAuth } from '../../AuthContext';
-import { Link } from 'react-router-dom'; 
+import React, { useState, useEffect } from "react";
+import axiosInstance from "../../api";
+import { useAuth } from "../../AuthContext";
+import { Link } from "react-router-dom";
 
-function Board() {
-  const [userProfile, setUserProfile] = useState({})
-  const [projects, setProjects] = useState([]);
-  const { isAuthenticated } = useAuth();
-  useEffect(() => {
-      const fetchUserProfile = async () => {
-        try {
-          const response = await axiosInstance.get('api/user/profile/'); // Adjust the endpoint URL as per your project setup
-          setUserProfile(response.data);
-          console.log(response.data)
-        } catch (error) {
-          console.error('Error fetching user profile:', error);
-        }
-      };
+function Board({ projects, onProjectClick }) {
+  const [userProfile, setUserProfile] = useState({});
+  // const [projects, setProjects] = useState([]);
+  // const { isAuthenticated } = useAuth();
+  // useEffect(() => {
+  //   const fetchUserProfile = async () => {
+  //     try {
+  //       const response = await axiosInstance.get("api/user/profile/"); // Adjust the endpoint URL as per your project setup
+  //       setUserProfile(response.data);
+  //       console.log(response.data);
+  //     } catch (error) {
+  //       console.error("Error fetching user profile:", error);
+  //     }
+  //   };
 
-      const fetchProjects = async () => {
-        try {
-          const response = await axiosInstance.get('api/user/projects/');
-          setProjects(response.data);
-          console.log(response.data)
-        } catch (error) {
-          console.error('Error fetching projects:', error);
-        }
-      };
-  
-      fetchProjects();
-      fetchUserProfile();
+  //   const fetchProjects = async () => {
+  //     try {
+  //       const response = await axiosInstance.get("api/user/projects/");
+  //       setProjects(response.data);
+  //       console.log(response.data);
+  //     } catch (error) {
+  //       console.error("Error fetching projects:", error);
+  //     }
+  //   };
 
-  }, [isAuthenticated]);
+  //   fetchProjects();
+  //   fetchUserProfile();
+  // }, [isAuthenticated]);
 
   return (
-    <div className="col-span-3 p-2 bg-white shadow-md rounded-lg">
+    <div className="min-h-screen col-span-3 p-2">
       <h1 className="text-center text-4xl font-bold">User Dashboard</h1>
-      <h2 className="text-3xl pt-2 pb-2">Hello, {userProfile.first_name} {userProfile.last_name}.</h2>
+      <h2 className="text-3xl pt-2 pb-2">
+        Hello, {userProfile.first_name} {userProfile.last_name}.
+      </h2>
       <div className="h-[320px] w-full">
         <img
           className="h-full w-full object-cover object-center rounded-xl"
@@ -47,32 +48,19 @@ function Board() {
       <div className="mt-4 block md:flex p-2 gap-2">
         {/* project div */}
         <div className="w-full md:w-[70%]">
-          <p className="text-2xl pb-1">Recent Projects:</p>
+          <p className="text-2xl pb-1">Recent Project:</p>
+          <p>Projects</p>
           <ul>
-          {projects.map(project => (
-            <li key={project.id}>
-              <Link to={`/projects/${project.title}`} className="flex gap-2 p-1 w-full max-h-max bg-purple-100 rounded-xl mb-2">
-              {project.images && project.images.length > 0 ? (
-                    <img
-                      className="h-full w-20 rounded-xl"
-                      src={project.images[0].image_url}
-                      alt="Project"
-                    />
-                  ) : (
-                    <img
-                      className="h-full w-20 rounded-xl"
-                      src="./assets/girlHolder.jpg"
-                      alt="Placeholder"
-                    />
-                  )}
-                <div>
-                  <h2 className="text-xl">{project.title}</h2>
-                  <p>{project.sub_header}</p>
-                  <p className="text-end">{project.post_date}</p>
-                </div>
-              </Link>
-            </li>
-          ))}
+            {projects.map((project) => (
+              <li key={project.id} className="mb-2">
+                <button
+                  onClick={() => onProjectClick(project)}
+                  className="w-full text-left p-2 bg-gray-200 hover:bg-gray-300 rounded-md"
+                >
+                  {project.title}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="w-full md:w-[30%] h-auto p-2 mb-2 mt-2 rounded-lg">
