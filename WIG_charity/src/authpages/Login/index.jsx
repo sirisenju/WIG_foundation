@@ -10,17 +10,29 @@ function Login() {
     const [buttonState, setButtonState] = useState(false)
     const navigate = useNavigate();
     const { user_login } = useAuth();
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
   
     const handleSubmit = (e) => {
       e.preventDefault();
       try {
         setButtonState(true);
-        user_login(email, password);
-        setTimeout(() => {
-          navigate('/dashboard');
-        }, 3000);
+        user_login(email, password, (isSuperuser) => {
+          if (isSuperuser === null) {
+              setIsAuthenticated(false);
+              console.error('Login failed');
+          } else {
+              setIsAuthenticated(true);
+              if (isSuperuser) {
+                  console.log('User is a superuser');
+                  navigate('/admin');
+              } else {
+                  console.log('User is not a superuser');
+                  navigate('/dashboard');
+              }
+          }
+      });
+
       } catch (error) {
-        // console.error('Login failed', error);
         alert("login failed, try again.")
         setButtonState(false)
       }

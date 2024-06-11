@@ -25,20 +25,24 @@ export const AuthProvider = ({ children }) => {
       }
     };
 
-    const user_login = async (email, password) => {
+    const user_login = async (email, password, callback) => {
         try {
             const response = await axiosInstance.post('api/user/login/', { email, password });
-            console.log(response)
+            console.log(response);
             const { access, refresh } = response.data.tokens;
+            const isSuperuser = response.data.is_superuser;
             localStorage.setItem('access_token', access);
             localStorage.setItem('refresh_token', refresh);
+            localStorage.setItem('is_superuser', isSuperuser);
             axios.defaults.headers.common['Authorization'] = `Bearer ${access}`;
-            setIsAuthenticated(true);
+            
+            callback(isSuperuser);
         } catch (error) {
             console.error('Login failed', error);
-            setIsAuthenticated(false);
+            callback(null); 
         }
     };
+
 
     const user_logout = async () => {
         try{
@@ -82,3 +86,16 @@ export const AuthProvider = ({ children }) => {
 export const useAuth = () => {
   return useContext(AuthContext);
 };
+
+
+/*
+            {data.users.map(user => (
+              <tr key={user.id}>
+                <td className="text-nowrap text-center">{user.first_name}</td>
+                <td className="text-nowrap text-center">{user.last_name}</td>
+                <td className="text-nowrap text-center">{user.email}</td>
+                <td className="text-nowrap text-center">{user.role}</td>
+                <td className="text-nowrap text-center">{user.phone_number}</td>
+              </tr>
+            ))}
+              */

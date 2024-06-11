@@ -1,78 +1,27 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from 'react';
+import axiosInstance from '../../api';
 import Users from "./Users";
 import PostList from "./PostList";
 
 function Projects() {
-  const users = [
-    {
-      id: 1,
-      fname: "John",
-      lname: "Doe",
-      email: "johndoe@gmail.com",
-      role: "cook",
-      number: "+234768776652",
-      imgUrl: "/assets/faceskinModel.jpg",
-    },
-    {
-      id: 2,
-      fname: "Peter",
-      lname: "Quill",
-      email: "peter@gmail.com",
-      role: "cook",
-      number: "+234768776652",
-      imgUrl: "/assets/faceskinModel.jpg"
-    },
-    {
-      id: 3,
-      fname: "Thanos",
-      lname: "Festus",
-      email: "johndoe@gmail.com",
-      role: "cook",
-      number: "+234768776652",
-      imgUrl: "/assets/faceskinModel.jpg"
-    },
-  ];
-
-  const posts = [
-    {
-      id: 1,
-      userId: 1,
-      topic: "Post 1 by User One",
-      body: "Content of post 1 by User One.",
-      date: "2023-05-01",
-    },
-    {
-      id: 2,
-      userId: 1,
-      topic: "Post 2 by User One",
-      body: "Content of post 2 by User One.",
-      date: "2023-05-02",
-    },
-    {
-      id: 3,
-      userId: 2,
-      topic: "Post 1 by User Two",
-      body: "Content of post 1 by User Two.",
-      date: "2023-05-03",
-    },
-    {
-      id: 4,
-      userId: 3,
-      topic: "Post 1 by User Three",
-      body: "Content of post 1 by User Three.",
-      date: "2023-05-04",
-    },
-    {
-      id: 5,
-      userId: 5,
-      topic: "Post 1 by User Three",
-      body: "Content of post 1 by User Three.",
-      date: "2023-05-04",
-    },
-  ];
-
+  const [users, setUsers] = useState([]);
+  const [posts, setPosts] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+        try {
+            const response = await axiosInstance.get('api/admin-summary/');
+            setData(response.data);
+            console.log(response.data)
+        } catch (error) {
+          console.error('Error fetching users:', error);
+        }
+    };
+
+    fetchData();
+}, []);
+
 
   const handleUserClick = (user) => {
     setSelectedUser(user);
@@ -81,6 +30,8 @@ function Projects() {
   const userPosts = selectedUser
     ? posts.filter((post) => post.userId === selectedUser.id)
     : [];
+
+
 
   return (
     <div className="w-full h-full p-2 bg-white shadow-md rounded-lg 2xl:max-w-7xl">
