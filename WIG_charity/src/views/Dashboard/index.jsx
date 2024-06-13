@@ -97,7 +97,12 @@ function Dashboard() {
               <h2 className="text-2xl font-bold mb-4">
                 {selectedProject.title}
               </h2>
-              <p>{selectedProject.description}</p>
+              <p>{selectedProject.sub_header}</p><p>{selectedProject.date}</p>
+              
+              <img src={selectedProject.images[0].image_url} alt={selectedProject.title} className="mb-4" />
+
+              <p>{selectedProject.content}</p>
+
               <button
                 onClick={() => setActiveComponent("Board")}
                 className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
