@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import axiosInstance from '../../api';
-import { useParams } from 'react-router-dom'; // Import useParams to access URL parameters
+import React, { useEffect, useState } from "react";
+import axiosInstance from "../../api";
+import { useParams } from "react-router-dom"; // Import useParams to access URL parameters
 
 function ProjectDetails() {
   const { projectTitle } = useParams(); // Extract project ID from URL params
@@ -14,7 +14,9 @@ function ProjectDetails() {
       setError(null);
 
       try {
-        const response = await axiosInstance.get(`api/user/projects/${projectTitle}/`);
+        const response = await axiosInstance.get(
+          `api/user/projects/${projectTitle}/`
+        );
         setProject(response.data);
       } catch (error) {
         setError(error);
@@ -40,6 +42,34 @@ function ProjectDetails() {
         </div>
       )}
     </div>
+
+    // <div className="w-full p-4 bg-white shadow-md rounded-lg">
+    //   <h1>Project details</h1>
+    //   <button
+    //     onClick={onBack}
+    //     className="mb-4 px-4 py-2 bg-blue-500 text-black rounded-md hover:bg-blue-700 focus:outline-none"
+    //   >
+    //     Back
+    //   </button>
+    //   <h2 className="text-xl font-semibold mb-4">
+    //     Projects for {user.firstName} {user.lastName}
+    //   </h2>
+    //   <ul>
+    //     {projects.map((project) => (
+    //       <li
+    //         key={project.id}
+    //         className="mb-2 p-2 border rounded-md bg-gray-100"
+    //       >
+    //         <p>
+    //           <strong>Title:</strong> {project.title}
+    //         </p>
+    //         <p>
+    //           <strong>Description:</strong> {project.description}
+    //         </p>
+    //       </li>
+    //     ))}
+    //   </ul>
+    // </div>
   );
 }
 

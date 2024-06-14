@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axiosInstance from '../../api';
 
 
-
-function Users(props) {
-  const { items, onUserClick } = props;
+function Users({ users, onUserClick }) {
   const [data, setData] = useState({});
 
   useEffect(() => {
@@ -28,7 +26,7 @@ function Users(props) {
       </h2>
       <div className="w-full flex flex-wrap gap-2">
         {/* simple card */}
-        {data.users && data.users.length > 0 && (
+        {/* {data.users && data.users.length > 0 && (
           data.users.map((user, index) => (
           <div key={user.email} className="bg-[#EDF7F5] shadow-md rounded-lg h-full flex-grow basis-[270px] p-4">
             <div className="w-full flex justify-center">
@@ -50,37 +48,35 @@ function Users(props) {
             </div>
           </div>
           ))
-        )}
+        )} */}
       </div>
-      {/* <div className="overflow-x-auto mt-2">
+      <div className="overflow-x-auto mt-2">
         <h2>User list table</h2>
         <table className="table-auto w-full">
           <thead className="text-center">
             <tr>
               <th className="text-nowrap text-center">First name</th>
               <th className="text-nowrap text-center">Surname</th>
-              <th className="text-nowrap text-center">Email address</th>
+              {/* <th className="text-nowrap text-center">Email address</th> */}
               <th className="text-nowrap text-center">Role</th>
-              <th className="text-nowrap text-center">Phone number</th>
+              {/* <th className="text-nowrap text-center">Phone number</th> */}
             </tr>
           </thead>
-          <tbody>
+          <tbody> 
             {users.map((item) => (
-              <tr key={item.id} className="text-center">
+              <tr key={item.id} className="text-center cursor-pointer hover:bg-green-300" onClick={() => onUserClick(item)}>
                 <td className="text-nowrap text-center">
-                  <button onClick={() => onUserClick(item)}>
-                    {item.fname}
-                  </button>
+                {item.firstName}
                 </td>
-                <td className="text-nowrap text-center">{item.lname}</td>
-                <td className="text-nowrap text-center">{item.email}</td>
+                {/* <td className="text-nowrap text-center">{item.firstName}</td> */}
+                <td className="text-nowrap text-center">{item.lastName}</td>
                 <td className="text-nowrap text-center">{item.role}</td>
-                <td className="text-nowrap text-center">{item.number}</td>
+                {/* <td className="text-nowrap text-center">{item.number}</td> */}
               </tr>
             ))}
           </tbody>
         </table>
-      </div> */}
+      </div>
     </div>
   );
 }

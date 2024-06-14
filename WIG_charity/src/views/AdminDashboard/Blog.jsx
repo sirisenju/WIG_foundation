@@ -33,13 +33,25 @@ function Blog() {
               required
             ></textarea>
           </div>
-          <div className="mb-4">
+
+          <div className="flex w-full gap-4">
+          <div className="mb-4 w-full">
             <label className="block text-gray-700">Authors name</label>
             <input
               type="text"
               className="w-full mt-2 p-2 border rounded-md"
               required
             />
+          </div>
+
+          <div className="mb-4 w-full">
+            <label className="block text-gray-700">Category</label>
+            <input
+              type="text"
+              className="w-full mt-2 p-2 border rounded-md"
+              required
+            />
+          </div>
           </div>
           <div className="mb-4">
             <label className="block text-gray-700">Upload Images</label>
