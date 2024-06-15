@@ -1,48 +1,82 @@
-import React, { useState, useEffect } from 'react';
-import axiosInstance from '../../api';
+import React, { useState, useEffect } from "react";
+import axiosInstance from "../../api";
 import Users from "./Users";
 import PostList from "./PostList";
 
 function Projects() {
-  const [users, setUsers] = useState([]);
-  const [posts, setPosts] = useState([]);
-  const [selectedUser, setSelectedUser] = useState(null);
-
   useEffect(() => {
     const fetchData = async () => {
-        try {
-            const response = await axiosInstance.get('api/admin-summary/');
-            setData(response.data);
-            console.log(response.data)
-        } catch (error) {
-          console.error('Error fetching users:', error);
-        }
+      try {
+        const response = await axiosInstance.get("api/admin-summary/");
+        setData(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
     };
 
     fetchData();
-}, []);
+  }, []);
 
+
+  const users = [
+    { id: 1, firstName: "John", lastName: "Doe", role: "Developer" },
+    { id: 2, firstName: "Jane", lastName: "Smith", role: "Designer" },
+    { id: 3, firstName: "Bob", lastName: "Johnson", role: "Manager" },
+  ];
+
+  const projects = [
+    {
+      id: 1,
+      userId: 1,
+      title: "Project A",
+      description: "Description of Project A",
+    },
+    {
+      id: 2,
+      userId: 1,
+      title: "Project B",
+      description: "Description of Project B",
+    },
+    {
+      id: 3,
+      userId: 2,
+      title: "Project C",
+      description: "Description of Project C",
+    },
+    {
+      id: 4,
+      userId: 3,
+      title: "Project D",
+      description: "Description of Project D",
+    },
+  ];
+
+  const [selectedUser, setSelectedUser] = useState(null);
 
   const handleUserClick = (user) => {
     setSelectedUser(user);
   };
 
-  const userPosts = selectedUser
-    ? posts.filter((post) => post.userId === selectedUser.id)
-    : [];
+  const handleBack = () => {
+    setSelectedUser(null);
+  };
 
-
+  const userProjects = selectedUser ? projects.filter(project => project.userId === selectedUser.id) : [];
 
   return (
-    <div className="w-full h-full p-2 bg-white shadow-md rounded-lg 2xl:max-w-7xl">
+    <div className="w-full h-full  sm:min-h-screen p-2 bg-white shadow-md rounded-lg 2xl:max-w-7xl">
       <h2>Projects created.</h2>
-      <div className="flex flex-wrap">
-        <div className="flex-grow basis-[200px]">
-        <Users items={users} onUserClick={handleUserClick} />
-        </div>
-        <div className="flex-grow basis-[200px]">
-        <PostList posts={userPosts} />
-        </div>
+      <div className="min-h-screen bg-gray-100">
+        {selectedUser ? (
+          <PostList
+            user={selectedUser}
+            projects={userProjects}
+            onBack={handleBack}
+          />
+        ) : (
+          <Users users={users} onUserClick={handleUserClick} />
+        )}
       </div>
     </div>
   );

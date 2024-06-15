@@ -22,11 +22,6 @@ function Dashboard() {
     { id: 3, title: "Project 3", description: "Description of Project 3" },
   ];
 
-  const handleLinkClick = (link) => {
-    setSelectedLink(link);
-    setSelectedProject(null);
-  };
-
   const handleProjectClick = (project) => {
     setSelectedProject(project);
     setActiveComponent("ProjectDetails");
