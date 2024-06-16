@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Swipper from "../../components/Swipper";
+import { Link } from "react-router-dom";
 
 function About() {
   return (
@@ -44,7 +45,9 @@ function About() {
                   express their independent thoughts, make sound decisions, and contribute to the growth and development 
                   of our family.
                 </p>
-                <button className="bg-green-400 px-6 py-2">Read More</button>
+                <Link to={"/causes"}>
+                  <button className="bg-green-400 px-6 py-2">Read More</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -129,13 +132,13 @@ function About() {
           <div className="w-full lg:w-[80%] h-full mx-auto pb-4 pt-14 p-2 2xl:max-w-7xl">
             <h3 className="text-lg pb-2 tracking-wider pt-4">About</h3>
             <h2 className="text-3xl pb-8">Our Features</h2>
-            <div className="w-full block sm:flex justify-between gap-10 flex-wrap">
-              <div className="bg-[#219D80]/[.40] hover:bg-primary_theme lg:max-w-sm p-6 rounded-xl mb-4 sm:mb-0 flex-grow basis-[230px]">
+            <div className="w-full block sm:flex justify-between gap-2 flex-wrap">
+              <div className="bg-[#219D80]/[.20] hover:bg-primary_theme p-6 rounded-xl mb-4 sm:mb-0 flex-grow basis-[240px]">
                 <img className="h-16 w-16" src="./assets/home.png" alt="" />
                 <h3 className="text-2xl pt-2 pb-2 tracking-wide">
-                  Food & Homeless Charity
+                  Food & Homeless Charity.
                 </h3>
-                <p className="text-base pb-2 text-balance">
+                <p className="text-base pb-2">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Architecto accusamus natus repellat ipsa vel blanditiis, eaque
                   eius minus ducimus ex.
@@ -145,12 +148,12 @@ function About() {
                 </p>
               </div>
 
-              <div className="bg-[#219D80]/[.40] hover:bg-primary_theme rounded-xl lg:max-w-sm p-6 mb-4 sm:mb-0 flex-grow basis-[230px]">
+              <div className="bg-[#219D80]/[.20] hover:bg-primary_theme rounded-xl p-6 mb-4 sm:mb-0 flex-grow basis-[240px]">
                 <img className="h-16 w-16" src="./assets/icon2.png" alt="" />
                 <h3 className="text-2xl pt-2 pb-2 tracking-wide">
-                  Food & Homeless Charity
+                  Make a donation.
                 </h3>
-                <p className="text-base pb-2 text-balance">
+                <p className="text-base pb-2">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Architecto accusamus natus repellat ipsa vel blanditiis, eaque
                   eius minus ducimus ex.
@@ -160,12 +163,12 @@ function About() {
                 </p>
               </div>
 
-              <div className="bg-[#219D80]/[.40] hover:bg-primary_theme rounded-xl lg:max-w-sm p-6 mb-4 sm:mb-0 flex-grow basis-[230px]">
-                <img className="h-16 w-16" src="./assets/icon2.png" alt="" />
+              <div className="bg-[#219D80]/[.20] hover:bg-primary_theme rounded-xl p-6 mb-4 sm:mb-0 flex-grow basis-[240px]">
+                <img className="h-16 w-16" src="./assets/ngo.png" alt="" />
                 <h3 className="text-2xl pt-2 pb-2 tracking-wide">
-                  Food & Homeless Charity
+                  Non profit.
                 </h3>
-                <p className="text-base pb-2 text-balance">
+                <p className="text-base pb-2">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Architecto accusamus natus repellat ipsa vel blanditiis, eaque
                   eius minus ducimus ex.
