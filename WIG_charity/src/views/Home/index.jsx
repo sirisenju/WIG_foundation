@@ -4,33 +4,8 @@ import Navbar from "../../components/Navbar";
 import Swipper from "../../components/Swipper";
 import SwipperTwo from "../../components/SwipperTwo";
 import { Link } from "react-router-dom";
-import axios from 'axios';
-
 
 function Home() {
-  const [data, setData] = useState({});
-
-  useEffect(() => {
-      const fetchData = async () => {
-          try {
-              const response = await axios.get('http://127.0.0.1:8000/api/summary/');
-              setData(response.data);
-              console.log(response.data)
-          } catch (error) {
-            console.error('Error fetching users:', error);
-          }
-      };
-
-      fetchData();
-  }, []);
-
-  const truncateText = (text, wordLimit) => {
-    const words = text.split(' ');
-    if (words.length <= wordLimit) {
-      return text;
-    }
-    return words.slice(0, wordLimit).join(' ') + '...';
-  };
   return (
     <>
       {/* the navbar component */}
@@ -94,7 +69,9 @@ function Home() {
                   interactions with others. We strive to be modest in our thoughts, actions, and achievements, 
                   as it fosters a sense of unity and respect within our family.
                 </p>
-                <button className="bg-green-400 px-6 py-2">Read More</button>
+                <Link to={"/causes"}>
+                  <button className="bg-green-400 px-6 py-2">Read More</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -216,109 +193,11 @@ function Home() {
               Find The Popular Cause <br /> And Donate To Them
             </h2>
             <div className="block sm:flex justify-between flex-wrap gap-x-4">
-              <div className="h-max w-full sm:w-[260px] shadow-lg drop-shadow-xl mb-4 flex-grow ">
-                <div className="h-[50%] w-full bg-green-200">
-                  <img
-                    className="w-fit h-fit object-center object-cover"
-                    src=" ./assets/kidd.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="w-full h-max p-3">
-                  <h3 className="text-lg pb-3">Medical</h3>
-                  <p className=" pb-3">
-                    Donate For Poor People Treatment and Medicine
-                  </p>
-                  <p className=" pb-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolore distinctio qui.
-                  </p>
-                  <div className="">
-                    <div className="flex justify-between pt-2">
-                      <p>Raised:$600</p> <p>Goal:$600</p>
-                    </div>
-                    <div className="h-3 w-full bg-green-400"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="h-max w-full sm:w-[260px] shadow-lg drop-shadow-xl mb-4 flex-grow ">
-                <div className="h-[50%] w-full bg-green-200">
-                  <img
-                    className="w-fit h-fit object-center object-cover"
-                    src=" ./assets/kidd.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="w-full h-max p-3">
-                  <h3 className="text-lg pb-3">Medical</h3>
-                  <p className=" pb-3">
-                    Donate For Poor People Treatment and Medicine
-                  </p>
-                  <p className=" pb-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolore distinctio qui.
-                  </p>
-                  <div className="">
-                    <div className="flex justify-between pt-2">
-                      <p>Raised:$600</p> <p>Goal:$600</p>
-                    </div>
-                    <div className="h-3 w-full bg-green-400"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="h-max w-full sm:w-[260px] shadow-lg drop-shadow-xl mb-4 flex-grow ">
-                <div className="h-[50%] w-full bg-green-200">
-                  <img
-                    className="w-fit h-fit object-center object-cover"
-                    src=" ./assets/kidd.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="w-full h-max p-3">
-                  <h3 className="text-lg pb-3">Medical</h3>
-                  <p className=" pb-3">
-                    Donate For Poor People Treatment and Medicine
-                  </p>
-                  <p className=" pb-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolore distinctio qui.
-                  </p>
-                  <div className="">
-                    <div className="flex justify-between pt-2">
-                      <p>Raised:$600</p> <p>Goal:$600</p>
-                    </div>
-                    <div className="h-3 w-full bg-green-400"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="h-max w-full sm:w-[260px] shadow-lg drop-shadow-xl mb-4 flex-grow ">
-                <div className="h-[50%] w-full bg-green-200">
-                  <img
-                    className="w-full h-full"
-                    src=" ./assets/kidd.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="w-full h-max p-3">
-                  <h3 className="text-lg pb-3">Medical</h3>
-                  <p className=" pb-3">
-                    Donate For Poor People Treatment and Medicine
-                  </p>
-                  <p className=" pb-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolore distinctio qui.
-                  </p>
-                  <div className="">
-                    <div className="flex justify-between pt-2">
-                      <p>Raised:$600</p> <p>Goal:$600</p>
-                    </div>
-                    <div className="h-3 w-full bg-green-400"></div>
-                  </div>
-                </div>
-              </div>
+              {
+                projectPosts.map((post) => (
+                  <PostCards key={post.id} title={post.title} subHeading={post.subHeading} mainContent={post.mainContent} image={post.image} milestone={post.milestone}/>
+                ))
+              }
             </div>
           </div>
         </section>
