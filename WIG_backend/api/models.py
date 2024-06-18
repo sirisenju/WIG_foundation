@@ -75,13 +75,15 @@ class Project(models.Model):
     
 
 class Blog(models.Model):
+    author= models.CharField("Author", max_length= 100, null=True, blank=True)
     title= models.CharField("Title", max_length= 100, null=True, blank=True)
     sub_header= models.CharField("Sub Header", max_length= 100, null=True, blank=True)
+    category= models.CharField("Category", max_length= 100, null=True, blank=True)
     content= models.TextField("Main Content", max_length= 10000, null=True, blank=True)
-    images = models.ManyToManyField('Gallery', blank=True)
+    image= models.ImageField(upload_to='images/', null=True, blank=True) 
     read_duration= models.CharField("Read Duration", max_length= 50, null=True, blank=True)
     post_date= models.CharField("Post Date", max_length= 50, null=True, blank=True)
-    date = models.DateTimeField(("Date"), auto_now_add=True)
+    date= models.DateField("Date", auto_now_add=True)
 
     def __str__(self):
         return self.title
