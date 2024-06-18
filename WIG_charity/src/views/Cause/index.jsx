@@ -3,8 +3,20 @@ import Navbar from "../../components/Navbar";
 import accordianData from "../../../lib/accordian_data";
 import Accordian from "../../components/Accordian";
 import Footer from "../../components/Footer";
+import PostCards from "../Home/PostCards";
 
 function Causes() {
+
+  const projectPosts = [
+    {id: 1, title: "Medicine", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "40%"},
+    {id: 2, title: "Art", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "50%"},
+    {id: 3, title: "Literature", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "60%"},
+    {id: 4, title: "Science", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "70%"},
+    {id: 5, title: "Geography", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "80%"},
+    {id: 6, title: "Chemistry", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "90%"},
+    {id: 7, title: "Physics", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "100%"},
+  ]
+
   return (
     <>
       <Navbar
@@ -21,219 +33,16 @@ function Causes() {
           <div className="max-w-sm mb-5">
             <h3 className="text-lg pb-2 tracking-wider">Latest causes</h3>
             <p className="text-3xl pb-8">
-              Find our popular cause and donate to them.
+              Find our popular cause and engage with them.
             </p>
           </div>
-
           {/* list of causes div 2 rows 4 column */}
           <div className="h-full w-full flex flex-wrap gap-x-4">
-            <div className="h-max w-full sm:w-[260px] shadow-lg drop-shadow-xl mb-4 flex-grow">
-              <div className="h-[50%] w-full bg-green-200">
-                <img
-                  className="w-full h-full"
-                  src=" ./assets/kidd.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="w-full h-max p-3">
-                <h3 className="text-lg pb-3">Medical</h3>
-                <p className=" pb-3">
-                  Donate For Poor People Treatment and Medicine
-                </p>
-                <p className=" pb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolore distinctio qui.
-                </p>
-                <div className="">
-                <div className="flex justify-between pt-2">
-                    <p>Raised:$600</p> <p>Goal:$600</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
-                </div>
-              </div>
-            </div>
-
-            <div className="h-max w-full sm:w-[260px] shadow-lg drop-shadow-xl mb-4 flex-grow ">
-              <div className="h-[50%] w-full bg-green-200">
-                <img
-                  className="w-full h-full"
-                  src=" ./assets/kidd.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="w-full h-max p-3">
-                <h3 className="text-lg pb-3">Medical</h3>
-                <p className=" pb-3">
-                  Donate For Poor People Treatment and Medicine
-                </p>
-                <p className=" pb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolore distinctio qui.
-                </p>
-                <div className="">
-                  <div className="flex justify-between pt-2">
-                    <p>Raised:$600</p> <p>Goal:$600</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
-                </div>
-              </div>
-            </div>
-
-            <div className="h-max w-full sm:w-[260px] shadow-lg drop-shadow-xl mb-4 flex-grow ">
-              <div className="h-[50%] w-full bg-green-200">
-                <img
-                  className="w-full h-full"
-                  src=" ./assets/kidd.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="w-full h-max p-3">
-                <h3 className="text-lg pb-3">Medical</h3>
-                <p className=" pb-3">
-                  Donate For Poor People Treatment and Medicine
-                </p>
-                <p className=" pb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolore distinctio qui.
-                </p>
-                <div className="">
-                  <div className="flex justify-between pt-2">
-                    <p>Raised:$600</p> <p>Goal:$600</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
-                </div>
-              </div>
-            </div>
-
-            <div className="h-max w-full sm:w-[260px] shadow-lg drop-shadow-xl mb-4 flex-grow ">
-              <div className="h-[50%] w-full bg-green-200">
-                <img
-                  className="w-full h-full"
-                  src=" ./assets/kidd.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="w-full h-max p-3">
-                <h3 className="text-lg pb-3">Medical</h3>
-                <p className=" pb-3">
-                  Donate For Poor People Treatment and Medicine
-                </p>
-                <p className=" pb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolore distinctio qui.
-                </p>
-                <div className="">
-                  <div className="flex justify-between pt-2">
-                    <p>Raised:$600</p> <p>Goal:$600</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
-                </div>
-              </div>
-            </div>
-
-            <div className="h-max w-full sm:w-[260px] shadow-lg drop-shadow-xl mb-4 flex-grow ">
-              <div className="h-[50%] w-full bg-green-200">
-                <img
-                  className="w-full h-full"
-                  src=" ./assets/kidd.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="w-full h-max p-3">
-                <h3 className="text-lg pb-3">Medical</h3>
-                <p className=" pb-3">
-                  Donate For Poor People Treatment and Medicine
-                </p>
-                <p className=" pb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolore distinctio qui.
-                </p>
-                <div className="">
-                  <div className="flex justify-between pt-2">
-                    <p>Raised:$600</p> <p>Goal:$600</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
-                </div>
-              </div>
-            </div>
-
-            <div className="h-max w-full sm:w-[260px] shadow-lg drop-shadow-xl mb-4 flex-grow ">
-              <div className="h-[50%] w-full bg-green-200">
-                <img
-                  className="w-full h-full"
-                  src=" ./assets/kidd.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="w-full h-max p-3">
-                <h3 className="text-lg pb-3">Medical</h3>
-                <p className=" pb-3">
-                  Donate For Poor People Treatment and Medicine
-                </p>
-                <p className=" pb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolore distinctio qui.
-                </p>
-                <div className="">
-                  <div className="flex justify-between pt-2">
-                    <p>Raised:$600</p> <p>Goal:$600</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
-                </div>
-              </div>
-            </div>
-
-            <div className="h-max w-full sm:w-[260px] shadow-lg drop-shadow-xl mb-4 flex-grow ">
-              <div className="h-[50%] w-full bg-green-200">
-                <img
-                  className="w-full h-full"
-                  src=" ./assets/kidd.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="w-full h-max p-3">
-                <h3 className="text-lg pb-3">Medical</h3>
-                <p className=" pb-3">
-                  Donate For Poor People Treatment and Medicine
-                </p>
-                <p className=" pb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolore distinctio qui.
-                </p>
-                <div className="">
-                  <div className="flex justify-between pt-2">
-                    <p>Raised:$600</p> <p>Goal:$600</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
-                </div>
-              </div>
-            </div>
-
-            <div className="h-max w-full sm:w-[260px] shadow-lg drop-shadow-xl mb-4 flex-grow ">
-              <div className="h-[50%] w-full bg-green-200">
-                <img
-                  className="w-full h-full"
-                  src=" ./assets/kidd.jpg"
-                  alt=""
-                />
-              </div>
-              <div className="w-full h-max p-3">
-                <h3 className="text-lg pb-3">Medical</h3>
-                <p className=" pb-3">
-                  Donate For Poor People Treatment and Medicine
-                </p>
-                <p className=" pb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Dolore distinctio qui.
-                </p>
-                <div className="">
-                  <div className="flex justify-between pt-2">
-                    <p>Raised:$600</p> <p>Goal:$600</p>
-                  </div>
-                  <div className="h-3 w-full bg-green-400"></div>
-                </div>
-              </div>
-            </div>
+            {
+              projectPosts.map((item) => (
+                <PostCards key={item.id} title={item.title} subHeading={item.subHeading} mainContent={item.mainContent} image={item.image} milestone={item.milestone}/>
+              ))
+            }
           </div>
         </div>
       </section>
@@ -365,13 +174,14 @@ function Causes() {
           </div>
         </div>
         <div className="max-w-sm bg-white max-h-min p-5 flex-grow">
-            <h2 className=" font-bold text-2xl pb-2">Address.</h2>
-            <p className=" pb-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio 
-              non nostrum odio explicabo, soluta repudiandae quasi sequi?
+            <h2 className="font-bold text-2xl pb-2">Address.</h2>
+            <p className="pb-2">Address: 2, Jemide Avenue,
+              <br />
+              Giwa Amu Street, GRA, <br />
+              Benin City, Edo state
             </p>
-            <p><span className="font-bold">Location:</span>  Paris, France</p>
-            <p><span className="font-bold">Phone:</span>+234 806 789 0957</p>
-            <p><span className="font-bold">Email address:</span>heritagefoundation@gmail.com</p>
+            <p><span className="font-bold">Phone: </span>+234 806 8939 461</p>
+            <p><span className="font-bold">Email: </span>thewesternersgroup@gmail.com</p>
         </div>
       </div>
         </div>
