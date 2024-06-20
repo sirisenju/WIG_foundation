@@ -4,8 +4,33 @@ import Navbar from "../../components/Navbar";
 import Swipper from "../../components/Swipper";
 import SwipperTwo from "../../components/SwipperTwo";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import PostCards from "./PostCards";
 
 function Home() {
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+      const fetchData = async () => {
+          try {
+              const response = await axios.get('https://wig-backend.onrender.com/api/summary/');
+              setData(response.data);
+              console.log(response.data)
+          } catch (error) {
+            console.error('Error fetching users:', error);
+          }
+      };
+
+      fetchData();
+  }, []);
+
+  const truncateText = (text, wordLimit) => {
+    const words = text.split(' ');
+    if (words.length <= wordLimit) {
+      return text;
+    }
+    return words.slice(0, wordLimit).join(' ') + '...';
+  };
   return (
     <>
       {/* the navbar component */}
@@ -193,11 +218,11 @@ function Home() {
               Find The Popular Cause <br /> And Donate To Them
             </h2>
             <div className="block sm:flex justify-between flex-wrap gap-x-4">
-              {
-                projectPosts.map((post) => (
-                  <PostCards key={post.id} title={post.title} subHeading={post.subHeading} mainContent={post.mainContent} image={post.image} milestone={post.milestone}/>
+            {data.projects && data.projects.length > 0 && (
+              data.projects.map((project, index) => (
+                  <PostCards key={project.id} title={project.title} subHeading={project.sub_header} mainContent={project.content} image={project.images[0].image_url} milestone={project.milestone} />
                 ))
-              }
+            )}
             </div>
           </div>
         </section>

@@ -1,17 +1,22 @@
-import React from 'react'
+import React from 'react';
+import { useAuth } from '../../AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 function SideBar({ onLinkClick }) {
-    const handleLogout = (e) => {
-        e.preventDefault();
-        try {
-          user_logout();
-          setTimeout(() => {
-            navigate("/");
-          }, 3000);
-        } catch (error) {
-          console.error("Logout failed", error);
-        }
-      };
+  const navigate = useNavigate();
+  const { user_logout } = useAuth();
+
+  const handleLogout = (e) => {
+      e.preventDefault();
+      try {
+        user_logout();
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
+      } catch (error) {
+        console.error("Logout failed", error);
+      }
+    };
 
     return (
         <div className="sm:basis-[100px] lg:basis-[200px] rounded-lg bg-white shadow-md flex-grow hidden md:block 2xl:max-w-7xl">
@@ -43,7 +48,7 @@ function SideBar({ onLinkClick }) {
               </li>
               <li className="h-10 flex items-center px-4 gap-2 text-lg hover:bg-[#EDF7F5] rounded-md">
                 <img className="h-6 w-6" src="./assets/shild.png" alt="" />
-                <button>Logout</button>
+                <button onClick={handleLogout}>Logout</button>
               </li>
             </ul>
             <div className="mt-[120px]">

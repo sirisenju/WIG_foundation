@@ -57,7 +57,7 @@ class UserProjectSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Project
-        fields = ['id', 'user', 'title', 'sub_header', 'content', 'images', 'image_files', 'volunteer', 'post_time', 'post_date', 'date']
+        fields = ['id', 'user', 'title', 'sub_header', 'content', 'images', 'image_files', 'volunteer', 'post_time', 'post_date', 'date', 'milestone']
 
 
     def create(self, validated_data):

@@ -21,7 +21,7 @@ class SummaryView(GenericAPIView):
         blog_serializer = serializers.BlogSerializer(blogs, many=True, context={'request': request})
 
         response_data = {
-            'projets': project_serializer.data,
+            'projects': project_serializer.data,
             'blogs': blog_serializer.data
         }
 
@@ -169,12 +169,14 @@ class AdminSummaryView(APIView):
         num_users = User.objects.count()
         num_blogs = Blog.objects.count()
 
+
+
         blogs = Blog.objects.all()
         blog_serializer = serializers.BlogSerializer(blogs, many=True)
 
         response_data = {
             'users': user_serializer.data,
-            'projets': project_serializer.data,
+            'projects': project_serializer.data,
             'num_projects': num_projects,
             'num_users': num_users,
             'num_blogs': num_blogs,

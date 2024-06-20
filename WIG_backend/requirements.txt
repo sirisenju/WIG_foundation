@@ -13,3 +13,5 @@ PyJWT
 pytz
 sqlparse
 python-dotenv
+
+

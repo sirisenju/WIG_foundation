@@ -60,6 +60,7 @@ class Project(models.Model):
     sub_header= models.CharField("Sub Header", max_length= 100, null=True, blank=True)
     content= models.TextField("Main Content", max_length= 10000, null=True, blank=True)
     images = models.ManyToManyField('Gallery', blank=True)
+    milestone= models.CharField("Milestone", max_length= 100, null=True, blank=True)
     volunteer= models.CharField("Volunteer", max_length= 500, null=True, blank=True)
     post_time= models.CharField("Post Time", max_length= 50, null=True, blank=True)
     post_date= models.CharField("Post Date", max_length= 50, null=True, blank=True)
