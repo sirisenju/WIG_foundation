@@ -17,6 +17,7 @@ function Signup() {
   const [buttonState, setButtonState] = useState(false)
   const { user_signup } = useAuth();
   const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
 
   const validateEmail = (email) => {
@@ -50,9 +51,10 @@ function Signup() {
       try {
         setButtonState(true)
         user_signup(email, password, first_name, last_name, phone_number, role);
+        setIsAuthenticated(true);
         setTimeout(() => {
           navigate('/dashboard');
-        }, 3000);
+        }, 1000);
       } catch (error) {
         alert("Sign up failed", error);
       }

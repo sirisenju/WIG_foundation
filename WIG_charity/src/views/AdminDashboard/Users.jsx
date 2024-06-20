@@ -63,17 +63,17 @@ function Users({ users, onUserClick }) {
             </tr>
           </thead>
           <tbody> 
-            {users.map((item) => (
-              <tr key={item.id} className="text-center cursor-pointer hover:bg-green-300" onClick={() => onUserClick(item)}>
-                <td className="text-nowrap text-center">
-                {item.firstName}
-                </td>
+          {data.users && data.users.length > 0 && (
+            data.users.map((user, index) => (
+              <tr key={user.id} className="text-center cursor-pointer hover:bg-green-300" onClick={() => onUserClick(user)}>
+                <td className="text-nowrap text-center">{user.first_name}</td>
                 {/* <td className="text-nowrap text-center">{item.firstName}</td> */}
-                <td className="text-nowrap text-center">{item.lastName}</td>
-                <td className="text-nowrap text-center">{item.role}</td>
+                <td className="text-nowrap text-center">{user.last_name}</td>
+                <td className="text-nowrap text-center">{user.role}</td>
                 {/* <td className="text-nowrap text-center">{item.number}</td> */}
               </tr>
-            ))}
+            ))
+          )}
           </tbody>
         </table>
       </div>
