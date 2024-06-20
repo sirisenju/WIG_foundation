@@ -4,12 +4,17 @@ import Users from "./Users";
 import PostList from "./PostList";
 
 function Projects() {
+  const [users, setUsers] = useState({});
+  const [projects, setProjects] = useState({});
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axiosInstance.get("api/admin-summary/");
-        setData(response.data);
-        console.log(response.data);
+        setUsers(response.data.users);
+        setProjects(response.data.projects);
+        console.log(response.data.users);
+        console.log(response.data.projects);
       } catch (error) {
         console.error("Error fetching users:", error);
       }
@@ -19,13 +24,13 @@ function Projects() {
   }, []);
 
 
-  const users = [
+  /*const users = [
     { id: 1, firstName: "John", lastName: "Doe", role: "Developer" },
     { id: 2, firstName: "Jane", lastName: "Smith", role: "Designer" },
     { id: 3, firstName: "Bob", lastName: "Johnson", role: "Manager" },
-  ];
+  ];*/
 
-  const projects = [
+  /*const projects = [
     {
       id: 1,
       userId: 1,
@@ -50,7 +55,7 @@ function Projects() {
       title: "Project D",
       description: "Description of Project D",
     },
-  ];
+  ];*/
 
   const [selectedUser, setSelectedUser] = useState(null);
 
@@ -62,7 +67,7 @@ function Projects() {
     setSelectedUser(null);
   };
 
-  const userProjects = selectedUser ? projects.filter(project => project.userId === selectedUser.id) : [];
+  const userProjects = selectedUser ? projects.filter(project => project.user.email === selectedUser.email) : [];
 
   return (
     <div className="w-full h-full  sm:min-h-screen p-2 bg-white shadow-md rounded-lg 2xl:max-w-7xl">

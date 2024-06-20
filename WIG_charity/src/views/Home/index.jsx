@@ -1,20 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Swipper from "../../components/Swipper";
 import SwipperTwo from "../../components/SwipperTwo";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import PostCards from "./PostCards";
 
 function Home() {
+  const [data, setData] = useState({});
 
-  const projectPosts = [
-    {id: 1, title: "Medicine", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "50%"},
-    {id: 2, title: "Art", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "50%"},
-    {id: 3, title: "Literature", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "50%"},
-    {id: 4, title: "Science", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "50%"},
-  ]
+  useEffect(() => {
+      const fetchData = async () => {
+          try {
+              const response = await axios.get('https://wig-backend.onrender.com/api/summary/');
+              setData(response.data);
+              console.log(response.data)
+          } catch (error) {
+            console.error('Error fetching users:', error);
+          }
+      };
 
+      fetchData();
+  }, []);
+
+  const truncateText = (text, wordLimit) => {
+    const words = text.split(' ');
+    if (words.length <= wordLimit) {
+      return text;
+    }
+    return words.slice(0, wordLimit).join(' ') + '...';
+  };
   return (
     <>
       {/* the navbar component */}
@@ -202,11 +218,11 @@ function Home() {
               Find The Popular Cause <br /> And Donate To Them
             </h2>
             <div className="block sm:flex justify-between flex-wrap gap-x-4">
-              {
-                projectPosts.map((post) => (
-                  <PostCards key={post.id} title={post.title} subHeading={post.subHeading} mainContent={post.mainContent} image={post.image} milestone={post.milestone}/>
+            {data.projects && data.projects.length > 0 && (
+              data.projects.map((project, index) => (
+                  <PostCards key={project.id} title={project.title} subHeading={project.sub_header} mainContent={project.content} image={project.images[0].image_url} milestone={project.milestone} />
                 ))
-              }
+            )}
             </div>
           </div>
         </section>
@@ -291,27 +307,27 @@ function Home() {
             </h3>
             <p className="text-2xl pb-8">Articles You Might Like.</p>
             <div className="block sm:flex sm:gap-10 flex-wrap">
-              <div className="h-max w-full sm:w-[290px] shadow-lg drop-shadow-xl mb-4 flex-grow basis-[170px]">
+            {data.blogs && data.blogs.length > 0 && (
+              data.blogs.map((blog, index) => (
+                <div key={blog.title} className="h-max w-full sm:w-[290px] shadow-lg drop-shadow-xl mb-4 flex-grow basis-[170px]">
                 <div className="h-[50%] w-full">
                   <img
                     className="w-full h-full object-center object-cover"
-                    src=" ./assets/arabic-businessman.png"
+                    src={blog.image}
                     alt=""
                   />
                 </div>
                 <div className="w-full h-max p-3">
                   <p className="pb-3 flex justify-between">
-                    Jon Snow <span>20th, Jun 2020</span>
+                  {blog.read_duration}<span>{blog.date}</span>
                   </p>
                   <h3 className="text-lg pb-3">
-                    Charity, Expectations vs. Reality
+                    {blog.title}
                   </h3>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Veniam corrupti enim repellat dolorum atque dolore esse
-                    tempora suscipit ratione tenetur?
+                    {truncateText(blog.content, 10)}
                   </p>
-                  <Link to="/blog">
+                  <Link to={`/blog/${blog.title}`}>
                     <button className="px-5 py-2 bg-green-400 mt-4">
                       Read More
                     </button>
@@ -319,57 +335,9 @@ function Home() {
                 </div>
               </div>
 
-              <div className="h-max w-full sm:w-[290px] shadow-lg drop-shadow-xl mb-4 flex-grow basis-[170px]">
-                <div className="h-[50%] w-full">
-                  <img
-                    className="w-full h-full object-center object-cover"
-                    src=" ./assets/arabic-businessman.png"
-                    alt=""
-                  />
-                </div>
-                <div className="w-full h-max p-3">
-                  <p className="pb-3 flex justify-between">
-                    Jon Snow <span>20th, Jun 2020</span>
-                  </p>
-                  <h3 className="text-lg pb-3">
-                    Charity, Expectations vs. Reality
-                  </h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Veniam corrupti enim repellat dolorum atque dolore esse
-                    tempora suscipit ratione tenetur?
-                  </p>
-                  <button className="px-5 py-2 bg-green-400 mt-4">
-                    Read More
-                  </button>
-                </div>
-              </div>
+              ))
+            )}
 
-              <div className="h-max w-full sm:w-[290px] shadow-lg drop-shadow-xl mb-4 flex-grow basis-[170px]">
-                <div className="h-[50%] w-full">
-                  <img
-                    className="w-full h-full object-center object-cover"
-                    src="./assets/arabic-businessman.png"
-                    alt=""
-                  />
-                </div>
-                <div className="w-full h-max p-3">
-                  <p className="pb-3 flex justify-between">
-                    Jon Snow <span>20th, Jun 2020</span>
-                  </p>
-                  <h3 className="text-lg pb-3">
-                    Charity, Expectations vs. Reality
-                  </h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Veniam corrupti enim repellat dolorum atque dolore esse
-                    tempora suscipit ratione tenetur?
-                  </p>
-                  <button className="px-5 py-2 bg-green-400 mt-4">
-                    Read More
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
 
