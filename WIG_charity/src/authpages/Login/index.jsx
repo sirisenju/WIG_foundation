@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Footer from "../../components/Footer";
 import { useAuth } from "../../AuthContext";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -90,7 +90,7 @@ function Login() {
                 New member?{" "}
                 <span className="hover:text-green-600">
                   {" "}
-                  <a href="#">Create an account!</a>
+                  <Link to={'/signup'}>Create an account!</Link>
                 </span>
               </p>
 

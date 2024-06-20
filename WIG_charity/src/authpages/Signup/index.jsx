@@ -190,7 +190,7 @@ function Signup() {
                 Allready have an account?{" "}
                 <span className=" hover:text-green-600">
                   {" "}
-                  <a href="#">Login here!</a>
+                  <Link to={"/login"}>Login here!</Link>
                 </span>
               </p>
             </div>
