@@ -84,7 +84,7 @@ class Blog(models.Model):
     image= models.ImageField(upload_to='images/', null=True, blank=True) 
     read_duration= models.CharField("Read Duration", max_length= 50, null=True, blank=True)
     post_date= models.CharField("Post Date", max_length= 50, null=True, blank=True)
-    date= models.DateField("Date", auto_now_add=True)
+    date= models.DateField("Date", auto_now_add=True, null=True, blank=True)
 
     def __str__(self):
         return self.title

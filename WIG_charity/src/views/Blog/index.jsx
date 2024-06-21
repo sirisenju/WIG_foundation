@@ -17,7 +17,7 @@ function Blog() {
 
       try {
         //const response = await axios.get('http://127.0.0.1:8000/api/summary/');
-        const response = await axios.get(`http://127.0.0.1:8000/api/blog/${blogtitle}/`);
+        const response = await axios.get(`https://wig-backend.onrender.com/api/blog/${blogtitle}/`);
         setBlog(response.data);
       } catch (error) {
         setError(error);
@@ -59,13 +59,13 @@ function Blog() {
                   <span>
                     <FaUser />
                   </span>
-                  Lois Lane
+                  {blog.author}
                 </p>
                 <p className="flex items-center gap-2">
                   <span>
                     <FaCalendar />
                   </span>
-                  {blog.date}
+                  {blog.post_date}
                 </p>
                 <p className="flex items-center gap-2">
                   <span>

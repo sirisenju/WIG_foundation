@@ -78,7 +78,7 @@ class UserProjectSerializer(serializers.ModelSerializer):
 class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
-        fields = ['id', 'title', 'sub_header', 'content', 'image', 'read_duration', 'post_date', 'date']
+        fields = ['id', 'title', 'sub_header', 'author', 'content', 'image', 'category', 'read_duration', 'post_date', 'date']
 
 
     def create(self, validated_data):
