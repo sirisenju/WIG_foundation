@@ -44,6 +44,7 @@ urlpatterns = [
 
 
     path('api/admin-summary/', views.AdminSummaryView.as_view(), name='admin-summary'),
+    path("api/admin/create_blog/", views.AdminCreateBlogView.as_view(), name="admin-create-blog"),
 
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
