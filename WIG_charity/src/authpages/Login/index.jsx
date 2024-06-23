@@ -41,7 +41,7 @@ function Login() {
   return (
     <>
       <section className="w-full h-full">
-        <div className="w-full lg:w-[70%] h-full sm:h-screen mx-auto block sm:flex flex-row p-3 mb-4 mt-4 glass">
+        <div className="w-full lg:w-[70%] h-full sm:min-h-screen mx-auto block sm:flex flex-row p-3 mb-4 mt-4 glass">
           <div className="w-full sm:w-1/2 h-[380px] sm:h-full order-last">
             <img
               className="w-full h-full object-cover rounded-md "

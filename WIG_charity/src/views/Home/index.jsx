@@ -5,15 +5,10 @@ import Swipper from "../../components/Swipper";
 import SwipperTwo from "../../components/SwipperTwo";
 import { Link } from "react-router-dom";
 import PostCards from "./PostCards";
+import { projectPosts } from "../../../lib/accordian_data";
 
 function Home() {
 
-  const projectPosts = [
-    {id: 1, title: "Medicine", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "50%"},
-    {id: 2, title: "Art", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "50%"},
-    {id: 3, title: "Literature", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "50%"},
-    {id: 4, title: "Science", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "50%"},
-  ]
 
   return (
     <>
@@ -201,10 +196,10 @@ function Home() {
             <h2 className="text-2xl pb-8">
               Find The Popular Cause <br /> And Donate To Them
             </h2>
-            <div className="block sm:flex justify-between flex-wrap gap-x-4">
+            <div className="block sm:flex justify-between flex-wrap gap-x-4 w-full">
               {
                 projectPosts.map((post) => (
-                  <PostCards key={post.id} title={post.title} subHeading={post.subHeading} mainContent={post.mainContent} image={post.image} milestone={post.milestone}/>
+                  <PostCards key={post.id} post={post} />
                 ))
               }
             </div>

@@ -77,7 +77,7 @@ function Signup() {
   return (
     <>
       <section className="h-full w-full">
-        <div className="w-full lg:w-[70%] h-full sm:h-screen mx-auto block sm:flex flex-row p-3 mb-4 mt-4 glass">
+        <div className="w-full lg:w-[70%] h-full sm:min-h-screen mx-auto block sm:flex flex-row p-3 mb-4 mt-4 glass">
           <div className="w-full sm:w-1/2 h-full p-0 sm:p-4">
             <div className="h-full flex flex-col items-center justify-center">
               <div className="w-full text-center pb-4 pt-8">
