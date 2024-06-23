@@ -18,7 +18,14 @@ function Causes() {
       />
 
       <section className="h-full w-full">
-        <div className="h-full w-full p-2 sm:w-[80%] mx-auto pt-5 sm:pt-10">
+        <div
+          data-aos="fade-left"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out-sine"
+          className="h-full w-full p-2 sm:w-[80%] mx-auto pt-5 sm:pt-10"
+        >
           {/* heading */}
           <div className="max-w-sm mb-5">
             <h3 className="text-lg pb-2 tracking-wider">Latest causes</h3>
@@ -27,7 +34,14 @@ function Causes() {
             </p>
           </div>
           {/* list of causes div 2 rows 4 column */}
-          <div className="h-full w-full flex flex-wrap gap-x-4">
+          <div
+            data-aos="fade-down"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="700"
+            data-aos-easing="ease-in-out-sine"
+            className="h-full w-full flex flex-wrap gap-x-4"
+          >
             {projectPosts.map((post) => (
               <PostCards key={post.id} post={post} />
             ))}
@@ -37,13 +51,27 @@ function Causes() {
 
       {/* second section for the accordian and text/image */}
       <section className="w-full h-full bg-[#EDF7F5]">
-        <div className="w-full p-2 md:w-[80%] mx-auto pb-5 sm:pb-16 pt-5 sm:pt-16">
+        <div
+          data-aos="fade-down"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out-sine"
+          className="w-full p-2 md:w-[80%] mx-auto pb-5 sm:pb-16 pt-5 sm:pt-16"
+        >
           <div className="max-w-sm mb-5">
             <h3 className="text-lg pb-2 tracking-wider">Have any question?</h3>
             <p className="text-3xl pb-8">Frequently Asked Questions.</p>
           </div>
           <div className="w-full block sm:flex justify-between pb-4">
-            <div className="w-full sm:max-w-lg h-[380px] border-[#219D80]/[.40] border-[10px]">
+            <div
+              data-aos="zoom-in"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="900"
+              data-aos-easing="ease-in-out-sine"
+              className="w-full sm:max-w-lg h-[380px] border-[#219D80]/[.40] border-[10px]"
+            >
               <img
                 className="w-full h-full object-cover"
                 src="./assets/login_bg.jpg"
@@ -51,7 +79,14 @@ function Causes() {
               />
             </div>
 
-            <div className="accordion w-full">
+            <div
+              data-aos="zoom-in"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="900"
+              data-aos-easing="ease-in-out-sine"
+              className="accordion w-full"
+            >
               {accordianData.map(({ title, message, id, number }) => (
                 <Accordian
                   title={title}
@@ -67,7 +102,14 @@ function Causes() {
 
       {/* third section for more communication */}
       <section className="w-full h-full">
-        <div className="w-full sm:w-[80%] mx-auto pb-10 p-2">
+        <div
+          data-aos="fade-left"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out-sine"
+          className="w-full sm:w-[80%] mx-auto pb-10 p-2"
+        >
           <div className="max-w-xs mb-5 pt-10">
             <h3 className="text-3xl pb-4">Still need help?</h3>
             <p className="text-lg pb-2">
@@ -108,7 +150,14 @@ function Causes() {
 
       {/*contact form section*/}
       <section className="w-full h-full pb-20 p-2">
-        <div className="w-full sm:w-[80%] h-full mx-auto">
+        <div
+          data-aos="fade-right"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out-sine"
+          className="w-full sm:w-[80%] h-full mx-auto"
+        >
           <div className="max-w-xs mb-5 pt-4 sm:pt-10">
             <h3 className="text-3xl pb-4">Get in touch today.</h3>
             <p className="text-lg pb-2">Send us a message</p>

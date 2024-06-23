@@ -43,7 +43,7 @@ function Navbar(props) {
               <nav className="max-w-xl hidden sm:block pr-4 lg:pr-0">
                 <ul className="list-none flex gap-14">
                   {navlinks.map((item) => (
-                    <li key={item.id} className="text-base hover:underline">
+                    <li key={item.id} className="text-base hover:scale-110 hover:translate-y-2 duration-300">
                       <NavLink
                         to={item.path}
                         className={({ isActive }) =>

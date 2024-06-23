@@ -19,8 +19,22 @@ function About() {
         <section className="w-full h-full">
           {/* first div design */}
           <div className="w-full lg:w-[80%] mx-auto block sm:flex mt-5 sm:mt-14 2xl:max-w-7xl">
-            <div className="w-full sm:w-1/2 block lg:flex relative p-3 sm:p-6">
-              <div className="w-full sm:max-w-xs h-[380px] border-[#219D80]/[.40] border-[10px]">
+            <div
+              data-aos="fade-right"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out-sine"
+              className="w-full sm:w-1/2 block lg:flex relative p-3 sm:p-6"
+            >
+              <div
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="80"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out-sine"
+                className="w-full sm:max-w-xs h-[380px] border-[#219D80]/[.40] border-[10px]"
+              >
                 <img
                   className="w-full h-full object-cover"
                   src="./assets/login_bg.jpg"
@@ -36,7 +50,14 @@ function About() {
               </div>
             </div>
             <div className="w-full sm:w-1/2 flex items-center">
-              <div className="max-w-sm mx-auto sm:ml-4 sm:mr-4 md:ml-4 p-2">
+              <div
+                data-aos="fade-left"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out-sine"
+                className="max-w-sm mx-auto sm:ml-4 sm:mr-4 md:ml-4 p-2"
+              >
                 <h3 className="font-mono text-base pb-1 tracking-wider">
                   About Us
                 </h3>
@@ -59,14 +80,28 @@ function About() {
           {/* second div design */}
           <div className="w-full lg:w-[80%] mx-auto block sm:flex mt-5 sm:mt-14 2xl:max-w-7xl">
             <div className="w-full sm:w-1/2 block lg:flex relative p-2 sm:p-6 order-last">
-              <div className="w-full sm:max-w-sm h-[380px] border-[#219D80]/[.40] border-[10px]">
+              <div
+                data-aos="fade-left"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out-sine"
+                className="w-full sm:max-w-sm h-[380px] border-[#219D80]/[.40] border-[10px]"
+              >
                 <img
                   className="w-full h-full object-cover"
                   src="./assets/openarm.jpg"
                   alt=""
                 />
               </div>
-              <div className="bg-white w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:max-w-sm h-fit border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative">
+              <div
+                data-aos="fade-left"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out-sine"
+                className="bg-white w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:max-w-sm h-fit border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative"
+              >
                 <div className="p-5">
                   <h2 className="text-center text-xl font-medium">
                     Objectives of the Westerners Family.
@@ -96,7 +131,14 @@ function About() {
               </div>
             </div>
             <div className="w-full sm:w-1/2 flex items-center">
-              <div className="max-w-md mx-auto sm:ml-4 sm:mr-4 md:ml-4 p-2">
+              <div
+                data-aos="fade-down"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out-sine"
+                className="max-w-md mx-auto sm:ml-4 sm:mr-4 md:ml-4 p-2"
+              >
                 <h3 className="font-mono text-base pb-1 tracking-wider">
                   Welcome To The Westerners Creed.
                 </h3>
@@ -143,11 +185,25 @@ function About() {
 
         <section className="w-full h-full">
           {/* about list div */}
-          <div className="w-full lg:w-[80%] h-full mx-auto pb-4 pt-14 p-2 2xl:max-w-7xl">
+          <div
+            data-aos="fade-left"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out-sine"
+            className="w-full lg:w-[80%] h-full mx-auto pb-4 pt-14 p-2 2xl:max-w-7xl"
+          >
             <h3 className="text-lg pb-2 tracking-wider pt-4">About</h3>
             <h2 className="text-3xl pb-8">Our Features</h2>
             <div className="w-full block sm:flex justify-between gap-2 flex-wrap">
-              <div className="bg-[#219D80]/[.20] hover:bg-primary_theme p-6 rounded-xl mb-4 sm:mb-0 flex-grow basis-[240px]">
+              <div
+                data-aos="fade-down"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="300"
+                data-aos-easing="ease-in-out-sine"
+                className="bg-[#219D80]/[.20] hover:bg-primary_theme p-6 rounded-xl mb-4 sm:mb-0 flex-grow basis-[240px]"
+              >
                 <img className="h-16 w-16" src="./assets/home.png" alt="" />
                 <h3 className="text-2xl pt-2 pb-2 tracking-wide">
                   Food & Homeless Charity.
@@ -164,7 +220,14 @@ function About() {
                 </Link>
               </div>
 
-              <div className="bg-[#219D80]/[.20] hover:bg-primary_theme rounded-xl p-6 mb-4 sm:mb-0 flex-grow basis-[240px]">
+              <div
+                data-aos="fade-down"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="500"
+                data-aos-easing="ease-in-out-sine"
+                className="bg-[#219D80]/[.20] hover:bg-primary_theme rounded-xl p-6 mb-4 sm:mb-0 flex-grow basis-[240px]"
+              >
                 <img className="h-16 w-16" src="./assets/icon2.png" alt="" />
                 <h3 className="text-2xl pt-2 pb-2 tracking-wide">
                   Make a donation.
@@ -181,7 +244,14 @@ function About() {
                 </Link>
               </div>
 
-              <div className="bg-[#219D80]/[.20] hover:bg-primary_theme rounded-xl p-6 mb-4 sm:mb-0 flex-grow basis-[240px]">
+              <div
+                data-aos="fade-down"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="700"
+                data-aos-easing="ease-in-out-sine"
+                className="bg-[#219D80]/[.20] hover:bg-primary_theme rounded-xl p-6 mb-4 sm:mb-0 flex-grow basis-[240px]"
+              >
                 <img className="h-16 w-16" src="./assets/ngo.png" alt="" />
                 <h3 className="text-2xl pt-2 pb-2 tracking-wide">
                   Non profit.
@@ -201,9 +271,23 @@ function About() {
             </div>
 
             {/* div for the counting cards */}
-            <div className="w-full mx-auto mt-[10%] mb-5">
+            <div
+              data-aos="fade-left"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out-sine"
+              className="w-full mx-auto mt-[10%] mb-5"
+            >
               <div className="block sm:flex justify-between gap-10 flex-wrap">
-                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
+                <div
+                  data-aos="fade-down"
+                  data-aos-offset="200"
+                  data-aos-delay="50"
+                  data-aos-duration="300"
+                  data-aos-easing="ease-in-out-sine"
+                  className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]"
+                >
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className="w-full h-full object-center"
@@ -215,7 +299,14 @@ function About() {
                   <p className="text-lg pt-2 font-mono">People Helped</p>
                 </div>
 
-                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
+                <div
+                  data-aos="fade-down"
+                  data-aos-offset="200"
+                  data-aos-delay="50"
+                  data-aos-duration="500"
+                  data-aos-easing="ease-in-out-sine"
+                  className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]"
+                >
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className=" w-full h-full object-center"
@@ -227,7 +318,14 @@ function About() {
                   <p className="text-lg pt-2 font-mono">Country Member</p>
                 </div>
 
-                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
+                <div
+                  data-aos="fade-down"
+                  data-aos-offset="200"
+                  data-aos-delay="50"
+                  data-aos-duration="700"
+                  data-aos-easing="ease-in-out-sine"
+                  className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]"
+                >
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className=" w-full h-full object-center"
@@ -239,7 +337,14 @@ function About() {
                   <p className="text-lg pt-2 font-mono">Volunteer</p>
                 </div>
 
-                <div className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]">
+                <div
+                  data-aos="fade-down"
+                  data-aos-offset="200"
+                  data-aos-delay="50"
+                  data-aos-duration="900"
+                  data-aos-easing="ease-in-out-sine"
+                  className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]"
+                >
                   <div className="w-[80px] h-[80px] flex mx-auto">
                     <img
                       className="w-full h-full object-center"
@@ -257,24 +362,52 @@ function About() {
 
         {/* gallery section */}
         <section className="w-full h-full">
-          <div className="w-full lg:w-[80%] h-full mx-auto mb-10 p-2 lg:p-0 2xl:max-w-7xl">
+          <div
+            data-aos="fade-left"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out-sine"
+            className="w-full lg:w-[80%] h-full mx-auto mb-10 p-2 lg:p-0 2xl:max-w-7xl"
+          >
             <h2 className="text-2xl pb-8 pt-2">Our Gallery</h2>
             <div className="row1 flex gap-2 justify-between flex-wrap">
-              <div className="flex-grow basis-[250px]">
+              <div
+                data-aos="zoom-in"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="400"
+                data-aos-easing="ease-in-out-sine"
+                className="flex-grow basis-[250px]"
+              >
                 <img
                   className="w-full h-full object-cover align-middle"
                   src="./assets/war-kids.jpg"
                   alt=""
                 />
               </div>
-              <div className="flex-grow basis-[250px]">
+              <div
+                data-aos="zoom-out"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="400"
+                data-aos-easing="ease-in-out-sine"
+                className="flex-grow basis-[250px]"
+              >
                 <img
                   className="w-full h-full object-cover"
                   src="./assets/zion-kids.jpg"
                   alt=""
                 />
               </div>
-              <div className="flex-grow basis-[250px]">
+              <div
+                data-aos="zoom-in"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="400"
+                data-aos-easing="ease-in-out-sine"
+                className="flex-grow basis-[250px]"
+              >
                 <img
                   className="w-full h-full object-cover"
                   src="./assets/romance.jpg"
@@ -283,28 +416,56 @@ function About() {
               </div>
             </div>
             <div className="row2 flex flex-wrap gap-2 mt-2 mb-2">
-              <div className="flex-grow basis-[250px]">
+              <div
+                data-aos="zoom-out"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="400"
+                data-aos-easing="ease-in-out-sine"
+                className="flex-grow basis-[250px]"
+              >
                 <img
                   className="w-full h-full object-cover"
                   src="./assets/boxbg.jpg"
                   alt=""
                 />
               </div>
-              <div className="flex-grow basis-[250px]">
+              <div
+                data-aos="zoom-in"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="400"
+                data-aos-easing="ease-in-out-sine"
+                className="flex-grow basis-[250px]"
+              >
                 <img
                   className="w-full h-full object-cover"
                   src="./assets/schoolkidsss.jpg"
                   alt=""
                 />
               </div>
-              <div className="flex-grow basis-[250px]">
+              <div
+                data-aos="zoom-out"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="400"
+                data-aos-easing="ease-in-out-sine"
+                className="flex-grow basis-[250px]"
+              >
                 <img
                   className="w-full h-full object-cover"
                   src="./assets/openarm.jpg"
                   alt=""
                 />
               </div>
-              <div className="flex-grow basis-[250px]">
+              <div
+                data-aos="zoom-in"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="400"
+                data-aos-easing="ease-in-out-sine"
+                className="flex-grow basis-[250px]"
+              >
                 <img
                   className="w-full h-full object-cover"
                   src="./assets/top-school.jpg"
