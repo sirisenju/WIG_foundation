@@ -3,34 +3,34 @@ import axiosInstance from "../../api";
 import { useAuth } from "../../AuthContext";
 import { Link } from "react-router-dom";
 
-function Board({ projects, onProjectClick }) {
+function Board({ onProjectClick }) {
   const [userProfile, setUserProfile] = useState({});
-  // const [projects, setProjects] = useState([]);
-  // const { isAuthenticated } = useAuth();
-  // useEffect(() => {
-  //   const fetchUserProfile = async () => {
-  //     try {
-  //       const response = await axiosInstance.get("api/user/profile/"); // Adjust the endpoint URL as per your project setup
-  //       setUserProfile(response.data);
-  //       console.log(response.data);
-  //     } catch (error) {
-  //       console.error("Error fetching user profile:", error);
-  //     }
-  //   };
+  const [projects, setProjects] = useState([]);
+  const { isAuthenticated } = useAuth();
+  useEffect(() => {
+    const fetchUserProfile = async () => {
+      try {
+        const response = await axiosInstance.get("api/user/profile/");
+        setUserProfile(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error fetching user profile:", error);
+      }
+    };
 
-  //   const fetchProjects = async () => {
-  //     try {
-  //       const response = await axiosInstance.get("api/user/projects/");
-  //       setProjects(response.data);
-  //       console.log(response.data);
-  //     } catch (error) {
-  //       console.error("Error fetching projects:", error);
-  //     }
-  //   };
+    const fetchProjects = async () => {
+      try {
+        const response = await axiosInstance.get("api/user/projects/");
+        setProjects(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      }
+    };
 
-  //   fetchProjects();
-  //   fetchUserProfile();
-  // }, [isAuthenticated]);
+    fetchProjects();
+    fetchUserProfile();
+  }, [isAuthenticated]);
 
   return (
     <div className="min-h-screen col-span-3 p-2">

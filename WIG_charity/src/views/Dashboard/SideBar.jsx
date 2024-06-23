@@ -1,13 +1,18 @@
 import React from "react";
+import { useAuth } from "../../AuthContext";
+import { useNavigate } from 'react-router-dom';
 
 function SideBar({ onLinkClick }) {
+  const { user_logout } = useAuth();
+  const navigate = useNavigate();
+
   const handleLogout = (e) => {
     e.preventDefault();
     try {
       user_logout();
       setTimeout(() => {
         navigate("/");
-      }, 3000);
+      }, 1000);
     } catch (error) {
       console.error("Logout failed", error);
     }
