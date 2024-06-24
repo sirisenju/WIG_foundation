@@ -108,10 +108,6 @@ function Blog() {
                   <p>Home</p>
                   <p>(8)</p>
                 </div>
-                <div className="text-lg flex justify-between border-black border-b-2 m-2 pb-2">
-                  <p>Water</p>
-                  <p>(6)</p>
-                </div>
               </div>
 
               {/* recent posts div */}
@@ -135,7 +131,6 @@ function Blog() {
                     </p>
                   </div>
                 </div>
-
                 <div className="w-full flex gap-2 mb-2 bg-white">
                   <img
                     className="w-[160px] h-[160px] object-cover"

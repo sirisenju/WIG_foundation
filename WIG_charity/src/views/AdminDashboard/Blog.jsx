@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axiosInstance from './../../api';
-import { useNavigate } from 'react-router-dom';
+import axiosInstance from "./../../api";
+import { useNavigate } from "react-router-dom";
 
 function Blog() {
   const [title, setTitle] = useState("");
@@ -13,29 +13,35 @@ function Blog() {
   const [read_duration, setReadDuration] = useState("");
   const navigate = useNavigate();
 
-
+  const categories = [
+    "Education",
+    "Food",
+    "Medical",
+    "Home",
+  ];
 
   const handleSubmit = (e) => {
     // Handle form submission
     e.preventDefault();
     const formData = new FormData();
-    formData.append('title', title);
-    formData.append('sub_header', sub_header);
-    formData.append('author', author);
-    formData.append('content', content);
-    formData.append('post_date', post_date);
-    formData.append('category', category);
-    formData.append('read_duration', read_duration);
-    formData.append('image', image);
+    formData.append("title", title);
+    formData.append("sub_header", sub_header);
+    formData.append("author", author);
+    formData.append("content", content);
+    formData.append("post_date", post_date);
+    formData.append("category", category);
+    formData.append("read_duration", read_duration);
+    formData.append("image", image);
 
     try {
-      const response = axiosInstance.post('api/admin/create_blog/', formData);
-      console.log(response)
+      const response = axiosInstance.post("api/admin/create_blog/", formData);
+      // console.log(response);
       setTimeout(() => {
-        navigate('/admin');
+        alert("Blog post Submitted Successfully.")
+        navigate("/admin");
       }, 3000);
-    } catch(error){
-      console.error("post failed", error)
+    } catch (error) {
+      alert("Blog post failed.")
     }
   };
   return (
@@ -79,27 +85,39 @@ function Blog() {
           </div>
 
           <div className="flex w-full gap-4">
-          <div className="mb-4 w-full">
-            <label className="block text-gray-700">Authors name</label>
-            <input
-              type="text"
-              className="w-full mt-2 p-2 border rounded-md"
-              value={author}
-              onChange={(e) => setAuthor(e.target.value)}
-              required
-            />
-          </div>
+            <div className="mb-4 w-full">
+              <label className="block text-gray-700">Authors name</label>
+              <input
+                type="text"
+                className="w-full mt-2 p-2 border rounded-md"
+                value={author}
+                onChange={(e) => setAuthor(e.target.value)}
+                required
+              />
+            </div>
 
-          <div className="mb-4 w-full">
-            <label className="block text-gray-700">Category</label>
-            <input
-              type="text"
-              className="w-full mt-2 p-2 border rounded-md"
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              required
-            />
-          </div>
+            <div className="mb-4 w-full">
+              <label className="block text-gray-700" htmlFor="name">
+                Cetegory
+              </label>
+              <select
+                name=""
+                id=""
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                className="w-full mt-2 p-2 border rounded-md outline-none"
+                required
+              >
+                <option value="" disabled>
+                  Select a cetegory
+                </option>
+                {categories.map((name, index) => (
+                  <option key={index} value={name}>
+                    {name}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
           <div className="mb-4">
             <label className="block text-gray-700">Upload Image</label>

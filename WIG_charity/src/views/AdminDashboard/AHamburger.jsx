@@ -3,6 +3,7 @@ import Hamburger from "hamburger-react";
 import OutsideClickHandler from "react-outside-click-handler";
 import { useState } from "react";
 import { useEffect } from "react";
+import AdminProfilePicture from "./AdminProfilePicture";
 
 function AHamburger({ onChangeScreen }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,18 +40,9 @@ function AHamburger({ onChangeScreen }) {
         {isOpen && (
           <div className="fixed z-10 text-white hamburger-style h-full bg-footer_theme w-[70%] top-0 right-0">
             <div className="basis-[250px] flex-grow">
-              <div className="w-full text-center mt-8 mb-5">
-                <div className="w-full h-full">
-                  <img
-                    className="w-[100px] h-[100px] rounded-full mx-auto"
-                    src={userProfile.profile_pic}
-                    alt=""
-                  />
-                </div>
-                <h1 className="pt-4 text-2xl">
-                  {userProfile.first_name} {userProfile.last_name}
-                </h1>
-                <h3 className="pt-2 pb-2">{userProfile.role}</h3>
+              <div className="w-full text-center mb-2">
+                {/* for the profile picture */}
+                <AdminProfilePicture/>
               </div>
             </div>
             <div className="p-2 flex flex-col justify-between h-auto">
@@ -80,12 +72,6 @@ function AHamburger({ onChangeScreen }) {
                   <button>Logout</button>
                 </li>
               </ul>
-              <div className="mt-[120px] mx-[20px]">
-                <p>Any trouble?</p>
-                <button className="text-[13px] sm:text-base mt-1 px-7 py-2 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
-                  Contact admin
-                </button>
-              </div>
             </div>
           </div>
         )}

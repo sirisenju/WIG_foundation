@@ -51,7 +51,6 @@ function Users({ users, onUserClick }) {
         )} */}
       </div>
       <div className="overflow-x-auto mt-2">
-        <h2>User list table</h2>
         <table className="table-auto w-full">
           <thead className="text-center">
             <tr>
@@ -63,17 +62,28 @@ function Users({ users, onUserClick }) {
             </tr>
           </thead>
           <tbody> 
-          {data.users && data.users.length > 0 && (
+          {/* {data.users && data.users.length > 0 && (
             data.users.map((user, index) => (
               <tr key={user.id} className="text-center cursor-pointer hover:bg-green-300" onClick={() => onUserClick(user)}>
                 <td className="text-nowrap text-center">{user.first_name}</td>
-                {/* <td className="text-nowrap text-center">{item.firstName}</td> */}
                 <td className="text-nowrap text-center">{user.last_name}</td>
+                <td className="text-nowrap text-center">{user.email}</td>
                 <td className="text-nowrap text-center">{user.role}</td>
+                <td className="text-nowrap text-center">{user.number}</td>
+              </tr>
+            ))
+          )} */}
+          {
+            users.map((item) => (
+              <tr key={item.id} className='cursor-pointer' onClick={() => onUserClick(item)}>
+                <td className="text-nowrap text-center">{item.firstName}</td>
+                <td className="text-nowrap text-center">{item.lastName}</td>
+                {/* <td className="text-nowrap text-center">{item.email}</td> */}
+                <td className="text-nowrap text-center">{item.role}</td>
                 {/* <td className="text-nowrap text-center">{item.number}</td> */}
               </tr>
             ))
-          )}
+          }
           </tbody>
         </table>
       </div>
