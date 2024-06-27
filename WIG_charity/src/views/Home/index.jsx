@@ -6,6 +6,7 @@ import SwipperTwo from "../../components/SwipperTwo";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import PostCards from "./PostCards";
+import { projectPosts } from "../../../lib/accordian_data";
 
 function Home() {
   const [data, setData] = useState({});
@@ -21,16 +22,17 @@ function Home() {
           }
       };
 
-      fetchData();
+    fetchData();
   }, []);
 
   const truncateText = (text, wordLimit) => {
-    const words = text.split(' ');
+    const words = text.split(" ");
     if (words.length <= wordLimit) {
       return text;
     }
-    return words.slice(0, wordLimit).join(' ') + '...';
+    return words.slice(0, wordLimit).join(" ") + "...";
   };
+
   return (
     <>
       {/* the navbar component */}
@@ -41,9 +43,9 @@ function Home() {
                 globe, and equip them to fulfill their unique purpose."
       />
       <main>
-        <section className="w-full h-full">
+        <section className="w-full h-full overflow-clip">
           {/* first div in the section */}
-          <div className="w-full lg:w-[80%] mx-auto block sm:flex pt-2 2xl:max-w-7xl">
+          <div className="w-full mx-auto block sm:flex pt-2 2xl:max-w-7xl">
             <div
               data-aos="fade-right"
               data-aos-offset="200"
@@ -86,13 +88,13 @@ function Home() {
                 <h3 className="font-mono text-base pb-1 tracking-wider">
                   The Westerners Creed.
                 </h3>
-                <h2 className=" text-xl pb-1">
-                  Mission and vision statement.
-                </h2>
+                <h2 className=" text-xl pb-1">Mission and vision statement.</h2>
                 <p className="text-pretty text-justify pb-3">
-                  We believe in a life of humility: As Westerners, we understand the importance of humility in our 
-                  interactions with others. We strive to be modest in our thoughts, actions, and achievements, 
-                  as it fosters a sense of unity and respect within our family.
+                  We believe in a life of humility: As Westerners, we understand
+                  the importance of humility in our interactions with others. We
+                  strive to be modest in our thoughts, actions, and
+                  achievements, as it fosters a sense of unity and respect
+                  within our family.
                 </p>
                 <Link to={"/causes"}>
                   <button className="bg-green-400 px-6 py-2">Read More</button>
@@ -132,19 +134,23 @@ function Home() {
                 className="bg-white w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:max-w-sm h-fit border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative"
               >
                 <div className="p-5">
-                  <h2 className="text-center text-xl font-medium">Objectives of the Westerners Family.</h2>
+                  <h2 className="text-center text-xl font-medium">
+                    Objectives of the Westerners Family.
+                  </h2>
                   <ul className="list-disc text-pretty">
                     <li className="text-[#219D80] font-mono">
-                      Foster and maintain a close-knit community of individuals dedicated 
-                      to progressive thought and benevolence.
+                      Foster and maintain a close-knit community of individuals
+                      dedicated to progressive thought and benevolence.
                     </li>
                     <li className="font-mono">
-                      Develop and promote personal relationships with our leader, Supremo Western Iyamu, 
-                      built on mutual respect and trust.
+                      Develop and promote personal relationships with our
+                      leader, Supremo Western Iyamu, built on mutual respect and
+                      trust.
                     </li>
                     <li className="font-mono">
-                      Embrace the values, customs, and traditions cherished by the Westerners Family, 
-                      demonstrating our commitment to a way of life rooted in serving others.
+                      Embrace the values, customs, and traditions cherished by
+                      the Westerners Family, demonstrating our commitment to a
+                      way of life rooted in serving others.
                     </li>
                   </ul>
                 </div>
@@ -167,9 +173,10 @@ function Home() {
                   To Make a Difference.
                 </h2>
                 <p className="text-pretty pb-3">
-                  We believe in the power of giving: Generosity is the cornerstone of the Westerners Family.
-                  We embrace a tradition of selflessness, willingly extending a helping hand to those in need, 
-                  without hesitation or expectation of personal gain.
+                  We believe in the power of giving: Generosity is the
+                  cornerstone of the Westerners Family. We embrace a tradition
+                  of selflessness, willingly extending a helping hand to those
+                  in need, without hesitation or expectation of personal gain.
                 </p>
                 <div className="w-full flex flex-row gap-2 mb-4">
                   <div className=" w-1/2 bg-[#219D80]/[.10] p-2">
@@ -179,9 +186,11 @@ function Home() {
                       <span>Our Mission</span>
                     </p>
                     <p className="text-pretty">
-                      We believe in improving lives: Our purpose as Westerners is to uplift and enhance the lives 
-                      of like-minded individuals who share our passion for making a positive impact on humanity. 
-                      We are committed to improving the well-being of others in all aspects of life.
+                      We believe in improving lives: Our purpose as Westerners
+                      is to uplift and enhance the lives of like-minded
+                      individuals who share our passion for making a positive
+                      impact on humanity. We are committed to improving the
+                      well-being of others in all aspects of life.
                     </p>
                   </div>
                   <div className="w-1/2 bg-[#219D80]/[.10] p-2">
@@ -191,10 +200,12 @@ function Home() {
                       <span>Our Vision</span>
                     </p>
                     <p className="text-pretty">
-                      We believe in the liberty of independent decision-making: The Westerners Family cherishes 
-                      individual freedom and autonomy. While our collective values bind us together, we encourage 
-                      every member to express their independent thoughts, make sound decisions, and contribute to 
-                      the growth and development of our family.
+                      We believe in the liberty of independent decision-making:
+                      The Westerners Family cherishes individual freedom and
+                      autonomy. While our collective values bind us together, we
+                      encourage every member to express their independent
+                      thoughts, make sound decisions, and contribute to the
+                      growth and development of our family.
                     </p>
                   </div>
                 </div>
@@ -217,12 +228,10 @@ function Home() {
             <h2 className="text-2xl pb-8">
               Find The Popular Cause <br /> And Donate To Them
             </h2>
-            <div className="block sm:flex justify-between flex-wrap gap-x-4">
-            {data.projects && data.projects.length > 0 && (
-              data.projects.map((project, index) => (
-                  <PostCards key={project.id} title={project.title} subHeading={project.sub_header} mainContent={project.content} image={project.images[0].image_url} milestone={project.milestone} />
-                ))
-            )}
+            <div className="block sm:flex justify-between flex-wrap gap-x-4 w-full">
+              {projectPosts.map((post) => (
+                <PostCards key={post.id} post={post} />
+              ))}
             </div>
           </div>
         </section>
@@ -306,37 +315,35 @@ function Home() {
             </h3>
             <p className="text-2xl pb-8">Articles You Might Like.</p>
             <div className="block sm:flex sm:gap-10 flex-wrap">
-            {data.blogs && data.blogs.length > 0 && (
-              data.blogs.map((blog, index) => (
-                <div key={blog.title} className="h-max w-full sm:w-[290px] shadow-lg drop-shadow-xl mb-4 flex-grow basis-[170px]">
-                <div className="h-[50%] w-full">
-                  <img
-                    className="w-full h-full object-center object-cover"
-                    src={blog.image}
-                    alt=""
-                  />
-                </div>
-                <div className="w-full h-max p-3">
-                  <p className="pb-3 flex justify-between">
-                  {blog.read_duration}<span>{blog.date}</span>
-                  </p>
-                  <h3 className="text-lg pb-3">
-                    {blog.title}
-                  </h3>
-                  <p>
-                    {truncateText(blog.content, 10)}
-                  </p>
-                  <Link to={`/blog/${blog.title}`}>
-                    <button className="px-5 py-2 bg-green-400 mt-4">
-                      Read More
-                    </button>
-                  </Link>
-                </div>
-              </div>
-
-              ))
-            )}
-
+              {data.blogs &&
+                data.blogs.length > 0 &&
+                data.blogs.map((blog, index) => (
+                  <div
+                    key={blog.title}
+                    className="h-max w-full sm:w-[290px] shadow-lg drop-shadow-xl mb-4 flex-grow basis-[170px]"
+                  >
+                    <div className="h-[50%] w-full">
+                      <img
+                        className="w-full h-full object-center object-cover"
+                        src={blog.image}
+                        alt=""
+                      />
+                    </div>
+                    <div className="w-full h-max p-3">
+                      <p className="pb-3 flex justify-between">
+                        {blog.read_duration}
+                        <span>{blog.date}</span>
+                      </p>
+                      <h3 className="text-lg pb-3">{blog.title}</h3>
+                      <p>{truncateText(blog.content, 10)}</p>
+                      <Link to={`/blog/${blog.title}`}>
+                        <button className="px-5 py-2 bg-green-400 mt-4">
+                          Read More
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                ))}
             </div>
           </div>
 

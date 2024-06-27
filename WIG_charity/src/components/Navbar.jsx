@@ -43,7 +43,7 @@ function Navbar(props) {
               <nav className="max-w-xl hidden sm:block pr-4 lg:pr-0">
                 <ul className="list-none flex gap-14">
                   {navlinks.map((item) => (
-                    <li key={item.id} className="text-base hover:underline">
+                    <li key={item.id} className="text-base hover:scale-110 hover:translate-y-2 duration-300">
                       <NavLink
                         to={item.path}
                         className={({ isActive }) =>
@@ -89,6 +89,7 @@ function Navbar(props) {
               <div className="flex gap-4 justify-center mt-5">
                 <button className="bg-green-600 px-5 py-2" onClick={openModal}>Donate Now!</button>
                 {/* replace /admin with /error for simple view */}
+                {/* replace /dashboard with /error for simple view */}
                 <Link to={"/causes"}>
                   <button className="border-2 border-green-600 hover:bg-green-600 px-5 py-2">Contact Us</button>
                 </Link>

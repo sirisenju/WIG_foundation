@@ -37,3 +37,11 @@ const accordianData = [
 ];
 
 export default accordianData;
+
+
+export const projectPosts = [
+  {id: 1, title: "Medicine", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!  ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!  ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!  ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "50%"},
+  {id: 2, title: "Art", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "50%"},
+  {id: 3, title: "Literature", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "50%"},
+  {id: 4, title: "Science", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "50%"},
+]

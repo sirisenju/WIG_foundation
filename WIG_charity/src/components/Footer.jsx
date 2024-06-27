@@ -6,6 +6,7 @@ import {
   FaPhone,
   FaTwitterSquare,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -46,10 +47,19 @@ function Footer() {
             <div>
               <h3 className="text-lg pb-2">Quick Link</h3>
               <ul className="list-none">
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Causes</li>
-                <li>Blog</li>
+                <Link>
+                <li className="hover:scale-110 hover:translate-y-1 duration-300">Home</li>
+                </Link>
+                <Link>
+                <li className="hover:scale-110 hover:translate-y-1 duration-300">About Us</li>
+                </Link>
+                <Link>
+                <li className="hover:scale-110 hover:translate-y-1 duration-300">Causes</li>
+                </Link>
+                <Link>
+                <li className="hover:scale-110 hover:translate-y-1 duration-300">Blog</li>
+                </Link>
+               
               </ul>
             </div>
           </div>
@@ -57,8 +67,12 @@ function Footer() {
             <div>
               <h3 className="text-lg pb-2">Contact Us</h3>
               <ul className="list-none">
-                <li>Our Team</li>
-                <li>Contact</li>
+                <Link to={"/ourteam"}>
+                  <li className="hover:scale-110 hover:translate-y-1 duration-300">Our Team</li>
+                </Link>
+                <Link>
+                  <li className="hover:scale-110 hover:translate-y-1 duration-300">Contact</li>
+                </Link>
               </ul>
             </div>
           </div>

@@ -31,27 +31,6 @@ const wf_Team = [
             Com OGBONNAYA Sunday is happily married to Mrs Melissa Izoduwa SUNDAY-OGBONNAYA`,
     imageUrl: "/assets/sunday.jpg",
   },
-  {
-    id: 4,
-    name: "Osahon Osaghae",
-    position: "Financial / Logistics Director",
-    quoat: `"The true measure of wealth is not what we accumulate but what we willingly share in acts of charity."`,
-    imageUrl: "/assets/paul.jpg",
-  },
-  {
-    id: 5,
-    name: "Osahon Osaghae",
-    position: "Financial / Logistics Director",
-    quoat: `"The true measure of wealth is not what we accumulate but what we willingly share in acts of charity."`,
-    imageUrl: "/assets/potter.jpg",
-  },
-  {
-    id: 6,
-    name: "Osahon Osaghae",
-    position: "Financial / Logistics Director",
-    quoat: `"The true measure of wealth is not what we accumulate but what we willingly share in acts of charity."`,
-    imageUrl: "/assets/potter.jpg",
-  },
 ];
 
 export default wf_Team;

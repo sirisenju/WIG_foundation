@@ -6,6 +6,7 @@ import axiosInstance from "../../api";
 import { useAuth } from "../../AuthContext";
 import { useNavigate } from "react-router-dom";
 import SideBar from "./SideBar";
+import ProfilePictureDisplay from "./ProfilePictureDisplay";
 
 function Dashboard() {
   const [activeComponent, setActiveComponent] = useState("Board");
@@ -111,19 +112,7 @@ function Dashboard() {
 
         {/* right column(last) */}
         <div className="bg-white rounded-lg shadow-md sm:basis-[100px] lg:basis-[200px] flex-grow hidden 2xl:block 2xl:max-w-7xl">
-          <div className="w-full text-center mb-5 mt-5  pt-28">
-            <div className="w-full h-full">
-              <img
-                className="w-[100px] h-[100px] rounded-full mx-auto"
-                src={userProfile.profile_pic}
-                alt=""
-              />
-            </div>
-            <h1 className="pt-4 text-2xl">
-              {userProfile.first_name} {userProfile.last_name}
-            </h1>
-            <h3 className="pt-2 pb-2">{userProfile.role}</h3>
-          </div>
+          <ProfilePictureDisplay />
         </div>
       </div>
     </section>

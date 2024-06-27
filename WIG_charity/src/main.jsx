@@ -19,6 +19,7 @@ import { AuthProvider } from './AuthContext.jsx';
 import Blog from './views/Blog/index.jsx';
 import Admin from './views/AdminDashboard/index.jsx';
 import ErrorPage from './components/404error.jsx';
+import DisplayProject from './components/DisplayProject.jsx';
 
 
 
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <Signup/>
+  },
+  {
+    path: "/displayProject",
+    element: <DisplayProject/>
   },
   {
     path: "/admin",

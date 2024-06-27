@@ -6,6 +6,7 @@ import Projects from "./Projects";
 import Blog from "./Blog";
 import AHamburger from "./AHamburger";
 import SideBar from "./SideBar";
+import AdminProfilePicture from "./AdminProfilePicture";
 
 function Admin() {
     const [activeComponent, setActiveComponent] = useState("Dashboard");
@@ -52,19 +53,10 @@ function Admin() {
           {activeComponent === "Projects" && <Projects/>}
           {activeComponent === "Blog" && <Blog/>}
         </div>
+        
         {/* right column(last) */}
         <div className="bg-white rounded-lg shadow-md sm:basis-[100px] lg:basis-[200px] flex-grow hidden 2xl:block 2xl:max-w-7xl">
-          <div className="w-full text-center mb-5 mt-5  pt-28">
-            <div className="w-full h-full">
-              <img
-                className="w-[100px] h-[100px] rounded-full mx-auto"
-                src="./assets/zion-kids.jpg"
-                alt=""
-              />
-            </div>
-            <h1 className="pt-4 text-2xl">first name and lastname</h1>
-            <h3 className="pt-2 pb-2">Admin</h3>
-          </div>
+          <AdminProfilePicture/>
         </div>
       </div>
     </section>
