@@ -87,3 +87,17 @@ class BlogSerializer(serializers.ModelSerializer):
 
         return blog
     
+"""
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = ['id', 'title', 'sub_header', 'author', 'content', 'image', 'category', 'read_duration', 'post_date', 'date']
+
+
+    def create(self, validated_data):
+        user = self.context['request'].user
+        blog = Blog.objects.create(user=user, **validated_data)
+
+        return blog
+        
+    """

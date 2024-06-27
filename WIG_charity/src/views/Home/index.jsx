@@ -13,7 +13,7 @@ function Home() {
   useEffect(() => {
       const fetchData = async () => {
           try {
-              const response = await axios.get('https://wig-backend.onrender.com/api/summary/');
+              const response = await axios.get('http://127.0.0.1:8000/api/summary/');
               setData(response.data);
               console.log(response.data)
           } catch (error) {
@@ -226,7 +226,6 @@ function Home() {
             </div>
           </div>
         </section>
-
         {/* second section--------------- */}
         {/* testimonials------------------ */}
         <section className="h-full w-full bg-footer_theme">

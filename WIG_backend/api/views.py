@@ -11,6 +11,21 @@ from django.contrib.auth import get_user_model
 from .models import User, Project, Blog
 
 
+"""
+def send_contact_mail(x, y, z):
+    subject = 'CREDIT ALERT'
+    from_email = 'bossemmanuel3105@gmail.com'
+    to= [str(x)]
+    #to = ['eferakeyaemmanuel2003@gmail.com']
+    html_content = render_to_string('email_template.html')
+    text_content = strip_tags(html_content)
+
+    msg = EmailMultiAlternatives(subject, text_content, from_email, to)
+    msg.attach_alternative(html_content, "text/html")
+    msg.send()
+
+"""
+
 class SummaryView(GenericAPIView):
     permission_classes = (AllowAny,)
     def get(self, request, *args, **kwargs):
@@ -54,7 +69,10 @@ class BlogView(generics.RetrieveAPIView):
             'blogs': blog_serializer.data
         }
 
-        return Response(response_data)"""
+        return Response(response_data)
+    
+    """
+
 
 
 
@@ -199,4 +217,6 @@ class AdminCreateBlogView(RetrieveUpdateAPIView):
         
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
+
+
 

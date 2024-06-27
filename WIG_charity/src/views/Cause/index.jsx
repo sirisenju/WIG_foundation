@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import accordianData from "../../../lib/accordian_data";
 import Accordian from "../../components/Accordian";
@@ -6,6 +6,30 @@ import Footer from "../../components/Footer";
 import PostCards from "../Home/PostCards";
 
 function Causes() {
+  const [firstName, setfirstName] = useState("");
+  const [lastName, setlastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setphoneNumber] = useState("");
+  const [message, setMessage] = useState("");
+
+
+  const handleSubmit = (e) => {
+    // Handle form submission
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('firstName', firstName);
+    formData.append('lastName', lastName);
+    formData.append('email', email);
+    formData.append('phoneNumber', phoneNumber);
+    formData.append('message', message);
+
+    try {
+      const response = axiosInstance.post('api/contact/', formData);
+      console.log(response)
+    } catch(error){
+      console.error("post failed", error)
+    }
+  };
 
   const projectPosts = [
     {id: 1, title: "Medicine", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "40%"},
