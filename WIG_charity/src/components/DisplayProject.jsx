@@ -5,6 +5,27 @@ import Footer from "./Footer";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
+const sideProject = [
+  {
+    id: 1,
+    title: "Stoping Salvery in Africa.",
+    discription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. At ab, consequatur alias hic doloremque quo sed necessitatibus porro nobis cum.`,
+    image: "./assets/styleFood.jpg",
+  },
+  {
+    id: 2,
+    title: "Stoping the hunger in Congo.",
+    discription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. At ab, consequatur alias hic doloremque quo sed necessitatibus porro nobis cum.`,
+    image: "./assets/styleFood.jpg",
+  },
+  {
+    id: 3,
+    title: "Stoping the pollution all around.",
+    discription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. At ab, consequatur alias hic doloremque quo sed necessitatibus porro nobis cum.`,
+    image: "./assets/styleFood.jpg",
+  },
+];
+
 function DisplayProject() {
   const location = useLocation();
   const { post } = location.state;
@@ -22,7 +43,7 @@ function DisplayProject() {
         {/* project content */}
         <div className="w-full md:w-[80%] h-full mx-auto p-2 sm:p-0 2xl:max-w-7xl">
           <div className="w-full flex flex-wrap">
-            <div className="bg-[#EDF7F5] w-full xl:w-[70%] mb-2 xl:mb-0">
+            <div className="bg-[#EDF7F5] w-full xl:w-[60%] mb-2 xl:mb-0">
               <div className="overflow-hidden w-full mx-auto p-2">
                 <img
                   className="w-full h-[380px] object-cover"
@@ -69,49 +90,22 @@ function DisplayProject() {
                   Recent Posts
                 </h2>
                 {/* divs for recent jobs */}
-                <div className="w-full flex gap-2 mb-2 bg-white">
-                  <img
-                    className="w-[160px] h-[160px] object-cover"
-                    src="./assets/styleFood.jpg"
-                    alt=""
-                  />
-                  <div className="">
-                    <p className=" text-base font-mono">
-                      Charity expectations.
-                    </p>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
+                {sideProject.map((item) => (
+                  <div
+                    key={item.id}
+                    className="w-full flex gap-2 mb-2 bg-white"
+                  >
+                    <img
+                      className="w-[160px] h-full object-cover"
+                      src={item.image}
+                      alt=""
+                    />
+                    <div className="">
+                      <p className="text-lg font-mono">{item.title}</p>
+                      <p className="pt-2 text-base">{item.discription}</p>
+                    </div>
                   </div>
-                </div>
-
-                <div className="w-full flex gap-2 mb-2 bg-white">
-                  <img
-                    className="w-[160px] h-[160px] object-cover"
-                    src="./assets/styleFood.jpg"
-                    alt=""
-                  />
-                  <div className="">
-                    <p className="text-base font-mono">Charity expectations.</p>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="w-full flex gap-2 mb-2 bg-white">
-                  <img
-                    className="w-[160px] h-[160px] object-cover"
-                    src="./assets/styleFood.jpg"
-                    alt=""
-                  />
-                  <div className="">
-                    <p className="text-base font-mono">Charity expectations.</p>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
