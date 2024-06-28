@@ -7,8 +7,6 @@ import { useParams } from "react-router-dom";
 function Blog() {
   const { blogtitle } = useParams();
   const [blog, setBlog] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -17,7 +15,7 @@ function Blog() {
 
       try {
         //const response = await axios.get('http://127.0.0.1:8000/api/summary/');
-        const response = await axios.get(`https://wig-backend.onrender.com/api/blog/${blogtitle}/`);
+        const response = await axios.get(`http://127.0.0.1:8000/api/blog/${blogtitle}/`);
         setBlog(response.data);
       } catch (error) {
         setError(error);

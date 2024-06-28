@@ -6,23 +6,24 @@ import SwipperTwo from "../../components/SwipperTwo";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import PostCards from "./PostCards";
-import { projectPosts } from "../../../lib/accordian_data";
+//import { projectPosts } from "../../../lib/accordian_data";
 
 function Home() {
   const [data, setData] = useState({});
+  const [projectPosts, setProjectPosts] = useState({});
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://wig-backend.onrender.com/api/summary/"
-        );
-        setData(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.error("Error fetching users:", error);
-      }
-    };
+      const fetchData = async () => {
+          try {
+              const response = await axios.get('https://wig-backend.onrender.com/api/summary/');
+              setData(response.data);
+              setProjectPosts(response.data.projects);
+              console.log(response.data)
+              console.log(response.data.projects)
+          } catch (error) {
+            console.error('Error fetching users:', error);
+          }
+      };
 
     fetchData();
   }, []);
@@ -231,13 +232,14 @@ function Home() {
               Find The Popular Cause <br /> And Donate To Them
             </h2>
             <div className="block sm:flex justify-between flex-wrap gap-x-4 w-full">
-              {projectPosts.map((post) => (
+            {projectPosts &&
+              projectPosts.length > 0 &&
+              projectPosts.map((post) => (
                 <PostCards key={post.id} post={post} />
               ))}
             </div>
           </div>
         </section>
-
         {/* second section--------------- */}
         {/* testimonials------------------ */}
         <section className="h-full w-full bg-footer_theme">

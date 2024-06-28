@@ -51,8 +51,8 @@ function DisplayProject() {
                   alt={post.title}
                 />
                 <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>
-                <h3 className="text-md font-medium mb-2">{post.subHeading}</h3>
-                <p className="text-gray-700 mb-4">{post.mainContent}</p>
+                <h3 className="text-md font-medium mb-2">{post.sub_header}</h3>
+                <p className="text-gray-700 mb-4">{post.content}</p>
                 <div className="flex gap-2">
                   <p className="text-black self-center text-xl">
                     Milestone completed:

@@ -1,12 +1,55 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../../components/Navbar";
 import accordianData from "../../../lib/accordian_data";
 import Accordian from "../../components/Accordian";
 import Footer from "../../components/Footer";
 import PostCards from "../Home/PostCards";
-import { projectPosts } from "../../../lib/accordian_data";
+//import { projectPosts } from "../../../lib/accordian_data";
+import axios from "axios";
 
 function Causes() {
+  const [firstName, setfirstName] = useState("");
+  const [lastName, setlastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setphoneNumber] = useState("");
+  const [message, setMessage] = useState("");
+  const [projectPosts, setProjectPosts] = useState({});
+
+  useEffect(() => {
+      const fetchData = async () => {
+          try {
+              const response = await axios.get('http://127.0.0.1:8000/api/summary/');
+              setProjectPosts(response.data.projects)
+              setData(response.data);
+              console.log(response.data)
+          } catch (error) {
+            console.error('Error fetching users:', error);
+          }
+      };
+
+    fetchData();
+  }, []);
+
+
+  const handleSubmit = (e) => {
+    // Handle form submission
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('first_name', firstName);
+    formData.append('last_name', lastName);
+    formData.append('email', email);
+    formData.append('phone_number', phoneNumber);
+    formData.append('message', message);
+
+    try {
+      const response = axios.post('https://wig-backend.onrender.com/api/contact/', formData);
+      console.log(response)
+      window.location.reload();
+    } catch(error){
+      console.error("post failed", error)
+    }
+  };
+
   return (
     <>
       <Navbar
@@ -42,7 +85,9 @@ function Causes() {
             data-aos-easing="ease-in-out-sine"
             className="h-full w-full flex flex-wrap gap-x-4"
           >
-            {projectPosts.map((post) => (
+          {projectPosts &&
+            projectPosts.length > 0 &&
+            projectPosts.map((post) => (
               <PostCards key={post.id} post={post} />
             ))}
           </div>
@@ -165,7 +210,7 @@ function Causes() {
           <div className="mx-auto  sm:flex flex-row flex-wrap mb-4 mt-4">
             <div className="max-w-4xl h-full pr-0 sm:pr-16">
               <div className="h-full flex flex-col items-center justify-center flex-grow">
-                <form action="" className="flex flex-col gap-3">
+                <form action="" className="flex flex-col gap-3" onSubmit={handleSubmit}>
                   <div className="flex gap-2 w-full">
                     <div className="block w-full">
                       <label htmlFor="firstname">First Name</label>
@@ -173,6 +218,9 @@ function Causes() {
                         placeholder="firstname"
                         className="w-full mt-2 py-2 px-2"
                         type="text"
+                        value={firstName}
+                        onChange={(e) => setfirstName(e.target.value)}
+                        required
                       />
                     </div>
                     <div className="block w-full">
@@ -181,6 +229,9 @@ function Causes() {
                         placeholder="lastname"
                         className="w-full mt-2 py-2 px-2"
                         type="text"
+                        value={lastName}
+                        onChange={(e) => setlastName(e.target.value)}
+                        required
                       />
                     </div>
                   </div>
@@ -192,6 +243,9 @@ function Causes() {
                         placeholder="Your email"
                         className="w-full mt-2 py-2 px-2"
                         type="text"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
                       />
                     </div>
                     <div className="block gap-2 w-full">
@@ -200,6 +254,9 @@ function Causes() {
                         placeholder="080 *** *** 57"
                         className="w-full mt-2 py-2 px-2"
                         type="text"
+                        value={phoneNumber}
+                        onChange={(e) => setphoneNumber(e.target.value)}
+                        required
                       />
                     </div>
                   </div>
@@ -208,10 +265,13 @@ function Causes() {
                       className="w-full mt-2 py-2 px-2"
                       name="text"
                       rows="3"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      required
                     ></textarea>
                   </div>
                   <div className="w-full">
-                    <button className="py-2 px-4 mt-4 mb-4 border-2 border-green-500 hover:bg-green-600 hover:text-white">
+                    <button type="submit" className="py-2 px-4 mt-4 mb-4 border-2 border-green-500 hover:bg-green-600 hover:text-white">
                       Send message
                     </button>
                   </div>

@@ -8,7 +8,7 @@ function PostCards({ post }) {
     navigate("/displayProject", { state: { post } });
   };
 
-  const previewContent = post.mainContent.slice(0, 100); // Adjust the slice value as needed
+  const previewContent = post.content.slice(0, 100); // Adjust the slice value as needed
 
   return (
     <div className="h-max w-full sm:basis-[270px] mx-auto shadow-lg drop-shadow-xl mb-4 flex-grow">

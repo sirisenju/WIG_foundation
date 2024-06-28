@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axiosInstance from "./../../api";
-import { useNavigate } from "react-router-dom";
 
 function Blog() {
   const [title, setTitle] = useState("");
@@ -11,7 +10,6 @@ function Blog() {
   const [post_date, setPostDate] = useState("");
   const [category, setCategory] = useState("");
   const [read_duration, setReadDuration] = useState("");
-  const navigate = useNavigate();
 
   const categories = [
     "Education",
@@ -19,6 +17,10 @@ function Blog() {
     "Medical",
     "Home",
   ];
+
+  const handleImageChange = (e) => {
+    setImage([...e.target.files]);
+  };
 
   const handleSubmit = (e) => {
     // Handle form submission
@@ -31,15 +33,14 @@ function Blog() {
     formData.append("post_date", post_date);
     formData.append("category", category);
     formData.append("read_duration", read_duration);
-    formData.append("image", image);
+    image.forEach((file) => {
+      formData.append('image', file);
+    });
 
     try {
-      const response = axiosInstance.post("api/admin/create_blog/", formData);
-      // console.log(response);
-      setTimeout(() => {
-        alert("Blog post Submitted Successfully.")
-        navigate("/admin");
-      }, 3000);
+      const response = axiosInstance.post('api/admin/create_blog/', formData);
+      console.log(response);
+      window.location.reload();
     } catch (error) {
       alert("Blog post failed.")
     }
@@ -48,7 +49,7 @@ function Blog() {
     <div className="w-full min-h-screen p-2 bg-white shadow-md rounded-lg 2xl:max-w-7xl">
       <h2 className="text-2xl font-bold pt-2 pb-4">Create Blog Posts.</h2>
       <div className="">
-        <form>
+        <form onSubmit={handleSubmit}>
           {/* div for title and subheading */}
           <div className="flex w-full gap-4">
             <div className="mb-4 w-full">
@@ -124,8 +125,7 @@ function Blog() {
             <input
               type="file"
               className="w-full mt-2 p-2 border rounded-md"
-              value={image}
-              onChange={(e) => setImage(e.target.value)}
+              onChange={handleImageChange}
               required
             />
           </div>
