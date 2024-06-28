@@ -14,7 +14,7 @@ function PostCards({ post }) {
     <div className="h-max w-full sm:basis-[270px] mx-auto shadow-lg drop-shadow-xl mb-4 flex-grow">
       <div className="h-[50%] w-full">
         <img
-          className="w-full h-fit object-center object-cover"
+          className="w-full h-full object-center object-cover"
           src={post.image}
           alt=""
         />
