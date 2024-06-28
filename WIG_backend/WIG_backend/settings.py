@@ -66,7 +66,7 @@ ROOT_URLCONF = 'WIG_backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -159,7 +159,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-"""
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -168,6 +167,3 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'bossemmanuel3105@gmail.com'
 EMAIL_HOST_PASSWORD = 'phgt ppbm xhyg wloo'  # Use the App Password generated
 DEFAULT_FROM_EMAIL = 'bossemmanuel3105@gmail.com'
-
-
-"""

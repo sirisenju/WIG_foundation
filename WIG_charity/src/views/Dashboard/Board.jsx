@@ -77,4 +77,5 @@ function Board({ onProjectClick }) {
   );
 }
 
+
 export default Board;

@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import axiosInstance from './../../api';
-import { useNavigate } from 'react-router-dom';
 
 function Project() {
   const [title, setTitle] = useState("");
   const [sub_header, setSubheading] = useState("");
   const [volunteer, setVolunteer] = useState("");
   const [content, setContent] = useState("");
-  const [image, setImages] = useState([]);
+  const [image, setImage] = useState([]);
   const [post_date, setPostDate] = useState("");
   const [post_time, setPostTime] = useState("");
-  const navigate = useNavigate();
 
   const handleImageChange = (e) => {
-    setImages([...e.target.files]);
+    setImage([...e.target.files]);
   };
 
   const handleSubmit = (e) => {
@@ -27,14 +25,13 @@ function Project() {
     formData.append('post_date', post_date);
     formData.append('post_time', post_time);
     image.forEach((file) => {
-      formData.append('image_files', file);
+      formData.append('image', file);
     });
     try {
       const response = axiosInstance.post('api/user/create_project/', formData);
       console.log(response)
-      setTimeout(() => {
-        navigate('/dashboard');
-      }, 3000);
+      window.location.reload();
+   
     } catch(error){
       console.error("post failed", error)
     }
@@ -95,7 +92,6 @@ function Project() {
             <label className="block text-gray-700">Upload Images</label>
             <input
               type="file"
-              multiple
               className="w-full mt-2 p-2 border rounded-md"
               onChange={handleImageChange}
             />

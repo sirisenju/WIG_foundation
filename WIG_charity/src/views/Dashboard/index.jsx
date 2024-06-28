@@ -95,7 +95,7 @@ function Dashboard() {
               </h2>
               <p>{selectedProject.sub_header}</p><p>{selectedProject.date}</p>
               
-              <img src={selectedProject.images[0].image_url} alt={selectedProject.title} className="mb-4" />
+              <img src={selectedProject.image} alt={selectedProject.title} className="mb-4" />
 
               <p>{selectedProject.content}</p>
 

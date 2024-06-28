@@ -56,34 +56,24 @@ function Users({ users, onUserClick }) {
             <tr>
               <th className="text-nowrap text-center">First name</th>
               <th className="text-nowrap text-center">Surname</th>
-              {/* <th className="text-nowrap text-center">Email address</th> */}
+              <th className="text-nowrap text-center">Email address</th>
               <th className="text-nowrap text-center">Role</th>
-              {/* <th className="text-nowrap text-center">Phone number</th> */}
+              <th className="text-nowrap text-center">Phone number</th> 
             </tr>
           </thead>
           <tbody> 
-          {/* {data.users && data.users.length > 0 && (
+          {data.users && data.users.length > 0 && (
             data.users.map((user, index) => (
               <tr key={user.id} className="text-center cursor-pointer hover:bg-green-300" onClick={() => onUserClick(user)}>
                 <td className="text-nowrap text-center">{user.first_name}</td>
                 <td className="text-nowrap text-center">{user.last_name}</td>
                 <td className="text-nowrap text-center">{user.email}</td>
                 <td className="text-nowrap text-center">{user.role}</td>
-                <td className="text-nowrap text-center">{user.number}</td>
+                <td className="text-nowrap text-center">{user.phone_number}</td>
               </tr>
             ))
-          )} */}
-          {
-            users.map((item) => (
-              <tr key={item.id} className='cursor-pointer' onClick={() => onUserClick(item)}>
-                <td className="text-nowrap text-center">{item.firstName}</td>
-                <td className="text-nowrap text-center">{item.lastName}</td>
-                {/* <td className="text-nowrap text-center">{item.email}</td> */}
-                <td className="text-nowrap text-center">{item.role}</td>
-                {/* <td className="text-nowrap text-center">{item.number}</td> */}
-              </tr>
-            ))
-          }
+          )}
+
           </tbody>
         </table>
       </div>

@@ -2,25 +2,14 @@ import React, { useState, useEffect } from "react";
 import axiosInstance from "../../api";
 
 const PostList = ({ user, projects, onBack }) => {
-  // const [data, setData] = useState([]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axiosInstance.get("api/admin-summary/");
-  //       setData(response.data.projects); // Assuming response.data.projects is the array of projects
-  //     } catch (error) {
-  //       console.error("Error fetching posts:", error);
-  //       // Handle error at component level if needed
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-
-  // if (!data || data.length === 0) {
-  //   return <div className="p-4">No posts available Yet!!!</div>;
-  // }
+  useEffect(() => {
+    const initialStatus = projects.reduce((acc, project) => {
+      acc[project.id] = { status: project.is_approved ? "approved" : "" };
+      return acc;
+    }, {});
+    setProjectStatus(initialStatus);
+  }, [projects]);
 
   const [projectStatus, setProjectStatus] = useState(
     projects.reduce((acc, project) => {
@@ -34,6 +23,18 @@ const PostList = ({ user, projects, onBack }) => {
       ...prevStatus,
       [projectId]: { status },
     }));
+  };
+
+  const handleSubmit = async () => {
+    for (const projectId in projectStatus) {
+      const { status } = projectStatus[projectId];
+      if (status === "approved") {
+        await axiosInstance.post(`/api/admin/projects/${projectId}/approve/`);
+      } else if (status === "rejected") {
+        await axiosInstance.delete(`/api/admin/projects/${projectId}/delete/`);
+      }
+    }
+    onBack(); // Call the onBack function to navigate back
   };
 
   return (
@@ -56,10 +57,10 @@ const PostList = ({ user, projects, onBack }) => {
                   <strong>Title:</strong> {project.title}
                 </p>
                 <p>
-                  <strong>Description:</strong> {project.description}
+                  <strong>Description:</strong> {project.sub_header}
                 </p>
                 <p>
-                  <strong>Main content:</strong> {project.maincontent}
+                  <strong>Main content:</strong> {project.content}
                 </p>
 
                 {/* checkbox divs */}
@@ -91,6 +92,12 @@ const PostList = ({ user, projects, onBack }) => {
           </ul>
         )}
       </ul>
+      <button
+        onClick={handleSubmit}
+        className="mb-4 px-7 py-2 bg-green-500 text-white rounded-md hover:bg-green-700 focus:outline-none"
+      >
+        Submit
+      </button>
       <button
         onClick={onBack}
         className="mb-4 px-7 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 focus:outline-none"
