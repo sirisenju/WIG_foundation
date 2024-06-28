@@ -7,8 +7,6 @@ import { useParams } from "react-router-dom";
 function Blog() {
   const { blogtitle } = useParams();
   const [blog, setBlog] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchBlog = async () => {
