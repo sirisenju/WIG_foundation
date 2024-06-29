@@ -16,7 +16,7 @@ function About() {
       />
       <main>
         {/* first section */}
-        <section className="w-full h-full">
+        <section className="w-full h-full overflow-clip">
           {/* first div design */}
           <div className="w-full lg:w-[80%] mx-auto block sm:flex mt-5 sm:mt-14 2xl:max-w-7xl">
             <div
@@ -183,7 +183,7 @@ function About() {
           </div>
         </section>
 
-        <section className="w-full h-full">
+        <section className="w-full h-full overflow-clip">
           {/* about list div */}
           <div
             data-aos="fade-left"
@@ -361,7 +361,7 @@ function About() {
         </section>
 
         {/* gallery section */}
-        <section className="w-full h-full">
+        <section className="w-full h-full overflow-clip">
           <div
             data-aos="fade-left"
             data-aos-offset="200"
@@ -477,14 +477,14 @@ function About() {
         </section>
 
         {/* testimonials........... */}
-        <section className="h-full sm:h-[60vh] w-full bg-footer_theme mb-[3%] mt-[3%]">
+        <section className="h-full sm:h-[60vh] w-full bg-footer_theme mb-[3%] mt-[3%] overflow-clip">
           <div className="h-full w-full sm:w-[80%] mx-auto flex justify-center items-center 2xl:max-w-7xl">
             <Swipper />
           </div>
         </section>
 
         {/* sponsors............................. */}
-        <section className="w-full h-full">
+        <section className="w-full h-full overflow-clip">
           <div className="mt-6 mb-10 w-full mx-auto 2xl:max-w-7xl">
             <div className="w-full sm:w-[60%] mx-auto flex justify-between gap-2 p-2 flex-wrap">
               <div className="w-[180px] h-[70px] flex-grow">

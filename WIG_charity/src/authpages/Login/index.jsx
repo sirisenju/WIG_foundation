@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Footer from "../../components/Footer";
 import { useAuth } from "../../AuthContext";
 import { Link, useNavigate } from 'react-router-dom';
+import Toasts from "../../components/Toasts";
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -18,11 +19,11 @@ function Login() {
         user_login(email, password, (isSuperuser) => {
           if (isSuperuser === null) {
               setIsAuthenticated(false);
-              console.error('Login failed');
+              <Toasts message={"Login failed."} type={"error"}/>
           } else {
               setIsAuthenticated(true);
               if (isSuperuser) {
-                  console.log('User is a superuser');
+                  <Toasts message={"Success, Welcome admin."} type={"success"}/>
                   navigate('/admin');
               } else {
                   console.log('User is not a superuser');
@@ -32,7 +33,7 @@ function Login() {
       });
 
       } catch (error) {
-        alert("login failed, try again.")
+        <Toasts message={"Login failed. Try again."} type={"error"}/>
         setButtonState(false)
       }
 
