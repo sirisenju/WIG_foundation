@@ -83,8 +83,8 @@ class ContactSerializer(serializers.ModelSerializer):
     
     def send_contact_mail(self, email, first_name, last_name, phone_number, message):
         subject = 'INQUIRY'
-        from_email = 'bossemmanuel3105@gmail.com'
-        to = [email]
+        from_email = ' worldwidewesterners@gmail.com'
+        to = ['westernersgroupworldwide@gmail.com']
 
         context = {
             'first_name': first_name,

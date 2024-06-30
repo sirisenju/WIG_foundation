@@ -33,7 +33,7 @@ function Causes() {
   useEffect(() => {
       const fetchData = async () => {
           try {
-              const response = await axios.get('http://127.0.0.1:8000/api/summary/');
+              const response = await axios.get('https://backend.thewesternfoundation.org/api/summary/');
               setProjectPosts(response.data.projects)
               setData(response.data);
           } catch (error) {
@@ -56,7 +56,7 @@ function Causes() {
     formData.append('message', message);
 
     try {
-      const response = axios.post('http://127.0.0.1:8000/api/contact/', formData);
+      const response = axios.post('https://backend.thewesternfoundation.org/api/contact/', formData);
       triggerSuccessToast();
       setTimeout(() => {
         window.location.reload();

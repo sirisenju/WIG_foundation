@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 const axiosInstance = axios.create({
-    baseURL: 'http://127.0.0.1:8000/', 
+    baseURL: 'https://backend.thewesternfoundation.org/', 
 });
 
 axiosInstance.interceptors.request.use(
@@ -32,7 +32,7 @@ axiosInstance.interceptors.response.use(
 
             try {
                 //http://127.0.0.1:8000/ 
-                const { data } = await axiosInstance.post('http://127.0.0.1:8000/', {
+                const { data } = await axiosInstance.post('https://backend.thewesternfoundation.org/', {
                     refresh: refresh_token,
                 });
 

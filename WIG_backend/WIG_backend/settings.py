@@ -30,8 +30,8 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    #"https://wig-foundation.vercel.app",
+    #"http://localhost:5173",
+    "https://wig-foundation.vercel.app",
 ]
 
 # Application definition
@@ -164,6 +164,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'bossemmanuel3105@gmail.com'
-EMAIL_HOST_PASSWORD = 'phgt ppbm xhyg wloo'  # Use the App Password generated
-DEFAULT_FROM_EMAIL = 'bossemmanuel3105@gmail.com'
+EMAIL_HOST_USER = 'worldwidewesterners@gmail.com'
+EMAIL_HOST_PASSWORD = '##############'  # Use the App Password generated
+DEFAULT_FROM_EMAIL = 'worldwidewesterners@gmail.com'
+
