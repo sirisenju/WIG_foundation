@@ -31,7 +31,8 @@ ALLOWED_HOSTS = ["*"]
 
 CORS_ALLOWED_ORIGINS = [
     #"http://localhost:5173",
-    "https://wig-foundation.vercel.app",
+    #"https://wig-foundation.vercel.app",
+    "https://frontend.thewesternfoundation.org"
 ]
 
 # Application definition
