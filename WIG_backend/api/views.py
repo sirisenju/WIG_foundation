@@ -98,7 +98,17 @@ class UserLoginAPIView(GenericAPIView):
         data["is_superuser"] = user.is_superuser
         return Response(data, status=status.HTTP_200_OK)
     
+    
+class CheckSuperuserView(APIView):
+    permission_classes = [IsAuthenticated]
 
+    def get(self, request):
+        """
+        GET request to check if the authenticated user is a superuser.
+        """
+        user = request.user
+        is_superuser = user.is_superuser
+        return Response({'is_superuser': is_superuser})
 
 class ProfilePictureUploadView(APIView):
     parser_classes = (MultiPartParser, FormParser)

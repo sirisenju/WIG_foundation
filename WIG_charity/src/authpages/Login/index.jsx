@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Footer from "../../components/Footer";
 import { useAuth } from "../../AuthContext";
 import { Link, useNavigate } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
+import Toasts from "../../components/Toasts";
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -10,6 +12,25 @@ function Login() {
     const navigate = useNavigate();
     const { user_login } = useAuth();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isSuperuser, setIsSuperuser] = useState(false);
+
+    const [message, setMessage] = useState("");
+    const [type, setType] = useState("");
+
+    const triggerSuccessToast = () => {
+      setMessage("Login Successful");
+      setType("success");
+    };
+
+    const triggerInvalidToast = () => {
+      setMessage("Invalid Login Credentials");
+      setType("info");
+    };
+
+    const triggerErrorToast = () => {
+      setMessage("An Error Occurred, Please Try Again");
+      setType("error");
+    };
   
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -18,21 +39,28 @@ function Login() {
         user_login(email, password, (isSuperuser) => {
           if (isSuperuser === null) {
               setIsAuthenticated(false);
-              console.error('Login failed');
+              setIsSuperuser(false);
+              triggerInvalidToast();
+              setButtonState(false)
           } else {
               setIsAuthenticated(true);
               if (isSuperuser) {
-                  console.log('User is a superuser');
-                  navigate('/admin');
+                  setIsSuperuser(true);
+                  triggerSuccessToast();
+                  setTimeout(() => {
+                    navigate('/admin');
+                  }, 1000);
               } else {
-                  console.log('User is not a superuser');
-                  navigate('/dashboard');
+                  triggerSuccessToast();
+                  setTimeout(() => {
+                    navigate('/dashboard');
+                  }, 1000);
               }
           }
       });
 
       } catch (error) {
-        alert("login failed, try again.")
+        triggerErrorToast();
         setButtonState(false)
       }
 
@@ -84,6 +112,7 @@ function Login() {
                 >
                   {buttonState ? "Loading..." : "Login"}
                 </button>
+                <Toasts message={message} type={type} />
               </form>
               {/* create account prompt */}
               <p className="text-center">
