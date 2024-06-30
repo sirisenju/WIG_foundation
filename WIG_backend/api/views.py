@@ -16,21 +16,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
 
-"""
-def send_contact_mail(x, y, z):
-    subject = 'CREDIT ALERT'
-    from_email = 'bossemmanuel3105@gmail.com'
-    to= [str(x)]
-    #to = ['eferakeyaemmanuel2003@gmail.com']
-    html_content = render_to_string('email_template.html')
-    text_content = strip_tags(html_content)
-
-    msg = EmailMultiAlternatives(subject, text_content, from_email, to)
-    msg.attach_alternative(html_content, "text/html")
-    msg.send()
-
-"""
-
 
 class ContactView(GenericAPIView):
     permission_classes = (AllowAny,)
