@@ -24,16 +24,6 @@ const accordianData = [
       Additionally, your support through donations plays a crucial role in helping us 
       getting all sort of items for our kids.`,
   },
-  {
-    id: 4,
-    number: "04",
-    title:
-      "How can I get involved or support The WESTERNERS WORLDWIDE?",
-    message: `Getting involved with The WESTERNERS WORLDWIDE is easy! 
-        It is as simple as sending use an email. 
-        Additionally, your support through donations plays a crucial role in helping us 
-        getting all sort of items for our kids.`,
-  },
 ];
 
 export default accordianData;

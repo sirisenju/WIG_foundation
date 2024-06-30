@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuth } from "../../AuthContext";
 import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
 
 function SideBar({ onLinkClick }) {
   const { user_logout } = useAuth();
@@ -18,17 +19,29 @@ function SideBar({ onLinkClick }) {
     }
   };
 
+  const [activeLink, setActiveLink] = useState("Board");
+
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+    onLinkClick(link);
+  };
+
+
   return (
     <div className="sm:basis-[100px] lg:basis-[200px] rounded-lg bg-white shadow-md flex-grow hidden md:block 2xl:max-w-7xl">
       <div className="p-2 flex flex-col justify-between h-auto pt-28">
         <ul className="list-none flex flex-col gap-4">
-          <li className="h-10 flex items-center px-4 gap-2 text-lg hover:bg-[#EDF7F5] rounded-md">
+          <li className={`h-10 flex items-center px-4 gap-2 text-lg rounded-md ${
+              activeLink === "Board" ? "bg-[#EDF7F5]" : "hover:bg-[#EDF7F5]"
+            }`}>
             <img className="h-6 w-6" src="./assets/shild.png" alt="" />
-            <button onClick={() => onLinkClick("Board")}>Dashboard</button>
+            <button onClick={() => handleLinkClick("Board")}>Dashboard</button>
           </li>
-          <li className="h-10 flex items-center px-4 gap-2 text-lg hover:bg-[#EDF7F5] rounded-md">
+          <li className={`h-10 flex items-center px-4 gap-2 text-lg rounded-md ${
+              activeLink === "Project" ? "bg-[#EDF7F5]" : "hover:bg-[#EDF7F5]"
+            }`}>
             <img className="h-6 w-6" src="./assets/shild.png" alt="" />
-            <button onClick={() => onLinkClick("Project")}>Project</button>
+            <button onClick={() => handleLinkClick("Project")}>Project</button>
           </li>
           <li className="h-10 flex items-center px-4 gap-2 text-lg hover:bg-[#EDF7F5] rounded-md">
             <img className="h-6 w-6" src="./assets/shild.png" alt="" />

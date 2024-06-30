@@ -7,6 +7,7 @@ import { useState } from "react";
 import DonateModel from "./DonateModel";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
+import Toasts from "./Toasts";
 // ..
 AOS.init();
 
@@ -94,9 +95,10 @@ function Navbar(props) {
                   <button className="border-2 border-green-600 hover:bg-green-600 px-5 py-2">Contact Us</button>
                 </Link>
               </div>
-              <div className="w-full h-full">
+              <div className="w-full h-full pb-8">
                 <DonateModel isVisible={isModalVisible} onClose={closeModal}/>
               </div>
+              {/* <Toasts message={"just a dummy message"} type="error"/> */}
             </div>
           </div>
         </div>
