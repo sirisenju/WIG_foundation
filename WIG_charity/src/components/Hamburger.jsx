@@ -35,7 +35,7 @@ const HamburgerMenu = ({propData}) => {
           setIsOpen(false);
         }}
       >
-        <div className="overflow-auto text-white">
+        <div className="overflow-clip text-white">
           <Hamburger 
             toggled={isOpen} 
             toggle={setIsOpen} 

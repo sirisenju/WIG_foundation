@@ -14,7 +14,7 @@ function OurTeam() {
       />
 
       {/* start of the section */}
-      <section className="w-full h-full">
+      <section className="w-full h-full overflow-clip">
         {/* div for the content */}
         <div className="w-full p-2 md:w-[80%] h-full mx-auto">
           {/* div for the heading message */}

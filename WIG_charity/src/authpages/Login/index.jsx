@@ -3,7 +3,6 @@ import Footer from "../../components/Footer";
 import { useAuth } from "../../AuthContext";
 import { Link, useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
-import Toasts from "../../components/Toasts";
 
 function Login() {
     const [email, setEmail] = useState('');

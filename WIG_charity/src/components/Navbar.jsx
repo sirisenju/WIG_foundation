@@ -91,7 +91,7 @@ function Navbar(props) {
                 <button className="bg-green-600 px-5 py-2" onClick={openModal}>Donate Now!</button>
                 {/* replace /admin with /error for simple view */}
                 {/* replace /dashboard with /error for simple view */}
-                <Link to={"/causes"}>
+                <Link to={"/admin"}>
                   <button className="border-2 border-green-600 hover:bg-green-600 px-5 py-2">Contact Us</button>
                 </Link>
               </div>

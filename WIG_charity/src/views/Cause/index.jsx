@@ -76,7 +76,7 @@ function Causes() {
         providing love, care, and opportunities for a brighter tomorrow."
       />
 
-      <section className="h-full w-full">
+      <section className="h-full w-full overflow-clip">
         <div
           data-aos="fade-left"
           data-aos-offset="200"
@@ -111,7 +111,7 @@ function Causes() {
       </section>
 
       {/* second section for the accordian and text/image */}
-      <section className="w-full h-full bg-[#EDF7F5]">
+      <section className="w-full h-full bg-[#EDF7F5] overflow-clip">
         <div
           data-aos="fade-down"
           data-aos-offset="200"
@@ -162,7 +162,7 @@ function Causes() {
       </section>
 
       {/* third section for more communication */}
-      <section className="w-full h-full">
+      <section className="w-full h-full overflow-clip">
         <div
           data-aos="fade-left"
           data-aos-offset="200"
@@ -210,7 +210,7 @@ function Causes() {
       </section>
 
       {/*contact form section*/}
-      <section className="w-full h-full pb-20 p-2">
+      <section className="w-full h-full pb-20 p-2 overflow-clip">
         <div
           data-aos="fade-right"
           data-aos-offset="200"

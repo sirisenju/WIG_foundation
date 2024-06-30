@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <section className="w-full h-full bg-footer_theme">
+    <section className="w-full h-full bg-footer_theme overflow-clip">
       <div className="w-full sm:w-[75%] h-[65%] pt-[5%] mx-auto 2xl:max-w-7xl">
         <div className="grid grid-flow-row place-content-center sm:place-content-start sm:grid-cols-4 sm:auto-cols-auto gap-5 auto-cols-max">
           <div className="text-center sm:text-start text-white p-1">

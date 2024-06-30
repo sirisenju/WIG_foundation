@@ -242,14 +242,14 @@ function Home() {
         </section>
         {/* second section--------------- */}
         {/* testimonials------------------ */}
-        <section className="h-full w-full bg-footer_theme">
+        <section className="h-full w-full bg-footer_theme overflow-clip">
           <div className="h-full w-full sm:w-[80%] mx-auto flex justify-center items-center 2xl:max-w-7xl">
             <Swipper />
           </div>
         </section>
 
         {/* third section ------------------------------- */}
-        <section className="h-full w-full">
+        <section className="h-full w-full overflow-clip">
           {/* first div------------------------ */}
           <div className="w-full lg:w-[75%] mx-auto p-2 pt-[5%] 2xl:max-w-7xl">
             <h3 className="font-mono text-base pb-2 tracking-wider">
