@@ -37,6 +37,7 @@ urlpatterns = [
     path("api/blog/<str:title>/", views.BlogView.as_view(), name="blog"),
     path("api/user/register/", views.UserRegisterationAPIView.as_view(), name="create-user"),
     path("api/user/login/", views.UserLoginAPIView.as_view(), name="login-user"),
+    path('api/check-superuser/', views.CheckSuperuserView.as_view(), name='check_superuser'),
     path("api/token/refresh/", TokenRefreshView.as_view(), name="token-refresh"),
     path("api/user/profile/", views.UserProfileView.as_view(), name="user-profile"),
     path("api/user/create_project/", views.UserCreateProjectView.as_view(), name="user-create-project"),

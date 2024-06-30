@@ -11,7 +11,6 @@ function ProfilePictureDisplay() {
       try {
         const response = await axiosInstance.get("api/user/profile/");
         setUserProfile(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error("Error fetching user profile:", error);
       }

@@ -1,7 +1,26 @@
 import React, { useState, useEffect } from "react";
 import axiosInstance from "../../api";
+import 'react-toastify/dist/ReactToastify.css';
+import Toasts from "../../components/Toasts";
 
 const PostList = ({ user, projects, onBack }) => {
+  const [message, setMessage] = useState("");
+  const [type, setType] = useState("");
+
+  const triggerApproveToast = () => {
+    setMessage("Project Approved");
+    setType("success");
+  };
+
+  const triggerRejectToast = () => {
+    setMessage("Project Rejected");
+    setType("success");
+  };
+
+  const triggerErrorToast = () => {
+    setMessage("An Error Occurred, Please Try Again");
+    setType("error");
+  };
 
   useEffect(() => {
     const initialStatus = projects.reduce((acc, project) => {
@@ -30,8 +49,10 @@ const PostList = ({ user, projects, onBack }) => {
       const { status } = projectStatus[projectId];
       if (status === "approved") {
         await axiosInstance.post(`/api/admin/projects/${projectId}/approve/`);
+        triggerApproveToast();
       } else if (status === "rejected") {
         await axiosInstance.delete(`/api/admin/projects/${projectId}/delete/`);
+        triggerRejectToast();
       }
     }
     onBack(); // Call the onBack function to navigate back
@@ -86,6 +107,7 @@ const PostList = ({ user, projects, onBack }) => {
                       onChange={() => handleRadioChange(project.id, "rejected")}
                     />
                   </div>
+                  <Toasts message={message} type={type} />
                 </div>
               </li>
             ))}

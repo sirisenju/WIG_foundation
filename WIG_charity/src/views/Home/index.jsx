@@ -15,7 +15,7 @@ function Home() {
   useEffect(() => {
       const fetchData = async () => {
           try {
-              const response = await axios.get('https://wig-backend.onrender.com/api/summary/');
+              const response = await axios.get('https://backend.thewesternfoundation.org/api/summary/');
               setData(response.data);
               setProjectPosts(response.data.projects);
               console.log(response.data)

@@ -6,6 +6,8 @@ import Footer from "../../components/Footer";
 import PostCards from "../Home/PostCards";
 //import { projectPosts } from "../../../lib/accordian_data";
 import axios from "axios";
+import 'react-toastify/dist/ReactToastify.css';
+import Toasts from "../../components/Toasts";
 
 function Causes() {
   const [firstName, setfirstName] = useState("");
@@ -15,15 +17,27 @@ function Causes() {
   const [message, setMessage] = useState("");
   const [projectPosts, setProjectPosts] = useState({});
 
+  const [toastmessage, setToastMessage] = useState("");
+  const [type, setType] = useState("");
+
+  const triggerSuccessToast = () => {
+    setToastMessage("Message Submitted Successfully");
+    setType("success");
+  };
+
+  const triggerErrorToast = () => {
+    setToastMessage("An Error Occurred, Please Try Again");
+    setType("error");
+  };
+
   useEffect(() => {
       const fetchData = async () => {
           try {
-              const response = await axios.get('http://127.0.0.1:8000/api/summary/');
+              const response = await axios.get('https://backend.thewesternfoundation.org/api/summary/');
               setProjectPosts(response.data.projects)
               setData(response.data);
-              console.log(response.data)
           } catch (error) {
-            console.error('Error fetching users:', error);
+            console.error('Error fetching:', error);
           }
       };
 
@@ -42,11 +56,13 @@ function Causes() {
     formData.append('message', message);
 
     try {
-      const response = axios.post('https://wig-backend.onrender.com/api/contact/', formData);
-      console.log(response)
-      window.location.reload();
+      const response = axios.post('https://backend.thewesternfoundation.org/api/contact/', formData);
+      triggerSuccessToast();
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     } catch(error){
-      console.error("post failed", error)
+      triggerErrorToast();
     }
   };
 
@@ -274,6 +290,7 @@ function Causes() {
                     <button type="submit" className="py-2 px-4 mt-4 mb-4 border-2 border-green-500 hover:bg-green-600 hover:text-white">
                       Send message
                     </button>
+                    <Toasts message={message} type={type} />
                   </div>
                 </form>
               </div>

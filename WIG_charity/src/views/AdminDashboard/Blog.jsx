@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axiosInstance from "./../../api";
+import 'react-toastify/dist/ReactToastify.css';
+import Toasts from "../../components/Toasts";
 
 function Blog() {
   const [title, setTitle] = useState("");
@@ -10,6 +12,20 @@ function Blog() {
   const [post_date, setPostDate] = useState("");
   const [category, setCategory] = useState("");
   const [read_duration, setReadDuration] = useState("");
+
+  const [message, setMessage] = useState("");
+  const [type, setType] = useState("");
+
+  const triggerSuccessToast = () => {
+    setMessage("Blog Submitted Successfully");
+    setType("success");
+  };
+
+  const triggerErrorToast = () => {
+    setMessage("An Error Occurred, Please Try Again");
+    setType("error");
+  };
+
 
   const categories = [
     "Education",
@@ -39,10 +55,13 @@ function Blog() {
 
     try {
       const response = axiosInstance.post('api/admin/create_blog/', formData);
-      console.log(response);
-      window.location.reload();
+      triggerSuccessToast();
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+      
     } catch (error) {
-      alert("Blog post failed.")
+        triggerErrorToast();
     }
   };
   return (
@@ -156,6 +175,7 @@ function Blog() {
           >
             Submit
           </button>
+          <Toasts message={message} type={type} />
         </form>
       </div>
     </div>

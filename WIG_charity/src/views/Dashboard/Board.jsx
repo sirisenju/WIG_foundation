@@ -12,7 +12,6 @@ function Board({ onProjectClick }) {
       try {
         const response = await axiosInstance.get("api/user/profile/");
         setUserProfile(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error("Error fetching user profile:", error);
       }
@@ -22,7 +21,6 @@ function Board({ onProjectClick }) {
       try {
         const response = await axiosInstance.get("api/user/projects/");
         setProjects(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error("Error fetching projects:", error);
       }
