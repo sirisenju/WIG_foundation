@@ -111,7 +111,6 @@ function Login() {
                 >
                   {buttonState ? "Loading..." : "Login"}
                 </button>
-                <Toasts message={message} type={type} />
               </form>
               {/* create account prompt */}
               <p className="text-center">
