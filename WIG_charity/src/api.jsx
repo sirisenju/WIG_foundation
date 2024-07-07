@@ -3,7 +3,7 @@ import axios from 'axios';
 
 
 const axiosInstance = axios.create({
-    baseURL: 'https://backend.thewesternfoundation.org/', 
+    baseURL: 'https://wig-backend.onrender.com/', 
 });
 
 axiosInstance.interceptors.request.use(
@@ -32,7 +32,7 @@ axiosInstance.interceptors.response.use(
 
             try {
                 //http://127.0.0.1:8000/ 
-                const { data } = await axiosInstance.post('https://backend.thewesternfoundation.org/', {
+                const { data } = await axiosInstance.post('https://wig-backend.onrender.com/', {
                     refresh: refresh_token,
                 });
 

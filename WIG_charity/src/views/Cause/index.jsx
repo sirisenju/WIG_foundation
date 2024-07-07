@@ -33,7 +33,7 @@ function Causes() {
   useEffect(() => {
       const fetchData = async () => {
           try {
-              const response = await axios.get('https://backend.thewesternfoundation.org/api/summary/');
+              const response = await axios.get('https://wig-backend.onrender.com/api/summary/');
               setProjectPosts(response.data.projects)
               setData(response.data);
           } catch (error) {
