@@ -56,7 +56,7 @@ function Causes() {
     formData.append('message', message);
 
     try {
-      const response = axios.post('https://backend.thewesternfoundation.org/api/contact/', formData);
+      const response = axios.post('https://wig-backend.onrender.com/api/contact/', formData);
       triggerSuccessToast();
       setTimeout(() => {
         window.location.reload();
