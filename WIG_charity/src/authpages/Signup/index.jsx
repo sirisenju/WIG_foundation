@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Footer from "../../components/Footer";
 import { useAuth } from '../../AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from "axios";
 import 'react-toastify/dist/ReactToastify.css';
 import Toasts from "../../components/Toasts";
 
