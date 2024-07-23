@@ -33,25 +33,16 @@ const wf_Team = [
   },
   {
     id: 4,
-    name: "Osahon Osaghae",
-    position: "Financial / Logistics Director",
-    quoat: `"The true measure of wealth is not what we accumulate but what we willingly share in acts of charity."`,
-    imageUrl: "/assets/paul.jpg",
+    name: "Ogbonnaya Sunday",
+    position: " Director of Programs",
+    quoat: `"He's a Business man, Entrepreneur and a Transporter. 
+He currently serve as Senior Special Assistant to the Edo State Governor. 
+He is an Associate member, Institute of Chattered Mediators and Conciliators
+He graduated from the Federal Polytechnic, Auchi.
+Com OGBONNAYA Sunday is happily married to Mrs Melissa Izoduwa SUNDAY-OGBONNAYA"`,
+    imageUrl: "/assets/ogbonnaya.jpg",
   },
-  {
-    id: 5,
-    name: "Osahon Osaghae",
-    position: "Financial / Logistics Director",
-    quoat: `"The true measure of wealth is not what we accumulate but what we willingly share in acts of charity."`,
-    imageUrl: "/assets/potter.jpg",
-  },
-  {
-    id: 6,
-    name: "Osahon Osaghae",
-    position: "Financial / Logistics Director",
-    quoat: `"The true measure of wealth is not what we accumulate but what we willingly share in acts of charity."`,
-    imageUrl: "/assets/potter.jpg",
-  },
+  
 ];
 
 export default wf_Team;
