@@ -30,20 +30,26 @@ from rest_framework_simplejwt.views import TokenRefreshView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path("api/summary/", views.SummaryView.as_view(), name="summary"),
+    path("api/contact/", views.ContactView.as_view(), name="contact"),
+    path('api/user/profile/upload/', views.ProfilePictureUploadView.as_view(), name='profile-picture-upload'),
     path("api/blog/<str:title>/", views.BlogView.as_view(), name="blog"),
     path("api/user/register/", views.UserRegisterationAPIView.as_view(), name="create-user"),
     path("api/user/login/", views.UserLoginAPIView.as_view(), name="login-user"),
+    path('api/check-superuser/', views.CheckSuperuserView.as_view(), name='check_superuser'),
     path("api/token/refresh/", TokenRefreshView.as_view(), name="token-refresh"),
     path("api/user/profile/", views.UserProfileView.as_view(), name="user-profile"),
     path("api/user/create_project/", views.UserCreateProjectView.as_view(), name="user-create-project"),
     path("api/user/projects/", views.UserProjectView.as_view(), name="user-projects"),
-    path("api/user/projects/<str:title>/", views.ProjectView.as_view(), name="project"),
     
-    path("api/logout/", views.UserLogoutAPIView.as_view(), name="logout-user"),
-
 
     path('api/admin-summary/', views.AdminSummaryView.as_view(), name='admin-summary'),
+    path('api/admin/projects/<int:pk>/approve/', views.ApproveProject.as_view(), name='approve_project'),
+    path('api/admin/projects/<int:pk>/delete/', views.DeleteProject.as_view(), name='delete_project'),
+    path("api/admin/create_blog/", views.AdminCreateBlogView.as_view(), name="admin-create-blog"),
 
+
+    path("api/logout/", views.UserLogoutAPIView.as_view(), name="logout-user"),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

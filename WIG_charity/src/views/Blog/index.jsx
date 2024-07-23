@@ -7,8 +7,6 @@ import { useParams } from "react-router-dom";
 function Blog() {
   const { blogtitle } = useParams();
   const [blog, setBlog] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -39,7 +37,7 @@ function Blog() {
       />
 
       {/* first section of the blog */}
-      <section className="w-full h-full">
+      <section className="w-full h-full overflow-clip">
         <div className="w-full md:w-[80%] h-full mx-auto p-2 sm:p-0 2xl:max-w-7xl">
           <h2 className="text-2xl font-bold tracking-wide pt-4 pb-4">
             Our blogging story. Join us and be a giver today.
@@ -59,13 +57,13 @@ function Blog() {
                   <span>
                     <FaUser />
                   </span>
-                  Lois Lane
+                  {blog.author}
                 </p>
                 <p className="flex items-center gap-2">
                   <span>
                     <FaCalendar />
                   </span>
-                  {blog.date}
+                  {blog.post_date}
                 </p>
                 <p className="flex items-center gap-2">
                   <span>
@@ -108,10 +106,6 @@ function Blog() {
                   <p>Home</p>
                   <p>(8)</p>
                 </div>
-                <div className="text-lg flex justify-between border-black border-b-2 m-2 pb-2">
-                  <p>Water</p>
-                  <p>(6)</p>
-                </div>
               </div>
 
               {/* recent posts div */}
@@ -135,7 +129,6 @@ function Blog() {
                     </p>
                   </div>
                 </div>
-
                 <div className="w-full flex gap-2 mb-2 bg-white">
                   <img
                     className="w-[160px] h-[160px] object-cover"

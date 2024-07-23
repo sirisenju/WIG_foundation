@@ -30,8 +30,9 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "https://wig-foundation.vercel.app",
+    #"http://localhost:5173",
+    #"https://wig-foundation.vercel.app",
+    "https://frontend.thewesternfoundation.org"
 ]
 
 # Application definition
@@ -66,7 +67,7 @@ ROOT_URLCONF = 'WIG_backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -158,3 +159,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'worldwidewesterners@gmail.com'
+EMAIL_HOST_PASSWORD = '##############'  # Use the App Password generated
+DEFAULT_FROM_EMAIL = 'worldwidewesterners@gmail.com'
+

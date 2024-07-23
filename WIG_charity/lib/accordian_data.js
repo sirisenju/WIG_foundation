@@ -24,16 +24,16 @@ const accordianData = [
       Additionally, your support through donations plays a crucial role in helping us 
       getting all sort of items for our kids.`,
   },
-  {
-    id: 4,
-    number: "04",
-    title:
-      "How can I get involved or support The WESTERNERS WORLDWIDE?",
-    message: `Getting involved with The WESTERNERS WORLDWIDE is easy! 
-        It is as simple as sending use an email. 
-        Additionally, your support through donations plays a crucial role in helping us 
-        getting all sort of items for our kids.`,
-  },
 ];
 
 export default accordianData;
+
+
+
+
+export const projectPosts = [
+  {id: 1, title: "Medicine", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!  ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!  ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!  ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "50%"},
+  {id: 2, title: "Art", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "50%"},
+  {id: 3, title: "Literature", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "50%"},
+  {id: 4, title: "Science", subHeading: "Donate medicine for the poor.", mainContent: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta iusto modi quam id corporis! Facilis neque vel laudantium? Natus excepturi ab ipsam aliquid dolore veniam voluptas odit eos tenetur saepe!`, image: "./assets/kidd.jpg", milestone: "50%"},
+]

@@ -51,15 +51,14 @@ function Users({ users, onUserClick }) {
         )} */}
       </div>
       <div className="overflow-x-auto mt-2">
-        <h2>User list table</h2>
         <table className="table-auto w-full">
           <thead className="text-center">
             <tr>
               <th className="text-nowrap text-center">First name</th>
               <th className="text-nowrap text-center">Surname</th>
-              {/* <th className="text-nowrap text-center">Email address</th> */}
+              <th className="text-nowrap text-center">Email address</th>
               <th className="text-nowrap text-center">Role</th>
-              {/* <th className="text-nowrap text-center">Phone number</th> */}
+              <th className="text-nowrap text-center">Phone number</th> 
             </tr>
           </thead>
           <tbody> 
@@ -67,13 +66,14 @@ function Users({ users, onUserClick }) {
             data.users.map((user, index) => (
               <tr key={user.id} className="text-center cursor-pointer hover:bg-green-300" onClick={() => onUserClick(user)}>
                 <td className="text-nowrap text-center">{user.first_name}</td>
-                {/* <td className="text-nowrap text-center">{item.firstName}</td> */}
                 <td className="text-nowrap text-center">{user.last_name}</td>
+                <td className="text-nowrap text-center">{user.email}</td>
                 <td className="text-nowrap text-center">{user.role}</td>
-                {/* <td className="text-nowrap text-center">{item.number}</td> */}
+                <td className="text-nowrap text-center">{user.phone_number}</td>
               </tr>
             ))
           )}
+
           </tbody>
         </table>
       </div>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Footer from "../../components/Footer";
 import { useAuth } from "../../AuthContext";
 import { Link, useNavigate } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -10,6 +11,25 @@ function Login() {
     const navigate = useNavigate();
     const { user_login } = useAuth();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isSuperuser, setIsSuperuser] = useState(false);
+
+    const [message, setMessage] = useState("");
+    const [type, setType] = useState("");
+
+    const triggerSuccessToast = () => {
+      setMessage("Login Successful");
+      setType("success");
+    };
+
+    const triggerInvalidToast = () => {
+      setMessage("Invalid Login Credentials");
+      setType("info");
+    };
+
+    const triggerErrorToast = () => {
+      setMessage("An Error Occurred, Please Try Again");
+      setType("error");
+    };
   
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -18,21 +38,28 @@ function Login() {
         user_login(email, password, (isSuperuser) => {
           if (isSuperuser === null) {
               setIsAuthenticated(false);
-              console.error('Login failed');
+              setIsSuperuser(false);
+              triggerInvalidToast();
+              setButtonState(false)
           } else {
               setIsAuthenticated(true);
               if (isSuperuser) {
-                  console.log('User is a superuser');
-                  navigate('/admin');
+                  setIsSuperuser(true);
+                  triggerSuccessToast();
+                  setTimeout(() => {
+                    navigate('/admin');
+                  }, 1000);
               } else {
-                  console.log('User is not a superuser');
-                  navigate('/dashboard');
+                  triggerSuccessToast();
+                  setTimeout(() => {
+                    navigate('/dashboard');
+                  }, 1000);
               }
           }
       });
 
       } catch (error) {
-        alert("login failed, try again.")
+        triggerErrorToast();
         setButtonState(false)
       }
 
@@ -40,7 +67,7 @@ function Login() {
   return (
     <>
       <section className="w-full h-full">
-        <div className="w-full lg:w-[70%] h-full sm:h-screen mx-auto block sm:flex flex-row p-3 mb-4 mt-4 glass">
+        <div className="w-full lg:w-[70%] h-full sm:min-h-screen mx-auto block sm:flex flex-row p-3 mb-4 mt-4 glass">
           <div className="w-full sm:w-1/2 h-[380px] sm:h-full order-last">
             <img
               className="w-full h-full object-cover rounded-md "

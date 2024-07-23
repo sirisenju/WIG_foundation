@@ -12,7 +12,6 @@ function Board({ onProjectClick }) {
       try {
         const response = await axiosInstance.get("api/user/profile/");
         setUserProfile(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error("Error fetching user profile:", error);
       }
@@ -22,7 +21,6 @@ function Board({ onProjectClick }) {
       try {
         const response = await axiosInstance.get("api/user/projects/");
         setProjects(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error("Error fetching projects:", error);
       }
@@ -47,7 +45,7 @@ function Board({ onProjectClick }) {
       </div>
       <div className="mt-4 block md:flex p-2 gap-2">
         {/* project div */}
-        <div className="w-full md:w-[70%]">
+        <div className="w-full md:w-[70%] overflow-auto">
           <p className="text-2xl pb-1">Recent Project:</p>
           <p>Projects</p>
           <ul>
@@ -63,7 +61,7 @@ function Board({ onProjectClick }) {
             ))}
           </ul>
         </div>
-        <div className="w-full md:w-[30%] h-auto p-2 mb-2 mt-2 rounded-lg">
+        {/* <div className="w-full md:w-[30%] h-auto p-2 mb-2 mt-2 rounded-lg">
           <p className="text-2xl pb-1">Filter by:</p>
           <button className="text-base mt-2 mr-2 px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
             Recent Post
@@ -71,10 +69,11 @@ function Board({ onProjectClick }) {
           <button className="text-base mt-2 px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
             Add Project
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
 }
+
 
 export default Board;

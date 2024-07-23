@@ -24,39 +24,6 @@ function Projects() {
   }, []);
 
 
-  /*const users = [
-    { id: 1, firstName: "John", lastName: "Doe", role: "Developer" },
-    { id: 2, firstName: "Jane", lastName: "Smith", role: "Designer" },
-    { id: 3, firstName: "Bob", lastName: "Johnson", role: "Manager" },
-  ];*/
-
-  /*const projects = [
-    {
-      id: 1,
-      userId: 1,
-      title: "Project A",
-      description: "Description of Project A",
-    },
-    {
-      id: 2,
-      userId: 1,
-      title: "Project B",
-      description: "Description of Project B",
-    },
-    {
-      id: 3,
-      userId: 2,
-      title: "Project C",
-      description: "Description of Project C",
-    },
-    {
-      id: 4,
-      userId: 3,
-      title: "Project D",
-      description: "Description of Project D",
-    },
-  ];*/
-
   const [selectedUser, setSelectedUser] = useState(null);
 
   const handleUserClick = (user) => {

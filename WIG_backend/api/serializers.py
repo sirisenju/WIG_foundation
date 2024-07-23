@@ -1,7 +1,12 @@
 from rest_framework import serializers
-from .models import User, Project, Gallery, Blog
+from .models import User, Project, Blog, Contact
 from django.contrib.auth import authenticate
 from django.conf import settings
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+
+from django.core.mail import send_mail
 
 
 
@@ -30,46 +35,25 @@ class UserLoginSerializer(serializers.Serializer):
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
+        read_only_fields = ['user']
         fields = ['email', 'first_name', 'last_name', 'phone_number', 'role', 'profile_pic']
-    
 
-class ImageSerializer(serializers.ModelSerializer):
-    image_url = serializers.SerializerMethodField()
-
-    class Meta:
-        model = Gallery
-        fields = ('id', 'image', 'image_url')
-
-    def get_image_url(self, obj):
-        request = self.context.get('request')
-        if request:
-            return request.build_absolute_uri(obj.image.url)
-        return obj.image.url
 
 
 class UserProjectSerializer(serializers.ModelSerializer):
     user = UserProfileSerializer(read_only=True) 
-    images = ImageSerializer(many=True, read_only=True)
-    image_files = serializers.ListField(
-        child=serializers.FileField(write_only=True),
-        write_only=True
-    )
+
 
     class Meta:
         model = Project
-        fields = ['id', 'user', 'title', 'sub_header', 'content', 'images', 'image_files', 'volunteer', 'post_time', 'post_date', 'date', 'milestone']
+        fields = ['id', 'user', 'title', 'sub_header', 'content', 'image', 'volunteer', 'post_time', 'post_date', 'date', 'milestone', 'is_approved']
 
 
     def create(self, validated_data):
-        image_files = validated_data.pop('image_files', [])
         user = self.context['request'].user
         project = Project.objects.create(user=user, **validated_data)
-        for image_file in image_files:
-            image = Gallery.objects.create(image=image_file)
-            project.images.add(image)
         return project
     
-
 
 
 
@@ -78,12 +62,40 @@ class UserProjectSerializer(serializers.ModelSerializer):
 class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
-        fields = ['id', 'title', 'sub_header', 'content', 'image', 'read_duration', 'post_date', 'date']
+        fields = ['id', 'title', 'sub_header', 'author', 'content', 'image', 'category', 'read_duration', 'post_date', 'date']
 
 
     def create(self, validated_data):
-        user = self.context['request'].user
-        blog = Blog.objects.create(user=user, **validated_data)
-
+        blog = Blog.objects.create(**validated_data)
         return blog
     
+
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = ['first_name', 'last_name', 'email', 'phone_number', 'message']
+
+
+    def create(self, validated_data):
+        contact = Contact.objects.create(**validated_data)
+        self.send_contact_mail(contact.email, contact.first_name, contact.last_name, contact.phone_number, contact.message)
+        return contact
+    
+    def send_contact_mail(self, email, first_name, last_name, phone_number, message):
+        subject = 'INQUIRY'
+        from_email = ' worldwidewesterners@gmail.com'
+        to = ['westernersgroupworldwide@gmail.com']
+
+        context = {
+            'first_name': first_name,
+            'last_name': last_name,
+            'phone_number': phone_number,
+            'message': message,
+        }
+        
+        html_content = render_to_string('email_template.html', context)
+        text_content = strip_tags(html_content)
+
+        msg = EmailMultiAlternatives(subject, text_content, from_email, to)
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()

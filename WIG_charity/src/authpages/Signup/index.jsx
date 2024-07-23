@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Footer from "../../components/Footer";
 import { useAuth } from '../../AuthContext';
-import { useNavigate } from 'react-router-dom';
-import axios from "axios";
+import { Link, useNavigate } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
+import Toasts from "../../components/Toasts";
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -18,6 +19,23 @@ function Signup() {
   const { user_signup } = useAuth();
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [message, setMessage] = useState("");
+  const [type, setType] = useState("");
+
+  const triggerSuccessToast = () => {
+    setMessage("Signup SuccessFul");
+    setType("success");
+  };
+
+  const triggerInvalidToast = () => {
+    setMessage("Complete The Form");
+    setType("info");
+  };
+
+  const triggerErrorToast = () => {
+    setMessage("An Error Occurred, Please Try Again");
+    setType("error");
+  };
 
 
   const validateEmail = (email) => {
@@ -52,11 +70,12 @@ function Signup() {
         setButtonState(true)
         user_signup(email, password, first_name, last_name, phone_number, role);
         setIsAuthenticated(true);
+        triggerSuccessToast();
         setTimeout(() => {
           navigate('/dashboard');
         }, 1000);
       } catch (error) {
-        alert("Sign up failed", error);
+        triggerErrorToast();
       }
       finally{
         setButtonState(false)
@@ -72,14 +91,14 @@ function Signup() {
       setConfirmPassword("");
     }
     else{
-      alert("Complete the form to login!");
+      triggerInvalidToast();
     }
   };
 
   return (
     <>
       <section className="h-full w-full">
-        <div className="w-full lg:w-[70%] h-full sm:h-screen mx-auto block sm:flex flex-row p-3 mb-4 mt-4 glass">
+        <div className="w-full lg:w-[70%] h-full sm:min-h-screen mx-auto block sm:flex flex-row p-3 mb-4 mt-4 glass">
           <div className="w-full sm:w-1/2 h-full p-0 sm:p-4">
             <div className="h-full flex flex-col items-center justify-center">
               <div className="w-full text-center pb-4 pt-8">
@@ -185,6 +204,7 @@ function Signup() {
                 >
                   {buttonState ? "Signning up...." : "Sign up"}
                 </button>
+                <Toasts message={message} type={type} />
               </form>
               <p className="text-center">
                 Allready have an account?{" "}

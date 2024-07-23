@@ -59,7 +59,7 @@ class Project(models.Model):
     title= models.CharField("Title", max_length= 100, null=True, blank=True)
     sub_header= models.CharField("Sub Header", max_length= 100, null=True, blank=True)
     content= models.TextField("Main Content", max_length= 10000, null=True, blank=True)
-    images = models.ManyToManyField('Gallery', blank=True)
+    image= models.ImageField(upload_to='images/', null=True, blank=True) 
     milestone= models.CharField("Milestone", max_length= 100, null=True, blank=True)
     volunteer= models.CharField("Volunteer", max_length= 500, null=True, blank=True)
     post_time= models.CharField("Post Time", max_length= 50, null=True, blank=True)
@@ -84,14 +84,22 @@ class Blog(models.Model):
     image= models.ImageField(upload_to='images/', null=True, blank=True) 
     read_duration= models.CharField("Read Duration", max_length= 50, null=True, blank=True)
     post_date= models.CharField("Post Date", max_length= 50, null=True, blank=True)
-    date= models.DateField("Date", auto_now_add=True)
+    date= models.DateField("Date", auto_now_add=True, null=True, blank=True)
 
     def __str__(self):
         return self.title
     
     class Meta:
         ordering = ['title']
+     
 
 
-class Gallery(models.Model):
-    image= models.ImageField(upload_to='images/', null=True, blank=True)        
+class Contact(models.Model):
+    first_name= models.CharField("First Name", max_length= 100, null=True, blank=True)
+    last_name= models.CharField("Last Name", max_length= 100, null=True, blank=True)
+    email= models.CharField("Email", max_length= 100, null=True, blank=True)
+    phone_number= models.CharField("Phone Number", max_length= 20, null=True, blank=True)
+    message= models.TextField("Message", max_length= 10000, null=True, blank=True)
+
+    def __str__(self):
+        return self.email

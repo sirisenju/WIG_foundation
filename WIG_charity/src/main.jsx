@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
 import {
   createBrowserRouter,
@@ -12,13 +11,13 @@ import Login from './authpages/Login/index.jsx';
 import Signup from './authpages/Signup/index.jsx';
 import Causes from './views/Cause/index.jsx';
 import Dashboard from './views/Dashboard/index.jsx';
-import ProjectDetails from './views/Dashboard/ReadProject.jsx';
 import OurTeam from './views/Team/index.jsx';
 import ProtectedRoute from './ProtectedRoute.jsx';
 import { AuthProvider } from './AuthContext.jsx';
 import Blog from './views/Blog/index.jsx';
 import Admin from './views/AdminDashboard/index.jsx';
 import ErrorPage from './components/404error.jsx';
+import DisplayProject from './components/DisplayProject.jsx';
 
 
 
@@ -60,6 +59,10 @@ const router = createBrowserRouter([
     element: <Signup/>
   },
   {
+    path: "/displayProject",
+    element: <DisplayProject/>
+  },
+  {
     path: "/admin",
     element: <ProtectedRoute element={<Admin/>} />
     // element: <Admin/>
@@ -69,11 +72,7 @@ const router = createBrowserRouter([
     // element: <Dashboard />
     element: <ProtectedRoute element={<Dashboard />} />
   },
-  {
-    path: "/projects/:projectTitle", 
-    // element: <ProjectDetails />
-    element: <ProtectedRoute element={<ProjectDetails />} />
-  },
+
 ])
 
 
