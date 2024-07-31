@@ -54,6 +54,13 @@ He graduated from the Federal Polytechnic, Auchi.
 Com OGBONNAYA Sunday is happily married to Mrs Melissa Izoduwa SUNDAY-OGBONNAYA"`,
     imageUrl: "/assets/ogbonnaya.jpg",
   },
+  {
+    id: 4,
+    name: "Uwagbame Iyamu",
+    position: " Director of Programs",
+    quoat: `"Comrade Western Uwagbame Iyamu, fondly called Comrade West, is a renowned youth advocate, leadership enthusiast, and trained social worker with extensive experience. As the founder of the Westerners School of Thought, he has inspired numerous young individuals and women with his unique leadership style and humane approach."`,
+    imageUrl: "/assets/Uwagbame.jpg",
+  },
   
 ];
 
