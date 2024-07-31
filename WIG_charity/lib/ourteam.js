@@ -33,8 +33,8 @@ const wf_Team = [
     imageUrl: "./assets/kingsley.jpg",
   },
   {
-    id: 4,
-    name: "Ogbonnaya Sunday",
+    id: 3,
+    name: "David Salami",
     position: "Director of Programs",
     quoat: `He's a Business man, Entrepreneur and a Transporter. 
             He currently serve as Senior Special Assistant to the Edo State Governor. 
@@ -43,6 +43,18 @@ const wf_Team = [
             Com OGBONNAYA Sunday is happily married to Mrs Melissa Izoduwa SUNDAY-OGBONNAYA`,
     imageUrl: "/assets/sunday.jpg",
   },
+  {
+    id: 4,
+    name: "Ogbonnaya Sunday",
+    position: " Director of Programs",
+    quoat: `"He's a Business man, Entrepreneur and a Transporter. 
+He currently serve as Senior Special Assistant to the Edo State Governor. 
+He is an Associate member, Institute of Chattered Mediators and Conciliators
+He graduated from the Federal Polytechnic, Auchi.
+Com OGBONNAYA Sunday is happily married to Mrs Melissa Izoduwa SUNDAY-OGBONNAYA"`,
+    imageUrl: "/assets/ogbonnaya.jpg",
+  },
+  
 ];
 
 export default wf_Team;
