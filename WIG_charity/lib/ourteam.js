@@ -1,6 +1,18 @@
 const wf_Team = [
   {
     id: 1,
+    name: "Comrade Western Uwagbame Iyamu",
+    position: "Director",
+    quoat: `Fondly called Comrade West, is a renowned youth advocate, leadership enthusiast, and trained social worker with 
+            extensive experience. As the founder of the Westerners School of Thought, he has inspired numerous young 
+            individuals and women with his unique leadership style and humane approach. Known for his reliable word 
+            and compassionate nature, Comrade West has established the Western Iyamu Global Foundation, a nonprofit organization 
+            dedicated to promoting education and supporting those in need.
+            `,
+    imageUrl: "/assets/iyamu.jpg",
+  },
+  {
+    id: 2,
     name: "MRS. Charity UYI-EDEGBE",
     position: "Director of Finance",
     quoat: `She is a trained, registered and practicing 
@@ -12,7 +24,7 @@ const wf_Team = [
     imageUrl: "/assets/charity_uyi.jpg",
   },
   {
-    id: 2,
+    id: 3,
     name: "Dr. Kingsley Oriahbure OAIKHENA",
     position: "Executive Secretary",
     quoat: `He is a trained Counselling Psychologist / Counsellor Educator from the University of Benin where is
@@ -21,7 +33,7 @@ const wf_Team = [
     imageUrl: "./assets/kingsley.jpg",
   },
   {
-    id: 3,
+    id: 4,
     name: "Ogbonnaya Sunday",
     position: "Director of Programs",
     quoat: `He's a Business man, Entrepreneur and a Transporter. 

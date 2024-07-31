@@ -16,7 +16,7 @@ function OurTeam() {
       {/* start of the section */}
       <section className="w-full h-full overflow-clip">
         {/* div for the content */}
-        <div className="w-full p-2 md:w-[80%] h-full mx-auto">
+        <div className="w-full p-2 md:w-[70%] h-full mx-auto">
           {/* div for the heading message */}
           <div className="max-w-sm mb-2 pt-5">
             <h3 className="text-lg pb-2 tracking-wider">Meet our team.</h3>
@@ -35,18 +35,18 @@ function OurTeam() {
                 data-aos-duration="500"
                 data-aos-easing="ease-in-out"
                 key={item.id}
-                className="min-h-min mx-auto shadow-md flex-grow basis-[290px] mb-3 sm:mb-0"
+                className="min-h-min mx-auto shadow-md flex-grow basis-[350px] mb-3 sm:mb-0"
               >
                 <img
                   src={item.imageUrl}
                   loading="lazy"
-                  className="object-cover object-center h-[440px] w-full rounded-tl-xl rounded-tr-xl"
+                  className="object-cover object-center h-[550px] w-full rounded-tl-xl rounded-tr-xl"
                   alt=""
                 />
                 <div className="w-full text-start p-2">
                   <p className="text-xl">{item.name}</p>
-                  <p className="text-base font-semibold">{item.position}</p>
-                  <p className="text-sm">{item.quoat}</p>
+                  <p className="text-lg sm:text-base font-semibold">{item.position}</p>
+                  <p className="text-base">{item.quoat}</p>
                 </div>
               </div>
             ))}

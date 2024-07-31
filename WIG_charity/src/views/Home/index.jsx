@@ -351,41 +351,6 @@ function Home() {
                 ))}
             </div>
           </div>
-
-          {/* third div---------------------------------------------------- */}
-          {/* sponsors-------------------- */}
-          <div className="mt-6 mb-10 w-full ">
-            <div className="w-full sm:w-[75%] mx-auto flex justify-between gap-2 p-2 flex-wrap 2xl:max-w-7xl">
-              <div className="w-[180px] h-[70px] flex-grow">
-                <img
-                  className="w-full h-full object-contain"
-                  src="./assets/sponsor1.png"
-                  alt=""
-                />
-              </div>
-              <div className="w-[180px] h-[70px] flex-grow">
-                <img
-                  className="w-full h-full object-contain"
-                  src="./assets/sponsor2.png"
-                  alt=""
-                />
-              </div>
-              <div className="w-[180px] h-[70px] flex-grow">
-                <img
-                  className="w-full h-full object-contain"
-                  src="./assets/sponsor2.png"
-                  alt=""
-                />
-              </div>
-              <div className="w-[180px] h-[70px] flex-grow">
-                <img
-                  className="w-full h-full object-contain"
-                  src="./assets/sponsor1.png"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
         </section>
       </main>
 
