@@ -33,7 +33,7 @@ function Causes() {
   useEffect(() => {
       const fetchData = async () => {
           try {
-              const response = await axios.get('https://jcoleman8635.pythonanywhere.com/');
+              const response = await axios.get('https://jcoleman8635.pythonanywhere.com/api/summary/');
               setProjectPosts(response.data.projects)
               setData(response.data);
           } catch (error) {
