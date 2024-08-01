@@ -35,7 +35,7 @@ function OurTeam() {
                 data-aos-duration="500"
                 data-aos-easing="ease-in-out"
                 key={item.id}
-                className="min-h-min mx-auto shadow-md flex-grow basis-[350px] mb-3 sm:mb-0"
+                className="min-h-min mx-auto shadow-md flex-wrap basis-[350px] lg:w-[350px] mb-3 sm:mb-0"
               >
                 <img
                   src={item.imageUrl}
