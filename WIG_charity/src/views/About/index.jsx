@@ -3,6 +3,7 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Swipper from "../../components/Swipper";
 import { Link } from "react-router-dom";
+import CountUp from 'react-countup';
 
 function About() {
   return (
@@ -61,7 +62,7 @@ function About() {
                 <h3 className="font-mono text-base pb-1 tracking-wider">
                   About Us
                 </h3>
-                <h2 className="text-xl pb-1">The Westerners Creed.</h2>
+                <h2 className="text-4xl pb-1">The Westerners Creed.</h2>
                 <p className="text-pretty text-justify pb-3">
                   We believe in the liberty of independent decision-making: The
                   Westerners Family cherishes individual freedom and autonomy.
@@ -70,9 +71,6 @@ function About() {
                   decisions, and contribute to the growth and development of our
                   family.
                 </p>
-                <Link to={"/causes"}>
-                  <button className="bg-green-400 px-6 py-2">Read More</button>
-                </Link>
               </div>
             </div>
           </div>
@@ -103,7 +101,7 @@ function About() {
                 className="bg-white w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:max-w-sm h-fit border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative"
               >
                 <div className="p-5">
-                  <h2 className="text-center text-xl font-medium">
+                  <h2 className="text-center text-2xl font-medium">
                     Objectives of the Westerners Family.
                   </h2>
                   <ul className="list-disc text-pretty text-base">
@@ -116,15 +114,6 @@ function About() {
                       Support the dissemination of knowledge and ideas,
                       fostering an environment of intellectual curiosity and
                       open-mindedness.
-                    </li>
-                    <li className="font-mono">
-                      Continuously seek personal growth and improvement,
-                      aligning with the vision of the Westerners Family.
-                    </li>
-                    <li className="font-mono">
-                      Actively engage in acts of giving, both within our family
-                      and beyond, to support and uplift individuals and
-                      communities in need.
                     </li>
                   </ul>
                 </div>
@@ -139,10 +128,10 @@ function About() {
                 data-aos-easing="ease-in-out-sine"
                 className="max-w-md mx-auto sm:ml-4 sm:mr-4 md:ml-4 p-2"
               >
-                <h3 className="font-mono text-base pb-1 tracking-wider">
+                <h3 className="font-mono text-3xl pb-1 tracking-wider">
                   Welcome To The Westerners Creed.
                 </h3>
-                <h2 className="text-3xl pb-2">Its All About Love.</h2>
+                <h2 className="text-xl pb-2">Its All About Love.</h2>
                 <p className="text-pretty pb-3">
                   The secret to happiness lies in helping others. Never
                   underestimate the difference YOU can make in the lives of the
@@ -191,7 +180,7 @@ function About() {
             data-aos-delay="50"
             data-aos-duration="1000"
             data-aos-easing="ease-in-out-sine"
-            className="w-full lg:w-[80%] h-full mx-auto pb-4 pt-14 p-2 2xl:max-w-7xl"
+            className="w-full lg:w-[80%] h-full mx-auto pb-4 pt-10 p-2 2xl:max-w-7xl"
           >
             <h3 className="text-lg pb-2 tracking-wider pt-4">About</h3>
             <h2 className="text-3xl pb-8">Our Features</h2>
@@ -270,22 +259,87 @@ function About() {
               </div>
             </div>
 
-            {/* div for the counting cards */}
+
+            {/* our leader card design */}
+            <div className="pt-10">
+              <h2 className="text-3xl pb-2">Our Brave Leader</h2>
+            <div className="w-full lg:w-[90%] mx-auto block sm:flex 2xl:max-w-7xl">
             <div
-              data-aos="fade-left"
+              data-aos="fade-right"
               data-aos-offset="200"
               data-aos-delay="50"
               data-aos-duration="1000"
               data-aos-easing="ease-in-out-sine"
-              className="w-full mx-auto mt-[10%] mb-5"
+              className="w-full sm:w-[60%] block lg:flex relative p-3"
+            >
+              <div
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="80"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out-sine"
+                className="w-full sm:max-w-md h-[470px] border-[#219D80]/[.40] border-[10px]"
+              >
+                <img
+                  className="w-full h-full object-cover object"
+                  src="./assets/iyamu.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:max-w-sm h-[440px] border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative">
+                <img
+                  className="w-full h-full object-fill md:object-cover"
+                  src="./assets/iyamu4.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className="w-full h-full p-2 sm:w-[40%] flex items-center bg-white border-[#219D80]/[.40] border-[10px] ">
+              <div
+                data-aos="fade-left"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out-sine"
+                className="max-w-md mx-auto sm:ml-4 sm:mr-4 md:ml-4"
+              >
+                <h2 className="text-2xl pb-1">Comrade Western Uwagbame<br /> Iyamu.</h2>
+                <p className="text-pretty text-justify">
+                  Fondly called Comrade West, is a renowned youth advocate, leadership enthusiast,
+                  and trained social worker with extensive experience. As the founder of the Westerners 
+                  School of Thought, he has inspired numerous young individuals and women with his unique 
+                  leadership style and humane approach.
+                  <br />
+                  Comrade West has an impressive track record of student leadership, having served as 
+                  Deputy Coordinator of Zone B and National Secretary General of the National Association 
+                  of Nigerian Students (NANS). He has engaged in various dialogues and initiatives across Nigeria, 
+                  fostering connections with emerging leaders.
+                  <br />
+                  Known for his reliable word and compassionate nature, Comrade West has established the Western 
+                  Iyamu Global Foundation, a nonprofit organization dedicated to promoting education and supporting 
+                  those in need.
+                </p>
+              </div>
+            </div>
+            </div>
+          </div>
+
+            {/* div for the counting cards */}
+            <div
+              // data-aos="fade-left"
+              // data-aos-offset="200"
+              // data-aos-delay="50"
+              // data-aos-duration="1000"
+              // data-aos-easing="ease-in-out-sine"
+              className="w-full mx-auto mt-[5%] mb-5"
             >
               <div className="block sm:flex justify-between gap-10 flex-wrap">
                 <div
-                  data-aos="fade-down"
-                  data-aos-offset="200"
-                  data-aos-delay="50"
-                  data-aos-duration="300"
-                  data-aos-easing="ease-in-out-sine"
+                  // data-aos="fade-down"
+                  // data-aos-offset="200"
+                  // data-aos-delay="50"
+                  // data-aos-duration="300"
+                  // data-aos-easing="ease-in-out-sine"
                   className="w-full mb-4 lg:max-w-xs h-[250px] bg-[#219D80]/[.20] hover:bg-primary_theme text-center p-6 flex-grow basis-[220px]"
                 >
                   <div className="w-[80px] h-[80px] flex mx-auto">
@@ -295,7 +349,7 @@ function About() {
                       alt=""
                     />
                   </div>
-                  <h4 className="text-2xl pt-2">4500+</h4>
+                  <h4 className="text-2xl pt-2"><CountUp end={4500} duration={4}/>+</h4>
                   <p className="text-lg pt-2 font-mono">People Helped</p>
                 </div>
 
@@ -314,7 +368,7 @@ function About() {
                       alt=""
                     />
                   </div>
-                  <h4 className="text-2xl pt-2">4500+</h4>
+                  <h4 className="text-2xl pt-2"><CountUp end={10} duration={4}/>+</h4>
                   <p className="text-lg pt-2 font-mono">Country Member</p>
                 </div>
 
@@ -333,7 +387,7 @@ function About() {
                       alt=""
                     />
                   </div>
-                  <h4 className="text-2xl pt-2">4500+</h4>
+                  <h4 className="text-2xl pt-2"><CountUp end={80} duration={4}/>+</h4>
                   <p className="text-lg pt-2 font-mono">Volunteer</p>
                 </div>
 
@@ -352,7 +406,7 @@ function About() {
                       alt=""
                     />
                   </div>
-                  <h4 className="text-2xl pt-2">4500+</h4>
+                  <h4 className="text-2xl pt-2"><CountUp end={7000} duration={3}/>+</h4>
                   <p className="text-lg pt-2 font-mono">People Saved</p>
                 </div>
               </div>

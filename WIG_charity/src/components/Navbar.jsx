@@ -7,8 +7,7 @@ import { useState } from "react";
 import DonateModel from "./DonateModel";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
-import Toasts from "./Toasts";
-// ..
+
 AOS.init();
 
 const navlinks = [
@@ -39,7 +38,11 @@ function Navbar(props) {
         <div className={heroStyle}>
           <div className="sm:pt-2 sm:block">
             <div className="w-full lg:w-[80%] text-white flex justify-between items-center h-14 mx-auto relative bg-footer_theme/[.80] sm:rounded-lg 2xl:max-w-7xl">
-              <div className="pl-4">logo</div>
+              <div className="pl-4">
+                <Link to={"/"}>
+                  <img className="h-12 w-12 rounded-[50%]" src="./assets/west-logo.png" alt="" />
+                </Link>
+              </div>
               <div className="block sm:hidden pr-4"><HamburgerMenu propData={navigation}/></div>
               <nav className="max-w-xl hidden sm:block pr-4 lg:pr-0">
                 <ul className="list-none flex gap-14">

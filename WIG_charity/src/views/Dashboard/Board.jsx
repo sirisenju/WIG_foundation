@@ -32,22 +32,43 @@ function Board({ onProjectClick }) {
 
   return (
     <div className="min-h-screen col-span-3 p-2">
-      <h1 className="text-center text-4xl font-bold">User Dashboard</h1>
-      <h2 className="text-3xl pt-2 pb-2">
-        Hello, {userProfile.first_name} {userProfile.last_name}.
-      </h2>
-      <div className="h-[320px] w-full">
-        <img
-          className="h-full w-full object-cover object-center rounded-xl"
-          src="./assets/peopleIllu.jpg"
-          alt=""
-        />
+      {/* john doe div */}
+      <div className="w-full bg-white flex flex-wrap justify-between items-center p-3 shadow-lg rounded-md">
+        <div className="hover:text-green-700 flex-grow basis-[200px]">
+          <h2 className="text-3xl pt-2 pb-1">Hello, John Doe! {userProfile.first_name} {userProfile.last_name}</h2>
+          <p className="text-xl">Lets get creative, start writing.</p>
+        </div>
+
+        <div className="flex-grow md:flex-shrink w-52 h-52">
+          <img
+            className="w-full h-full object-contain object-center"
+            src="./assets/dash-writing.jpg"
+            alt=""
+          />
+        </div>
       </div>
-      <div className="mt-4 block md:flex p-2 gap-2">
-        {/* project div */}
+
+      {/* stats div */}
+      <div className="w-full mt-2 flex flex-wrap gap-2">
+        <div className="hover:bg-[#EDF7F5] flex-grow basis-[200px] p-4 shadow-lg rounded-md">
+          <div className="text-center p-2">
+            <h2 className="text-2xl">Number of projects made:</h2>
+            <h3 className="font-semibold text-3xl">56</h3>
+          </div>
+        </div>
+        <div className="hover:bg-[#EDF7F5] flex-grow basis-[200px] p-4 shadow-lg rounded-md">
+          <div className="text-center p-2">
+            <h2 className="text-2xl">Role:</h2>
+            <h3 className="font-semibold text-3xl">Community Manager</h3>
+          </div>
+        </div>
+      </div>
+
+      {/* project div */}
+      <div className="mt-4 block md:flex p-2 gap-2 h-full">
         <div className="w-full md:w-[70%] overflow-auto">
-          <p className="text-2xl pb-1">Recent Project:</p>
-          <p>Projects</p>
+          <p className="text-2xl pb-1">Project:</p>
+          <p>List of projects</p>
           <ul>
             {projects.map((project) => (
               <li key={project.id} className="mb-2">
@@ -61,19 +82,9 @@ function Board({ onProjectClick }) {
             ))}
           </ul>
         </div>
-        {/* <div className="w-full md:w-[30%] h-auto p-2 mb-2 mt-2 rounded-lg">
-          <p className="text-2xl pb-1">Filter by:</p>
-          <button className="text-base mt-2 mr-2 px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
-            Recent Post
-          </button>
-          <button className="text-base mt-2 px-6 py-1 rounded-full border-2 border-green-500 hover:bg-green-600 hover:text-white">
-            Add Project
-          </button>
-        </div> */}
       </div>
     </div>
   );
 }
-
 
 export default Board;

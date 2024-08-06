@@ -6,6 +6,7 @@ import SwipperTwo from "../../components/SwipperTwo";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import PostCards from "./PostCards";
+import CountUp from 'react-countup';
 //import { projectPosts } from "../../../lib/accordian_data";
 
 function Home() {
@@ -88,7 +89,7 @@ function Home() {
                 data-aos-easing="ease-in-out-sine"
                 className="max-w-sm mx-auto sm:ml-4 sm:mr-4 md:ml-4 p-2"
               >
-                <h3 className="font-mono text-base pb-1 tracking-wider">
+                <h3 className="font-mono text-2xl pb-1 tracking-wider">
                   The Westerners Creed.
                 </h3>
                 <h2 className=" text-xl pb-1">Mission and vision statement.</h2>
@@ -149,11 +150,6 @@ function Home() {
                       Develop and promote personal relationships with our
                       leader, Supremo Western Iyamu, built on mutual respect and
                       trust.
-                    </li>
-                    <li className="font-mono">
-                      Embrace the values, customs, and traditions cherished by
-                      the Westerners Family, demonstrating our commitment to a
-                      way of life rooted in serving others.
                     </li>
                   </ul>
                 </div>
@@ -270,7 +266,7 @@ function Home() {
                       alt=""
                     />
                   </div>
-                  <h4 className="text-2xl pt-2">4500+</h4>
+                  <h4 className="text-2xl pt-2"><CountUp end={4500} duration={4}/>+</h4>
                   <p className="text-lg pt-2 font-mono">People Helped</p>
                 </div>
 
@@ -282,7 +278,7 @@ function Home() {
                       alt=""
                     />
                   </div>
-                  <h4 className="text-2xl pt-2">4500+</h4>
+                  <h4 className="text-2xl pt-2"><CountUp end={10} duration={3}/>+</h4>
                   <p className="text-lg pt-2 font-mono">Country Member</p>
                 </div>
 
@@ -294,7 +290,7 @@ function Home() {
                       alt=""
                     />
                   </div>
-                  <h4 className="text-2xl pt-2">4500+</h4>
+                  <h4 className="text-2xl pt-2"><CountUp end={80} duration={4}/>+</h4>
                   <p className="text-lg pt-2 font-mono">Volunteer</p>
                 </div>
 
@@ -306,7 +302,7 @@ function Home() {
                       alt=""
                     />
                   </div>
-                  <h4 className="text-2xl pt-2">4500+</h4>
+                  <h4 className="text-2xl pt-2"><CountUp end={7000} duration={4}/>+</h4>
                   <p className="text-lg pt-2 font-mono">People Saved</p>
                 </div>
               </div>

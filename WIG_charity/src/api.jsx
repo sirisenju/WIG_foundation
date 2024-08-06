@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 
-
 const axiosInstance = axios.create({
     baseURL: 'https://jcoleman8635.pythonanywhere.com/', 
 });
@@ -44,6 +43,8 @@ axiosInstance.interceptors.response.use(
                 console.error('Refresh token expired or invalid', e);
                 localStorage.removeItem('access_token');
                 localStorage.removeItem('refresh_token');
+                
+                //potential problem
                 window.location.href = '/login';
             }
         }

@@ -79,7 +79,7 @@ function Dashboard() {
       <div className="block md:hidden 2xl:max-w-7xl">
         <DHamburger onChangeScreen={changeScreen} />
       </div>
-      <div className=" min-h-screen flex flex-row p-2 gap-4 flex-wrap">
+      <div className="min-h-screen flex flex-row p-2 gap-4 flex-wrap">
         {/* left dashboard */}
         <SideBar onLinkClick={changeScreen} />
 
