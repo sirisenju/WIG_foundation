@@ -85,7 +85,7 @@ function Login() {
           <div className="w-full sm:w-1/2 h-[380px] sm:h-full order-last">
             <img
               className="w-full h-full object-cover rounded-md "
-              src="./assets/login_bg.jpg"
+              src="./assets/iyamu4.jpg"
               alt=""
             />
           </div>

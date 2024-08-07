@@ -227,7 +227,7 @@ function Signup() {
           <div className="w-full sm:w-1/2 min-h-screen sm:h-full">
             <img
               className="w-full h-full object-cover object-center rounded-md "
-              src="./assets/signup_bg.jpg"
+              src="./assets/iyamu4.jpg"
               alt=""
             />
           </div>
