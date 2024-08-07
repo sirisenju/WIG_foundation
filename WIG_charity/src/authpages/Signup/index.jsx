@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Footer from "../../components/Footer";
-import { useAuth } from '../../AuthContext';
-import { Link, useNavigate } from 'react-router-dom';
-import 'react-toastify/dist/ReactToastify.css';
+import { useAuth } from "../../AuthContext";
+import { Link, useNavigate } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 import Toasts from "../../components/Toasts";
 
 function Signup() {
@@ -15,7 +15,7 @@ function Signup() {
   const [last_name, setLastname] = useState("");
   const [phone_number, setPhone] = useState("");
   const [role, setRole] = useState("");
-  const [buttonState, setButtonState] = useState(false)
+  const [buttonState, setButtonState] = useState(false);
   const { user_signup } = useAuth();
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -36,7 +36,6 @@ function Signup() {
     setMessage("An Error Occurred, Please Try Again");
     setType("error");
   };
-
 
   const validateEmail = (email) => {
     // Regex for email validation
@@ -67,18 +66,17 @@ function Signup() {
       //setLoading(true);
       //alert("login done");
       try {
-        setButtonState(true)
+        setButtonState(true);
         user_signup(email, password, first_name, last_name, phone_number, role);
         setIsAuthenticated(true);
         triggerSuccessToast();
         setTimeout(() => {
-          navigate('/dashboard');
+          navigate("/dashboard");
         }, 1000);
       } catch (error) {
         triggerErrorToast();
-      }
-      finally{
-        setButtonState(false)
+      } finally {
+        setButtonState(false);
       }
 
       // clear the form fields
@@ -89,8 +87,7 @@ function Signup() {
       setPhone("");
       setRole("");
       setConfirmPassword("");
-    }
-    else{
+    } else {
       triggerInvalidToast();
     }
   };
@@ -102,8 +99,20 @@ function Signup() {
           <div className="w-full sm:w-1/2 h-full p-0 sm:p-4">
             <div className="h-full flex flex-col items-center justify-center">
               <div className="w-full text-center pb-4 pt-8">
+                <div className="inline sm:flex justify-center items-center">
+                  <Link to={"/"}>
+                  <div className="flex justify-center items-center">
+                    <img
+                        className="h-16 w-16 rounded-[50%] "
+                        src="./assets/west-logo.png"
+                        alt=""
+                      />
+                  </div>
+                  </Link>
+                  <h1 className="text-3xl pl-2 pb-2">The Westerners Foundation</h1>
+                </div>
                 <h1 className="text-3xl font-semibold">Create Your Account.</h1>
-                <p className=" text-base font-medium">Signup today.</p>
+                <p className=" text-xl font-medium">Signup today.</p>
               </div>
               <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                 <div className="block">
@@ -215,9 +224,9 @@ function Signup() {
               </p>
             </div>
           </div>
-          <div className="w-full sm:w-1/2 h-[380px] sm:h-full">
+          <div className="w-full sm:w-1/2 min-h-screen sm:h-full">
             <img
-              className="w-full h-full object-cover rounded-md "
+              className="w-full h-full object-cover object-center rounded-md "
               src="./assets/signup_bg.jpg"
               alt=""
             />

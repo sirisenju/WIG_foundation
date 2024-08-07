@@ -56,7 +56,7 @@ function Home() {
               data-aos-delay="50"
               data-aos-duration="1000"
               data-aos-easing="ease-in-out-sine"
-              className="w-full sm:w-1/2 block lg:flex relative -z-[1] p-3 sm:p-6"
+              className="w-full sm:w-1/2 block lg:flex relative -z-[1] p-3"
             >
               <div
                 data-aos="fade-right"
@@ -64,18 +64,18 @@ function Home() {
                 data-aos-delay="80"
                 data-aos-duration="1000"
                 data-aos-easing="ease-in-out-sine"
-                className="w-full sm:max-w-xs h-[380px] border-[#219D80]/[.40] border-[10px]"
+                className="w-full sm:max-w-sm h-[550px] border-[#219D80]/[.40] border-[10px]"
               >
                 <img
                   className="w-full h-full object-cover"
-                  src="./assets/login_bg.jpg"
+                  src="./assets/iyamuBW.jpg"
                   alt=""
                 />
               </div>
-              <div className="w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:max-w-sm h-[260px] sm:h-[300px] border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative">
+              <div className="w-[90%] h-full mx-auto -mt-[100px] sm:ml-[10px] md:ml-20 sm:max-w-md sm:h-[380px] border-[#219D80]/[.40] border-[10px] lg:-ml-20 lg:mt-[15%] relative">
                 <img
-                  className="w-full h-full object-cover"
-                  src="./assets/boxbg.jpg"
+                  className="w-full h-full object-cover object-center"
+                  src="./assets/iyamuST.jpg"
                   alt=""
                 />
               </div>
@@ -87,7 +87,7 @@ function Home() {
                 data-aos-delay="50"
                 data-aos-duration="1000"
                 data-aos-easing="ease-in-out-sine"
-                className="max-w-sm mx-auto sm:ml-4 sm:mr-4 md:ml-4 p-2"
+                className="max-w-md mx-auto sm:ml-4 sm:mr-4 md:ml-4 p-2"
               >
                 <h3 className="font-mono text-2xl pb-1 tracking-wider">
                   The Westerners Creed.
@@ -135,21 +135,27 @@ function Home() {
                 data-aos-delay="50"
                 data-aos-duration="1000"
                 data-aos-easing="ease-in-out-sine"
-                className="bg-white w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:max-w-sm h-fit border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative"
+                className="bg-white w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:max-w-md h-fit border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative"
               >
                 <div className="p-5">
-                  <h2 className="text-center text-xl font-medium">
+                  <h2 className="text-center text-2xl font-medium">
                     Objectives of the Westerners Family.
                   </h2>
                   <ul className="list-disc text-pretty">
                     <li className="text-[#219D80] font-mono">
-                      Foster and maintain a close-knit community of individuals
-                      dedicated to progressive thought and benevolence.
+                      Identifying and developing future leaders, empowering them to drive change.
                     </li>
                     <li className="font-mono">
-                      Develop and promote personal relationships with our
-                      leader, Supremo Western Iyamu, built on mutual respect and
-                      trust.
+                      Investing in human capital development, enhancing skills and knowledge.
+                    </li>
+                    <li className="font-mono">
+                      Supporting those in need, demonstrating compassion and empathy.
+                    </li>
+                    <li className="font-mono">
+                      Embodying selflessness, prioritizing the greater good over personal interests.
+                    </li>
+                    <li className="font-mono">
+                      Fostering community development, building stronger, more resilient societies.
                     </li>
                   </ul>
                 </div>

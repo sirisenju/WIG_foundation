@@ -34,18 +34,18 @@ function About() {
                 data-aos-delay="80"
                 data-aos-duration="1000"
                 data-aos-easing="ease-in-out-sine"
-                className="w-full sm:max-w-xs h-[380px] border-[#219D80]/[.40] border-[10px]"
+                className="w-full sm:max-w-sm h-[400px] border-[#219D80]/[.40] border-[10px]"
               >
                 <img
-                  className="w-full h-full object-cover"
-                  src="./assets/login_bg.jpg"
+                  className="w-full h-full object-cover object-center"
+                  src="./assets/iyamuST.jpg"
                   alt=""
                 />
               </div>
-              <div className="w-[90%] mx-auto -mt-[130px] sm:ml-[10px] md:ml-20 sm:max-w-sm h-[260px] sm:h-[300px] border-[#219D80]/[.40] border-[10px] lg:-ml-24 lg:mt-[35%] relative">
+              <div className="w-[90%] mx-auto -mt-[120px] sm:ml-[10px] md:ml-20 sm:max-w-sm h-[400px] border-[#219D80]/[.40] border-[10px] lg:-ml-20 lg:mt-[15%] relative">
                 <img
-                  className="w-full h-full object-cover"
-                  src="./assets/boxbg.jpg"
+                  className="w-full h-full object-cover object-top"
+                  src="./assets/iyamuBW.jpg"
                   alt=""
                 />
               </div>
@@ -106,14 +106,13 @@ function About() {
                   </h2>
                   <ul className="list-disc text-pretty text-base">
                     <li className="text-[#219D80] font-mono">
-                      Maintain a strong sense of solidarity and unity,
-                      celebrating our achievements collectively and reinforcing
-                      the bonds that make us unique and distinguished people.
+                      Identifying and developing future leaders, empowering them to drive change.
                     </li>
                     <li className="font-mono">
-                      Support the dissemination of knowledge and ideas,
-                      fostering an environment of intellectual curiosity and
-                      open-mindedness.
+                      Investing in human capital development, enhancing skills and knowledge.
+                    </li>
+                    <li className="font-mono">
+                      Supporting those in need, demonstrating compassion and empathy.
                     </li>
                   </ul>
                 </div>
