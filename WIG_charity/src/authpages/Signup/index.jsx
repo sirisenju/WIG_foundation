@@ -109,7 +109,7 @@ function Signup() {
                       />
                   </div>
                   </Link>
-                  <h1 className="text-3xl pl-2 pb-2">The Westerners Foundation</h1>
+                  <h1 className="text-3xl pl-2 pb-2">The Westerners Worldwide</h1>
                 </div>
                 <h1 className="text-3xl font-semibold">Create Your Account.</h1>
                 <p className=" text-xl font-medium">Signup today.</p>

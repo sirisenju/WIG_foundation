@@ -35,7 +35,7 @@ function Board({ onProjectClick }) {
       {/* john doe div */}
       <div className="w-full bg-white flex flex-wrap justify-between items-center p-3 shadow-lg rounded-md">
         <div className="hover:text-green-700 flex-grow basis-[200px]">
-          <h2 className="text-3xl pt-2 pb-1">Hello, John Doe! {userProfile.first_name} {userProfile.last_name}</h2>
+          <h2 className="text-3xl pt-2 pb-1">Hello, {userProfile.first_name} {userProfile.last_name}!</h2>
           <p className="text-xl">Lets get creative, start writing.</p>
         </div>
 
@@ -59,7 +59,7 @@ function Board({ onProjectClick }) {
         <div className="hover:bg-[#EDF7F5] flex-grow basis-[200px] p-4 shadow-lg rounded-md">
           <div className="text-center p-2">
             <h2 className="text-2xl">Role:</h2>
-            <h3 className="font-semibold text-3xl">Community Manager</h3>
+            <h3 className="font-semibold text-3xl">{userProfile.role}</h3>
           </div>
         </div>
       </div>

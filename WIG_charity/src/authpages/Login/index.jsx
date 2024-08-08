@@ -78,7 +78,7 @@ function Login() {
                 </div>
               </Link>
               <h1 className="text-3xl pl-2 pb-2 text-center">
-                The Westerners Foundation
+                The Westerners Worldwide
               </h1>
             </div>
           </div>
@@ -104,7 +104,7 @@ function Login() {
                       </div>
                     </Link>
                     <h1 className="text-3xl pl-2 pb-2">
-                      The Westerners Foundation
+                      The Westerners Worldwide
                     </h1>
                   </div>
                 </div>
