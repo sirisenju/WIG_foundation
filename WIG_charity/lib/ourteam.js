@@ -1,18 +1,18 @@
 const wf_Team = [
+  // {
+  //   id: 1,
+  //   name: "Comrade Western Uwagbame Iyamu",
+  //   position: "Director",
+  //   quoat: `Fondly called Comrade West, is a renowned youth advocate, leadership enthusiast, and trained social worker with 
+  //           extensive experience. As the founder of the Westerners School of Thought, he has inspired numerous young 
+  //           individuals and women with his unique leadership style and humane approach. Known for his reliable word 
+  //           and compassionate nature, Comrade West has established the Western Iyamu Global Foundation, a nonprofit organization 
+  //           dedicated to promoting education and supporting those in need.
+  //           `,
+  //   imageUrl: "/assets/iyamu.jpg",
+  // },
   {
     id: 1,
-    name: "Comrade Western Uwagbame Iyamu",
-    position: "Director",
-    quoat: `Fondly called Comrade West, is a renowned youth advocate, leadership enthusiast, and trained social worker with 
-            extensive experience. As the founder of the Westerners School of Thought, he has inspired numerous young 
-            individuals and women with his unique leadership style and humane approach. Known for his reliable word 
-            and compassionate nature, Comrade West has established the Western Iyamu Global Foundation, a nonprofit organization 
-            dedicated to promoting education and supporting those in need.
-            `,
-    imageUrl: "/assets/iyamu.jpg",
-  },
-  {
-    id: 2,
     name: "Dr. Kingsley Oriahbure OAIKHENA",
     position: "Executive Secretary",
     quoat: `He is a trained Counselling Psychologist / Counsellor Educator from the University of Benin where is
@@ -21,7 +21,7 @@ const wf_Team = [
     imageUrl: "./assets/kingsley.jpg",
   },
   {
-    id: 3,
+    id: 2,
     name: "Mr. Ogbonnaya Sunday",
     position: "Director of Programs",
     quoat: `"He's a Business man, Entrepreneur and a Transporter. 
@@ -32,14 +32,14 @@ const wf_Team = [
     imageUrl: "/assets/ogbonnaya.jpg",
   },
   {
-    id: 4,
+    id: 3,
     name: "Mr. David Salami",
     position: "Director of Information",
     quoat: `Mr.David Afekhafe SALAMI is the Publicity Secretary of Westerners Group World wide,a position he occupies from the 15th of September, 2022 till date.He is a trained and registered laboratory technologist /Petroleum Engineer from the prestigious University of Benin where he is gainfully employed. Mr David Salami is also an entrepreneur and educational consultant who has solved so many problems using his platform. Mr David Afekhafe Salami is married to Mrs Lilian Salami and blessed with children.`,
     imageUrl: "/assets/sunday.jpg",
   },
   {
-    id: 5,
+    id: 4,
     name: "MRS. Charity UYI-EDEGBE",
     position: "Director of Finance",
     quoat: `She is a trained, registered and practicing 

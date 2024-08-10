@@ -8,18 +8,35 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 const swipeData = [
   {
     id: 1,
-    imgUrl: "./assets/openarm.jpg",
-    text: "Children of the night, shinning up and down"
+    imgUrl: "./assets/img-1.jpg",
   },
   {
     id: 2,
-    imgUrl: "./assets/war-kids.jpg",
-    text: "The victors of war."
+    imgUrl: "./assets/img-2.jpg",
   },
   {
     id: 3,
-    imgUrl: "./assets/romance.jpg",
-    text: "Somewhere over the rainbow."
+    imgUrl: "./assets/img-3.jpg",
+  },
+  {
+    id: 4,
+    imgUrl: "./assets/img-4.jpg",
+  },
+  {
+    id: 5,
+    imgUrl: "./assets/img-5.jpg",
+  },
+  {
+    id: 6,
+    imgUrl: "./assets/img-6.jpg",
+  },
+  {
+    id: 7,
+    imgUrl: "./assets/img-7.jpg",
+  },
+  {
+    id: 8,
+    imgUrl: "./assets/img-8.jpg",
   },
 ];
 
@@ -49,7 +66,7 @@ function SwipperTwo() {
                     src={item.imgUrl}
                     alt=""
                   />
-                 <p className="absolute text-[#fad643] bottom-0 right-4 great-vibes-regular text-[25px] sm:text-[60px]">{item.text}</p>
+                 {/* <p className="absolute text-[#fad643] bottom-0 right-4 great-vibes-regular text-[25px] sm:text-[60px]">{item.text}</p> */}
                 </div>
               </div>
             </div>
