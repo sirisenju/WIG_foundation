@@ -67,14 +67,14 @@ function Home() {
                 className="w-full sm:max-w-sm h-[550px] border-[#219D80]/[.40] border-[10px]"
               >
                 <img
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                   src="./assets/iyamuBW.jpg"
                   alt=""
                 />
               </div>
               <div className="w-[90%] h-full mx-auto -mt-[100px] sm:ml-[10px] md:ml-20 sm:max-w-md sm:h-[380px] border-[#219D80]/[.40] border-[10px] lg:-ml-20 lg:mt-[15%] relative">
                 <img
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-top"
                   src="./assets/iyamuST.jpg"
                   alt=""
                 />
