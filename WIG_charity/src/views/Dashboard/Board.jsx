@@ -52,7 +52,7 @@ function Board({ onProjectClick }) {
       <div className="w-full mt-2 flex flex-wrap gap-2">
         <div className="hover:bg-[#EDF7F5] flex-grow basis-[200px] p-4 shadow-lg rounded-md">
           <div className="text-center p-2">
-            <h2 className="text-2xl">Number of projects made:</h2>
+            <h2 className="text-2xl">Number of projects made:  {projects.length}</h2>
             <h3 className="font-semibold text-3xl">56</h3>
           </div>
         </div>
